@@ -36,7 +36,8 @@ export function HeroScene() {
     (_, contextSafe) => {
       const q = gsap.utils.selector(root);
       const [preloader] = q("[data-preloader]");
-      const [preBg] = q("[data-pre-bg]");
+      const [gateLeft] = q("[data-gate='left']");
+      const [gateRight] = q("[data-gate='right']");
       const [preUi] = q("[data-pre-ui]");
       const [preLogo] = q("[data-pre-logo]");
       const [preBar] = q("[data-pre-bar]");
@@ -49,7 +50,8 @@ export function HeroScene() {
       const html = document.documentElement;
 
       // --- Initial states (elements also carry `invisible` to avoid FOUC) ---
-      gsap.set(q("[data-hero-image]"), { clipPath: "inset(0% 50% 0% 50%)" });
+      gsap.set(gateLeft, { clipPath: "inset(0% 50% 0% 0%)" });
+      gsap.set(gateRight, { clipPath: "inset(0% 0% 0% 50%)" });
       gsap.set(q("[data-nav]"), { x: "22rem", autoAlpha: 0 });
       gsap.set(q("[data-nav-line]"), { scaleX: 0, transformOrigin: "right center" });
       gsap.set(q("[data-line-a]"), { x: "-29rem", autoAlpha: 0 });
@@ -69,8 +71,7 @@ export function HeroScene() {
         },
       });
       heroTl
-        .to(q("[data-hero-image]"), { clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "power4.inOut" })
-        .to(q("[data-line-a], [data-line-b]"), { x: 0, autoAlpha: 1, duration: 1, ease: EASE_REVEAL, stagger: 0.08 }, "-=0.45")
+        .to(q("[data-line-a], [data-line-b]"), { x: 0, autoAlpha: 1, duration: 1, ease: EASE_REVEAL, stagger: 0.08 })
         .to(q("[data-nav]"), { x: 0, autoAlpha: 1, duration: 0.9, ease: EASE_REVEAL }, "<0.1")
         .to(q("[data-nav-line]"), { scaleX: 1, duration: 0.8, ease: EASE_REVEAL }, "-=0.5")
         .fromTo(
@@ -80,7 +81,8 @@ export function HeroScene() {
           "<",
         );
 
-      // --- 2. Preloader exit: loading UI drops, logo docks into the header, overlay fades ---
+      // --- 2. Preloader exit: loading UI drops, logo docks into the header,
+      //        the blue background splits open like a gate to reveal the hero ---
       const exitPreloader = () => {
         const from = preLogo.getBoundingClientRect();
         const to = heroLogo.getBoundingClientRect();
@@ -106,7 +108,8 @@ export function HeroScene() {
             },
             "<0.1",
           )
-          .to(preBg, { autoAlpha: 0, duration: 0.8 }, "<0.2");
+          .to(gateLeft, { clipPath: "inset(0% 100% 0% 0%)", duration: 1.4, ease: "power4.inOut" }, "<0.35")
+          .to(gateRight, { clipPath: "inset(0% 0% 0% 100%)", duration: 1.4, ease: "power4.inOut" }, "<");
       };
 
       // --- 1. Preloader: bar + counter follow real loading (fonts + non-lazy images) ---
@@ -185,7 +188,11 @@ export function HeroScene() {
     <section id="top" ref={root} className="relative text-white">
       {/* Preloader overlay (Figma Default → Variant8) */}
       <div data-preloader className="fixed inset-0 z-50 grid text-white" role="status" aria-label="Loading">
-        <div data-pre-bg className="absolute inset-0">
+        {/* Gate: two clipped halves of the same background, opened outwards on exit */}
+        <div data-gate="left" className="absolute inset-0 [clip-path:inset(0_50%_0_0)]">
+          <BrandBackground />
+        </div>
+        <div data-gate="right" className="absolute inset-0 [clip-path:inset(0_0_0_50%)]">
           <BrandBackground />
         </div>
         <div className="relative grid place-items-center [grid-area:1/1]">

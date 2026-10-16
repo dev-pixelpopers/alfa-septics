@@ -10,25 +10,21 @@ const FEATURES = [
     title: "Licensed Expertise",
     body: "TCEQ Installer II expertise for compliant OSSF installations.",
     icon: { src: "/assets/icons/feature-licensed.png", width: 216, height: 257 },
-    bodyWidth: "34.8rem",
   },
   {
     title: "Turnkey Service",
     body: "From site evaluation and permitting to installation and inspection.",
     icon: { src: "/assets/icons/feature-turnkey.png", width: 272, height: 271 },
-    bodyWidth: "34.8rem",
   },
   {
     title: "Clear Communication",
     body: "Straightforward answers, clear expectations, and transparent project guidance.",
     icon: { src: "/assets/icons/feature-communication.png", width: 270, height: 239 },
-    bodyWidth: "42.9rem",
   },
   {
     title: "Built for the Site",
     body: "Every solution is planned around your property, soil, and project requirements.",
     icon: { src: "/assets/icons/feature-site.png", width: 418, height: 265 },
-    bodyWidth: "39.4rem",
   },
 ];
 
@@ -53,7 +49,7 @@ export function FeaturesScene() {
       // V22 → V26: each card swings up into place while the previous one recedes.
       cards.forEach((card, i) => {
         const at = i + 1;
-        tl.to(card, { y: 0, rotation: 0, ease: EASE_REVEAL, duration: 1.1 }, at);
+        tl.to(card, { y: 0, ease: EASE_REVEAL, duration: 1.1 }, at);
         if (i > 0) {
           tl.to(cards[i - 1], { autoAlpha: 0, scale: 0.92, y: "-4rem", ease: "power2.in", duration: 0.6 }, at + 0.15);
         }
@@ -89,21 +85,20 @@ export function FeaturesScene() {
             <li
               key={feature.title}
               data-card
-              className="invisible absolute inset-0 flex rotate-[7.68deg] flex-col rounded-[5rem] bg-[radial-gradient(120%_90%_at_55%_45%,rgba(42,150,103,0.35),transparent_60%),linear-gradient(170deg,#64c3b3_0%,#38aab8_40%,#2f9fcf_100%)] pb-[4rem] pl-[4.5rem] pr-[4rem] pt-[5rem] text-white shadow-[0_4rem_8rem_rgba(0,0,0,0.18)]"
+              className="invisible absolute left-0 top-0 flex h-[49.8rem] w-[55rem] rotate-[7.68deg] flex-col overflow-hidden rounded-[5rem] bg-[linear-gradient(to_bottom,#64c3b3cf_0%,#2f9fcf_40%)] pb-[4rem] pl-[4.5rem] pr-[4rem] pt-[5rem] text-white shadow-[0_4rem_8rem_rgba(0,0,0,0.18)]"
             >
-              <h3 className="w-[49.3rem] font-display text-[6rem] font-black capitalize leading-[0.96]">
+              {/* 5.5rem keeps the longest word ("Communication") inside the 46.5rem content box */}
+              <h3 className="w-full font-display text-[5.5rem] font-black capitalize leading-[0.96]">
                 {feature.title}
               </h3>
-              <p className="mt-[2.6rem] text-[2.5rem] leading-[1.5]" style={{ width: feature.bodyWidth }}>
-                {feature.body}
-              </p>
+              <p className="mt-[2.4rem] w-full text-[2.5rem] leading-[1.5]">{feature.body}</p>
               <Image
                 src={feature.icon.src}
                 alt=""
                 width={feature.icon.width}
                 height={feature.icon.height}
                 sizes="12vw"
-                className="mt-auto h-[13rem] w-auto self-end"
+                className="mt-auto h-[13rem] w-auto shrink-0 self-end"
               />
             </li>
           ))}

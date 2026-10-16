@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { BrandBackground } from "@/components/ui/BrandBackground";
 import { PillLink } from "@/components/ui/PillLink";
 import { StickyBackdrop } from "@/components/ui/StickyBackdrop";
-import { EASE_REVEAL, FIGMA_EASE_OUT, ScrollTrigger, createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
+import { EASE_REVEAL, FIGMA_EASE_OUT, ScrollTrigger, gsap, useGSAP } from "@/lib/gsap";
 
 const NAV_ITEMS = [
   { label: "Home", href: "#top" },
@@ -26,11 +26,10 @@ const BADGES = [
 
 /**
  * Preloader (Default → Variant9) and hero (Variant9 → Variant20).
- * Preloader + hero entrance are time-based; everything after is scrubbed.
+ * Preloader, hero entrance and the "From Bare Land" reveal are all time-based.
  */
 export function HeroScene() {
   const root = useRef<HTMLElement>(null);
-  const watermark = useRef<HTMLDivElement>(null);
 
   useGSAP(
     (_, contextSafe) => {
@@ -43,7 +42,7 @@ export function HeroScene() {
       const [preBar] = q("[data-pre-bar]");
       const [preCount] = q("[data-pre-count]");
       const [heroLogo] = q("[data-hero-logo]");
-      const [bareScene] = q("[data-bare-scene]");
+      const [bareBlock] = q("[data-bare-block]");
       const [bareHeading] = q("[data-bare-heading]");
       const [bareDesc] = q("[data-bare-desc]");
       const badges = q("[data-badge]");
@@ -126,9 +125,9 @@ export function HeroScene() {
         img.complete
           ? Promise.resolve()
           : new Promise((resolve) => {
-              img.addEventListener("load", resolve, { once: true });
-              img.addEventListener("error", resolve, { once: true });
-            });
+            img.addEventListener("load", resolve, { once: true });
+            img.addEventListener("error", resolve, { once: true });
+          });
       const tasks: Promise<unknown>[] = [
         document.fonts.ready,
         ...Array.from(document.images)
@@ -160,22 +159,31 @@ export function HeroScene() {
 
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) heroTl.timeScale(3);
 
-      // --- 4. Scroll (Variant12 → Variant20) ---
-      // V12 → V15 is plain page movement in the prototype, so it uses native scroll;
-      // only the watermark counter-drifts, locked to the first screen of scrolling.
-      gsap.to(watermark.current, {
-        y: "39.9rem",
-        ease: "none",
-        scrollTrigger: { trigger: root.current, start: "top top", end: "+=100%", scrub: true },
-      });
-
-      createSceneTimeline(bareScene)
+      // --- 4. "From Bare Land" (Variant15 → Variant20) ---
+      // Plays on its own (not scrubbed) every time the block comes into view, from either direction.
+      const bareReveal = gsap
+        .timeline({ paused: true })
         // V15 → V16: heading wipes in top-down, description slides in from the right.
         .to(bareHeading, { clipPath: "inset(0% 0% 0% 0%)", y: 0, ease: EASE_REVEAL, duration: 1.2 }, 0)
-        .to(bareDesc, { x: 0, autoAlpha: 1, ease: EASE_REVEAL }, 0.3)
+        .to(bareDesc, { x: 0, autoAlpha: 1, ease: EASE_REVEAL, duration: 1 }, 0.3)
         // V16 → V20: badges rise one after another, overlapping slightly.
-        .to(badges, { y: 0, autoAlpha: 1, scale: 1, ease: "back.out(1.3)", stagger: 0.7 }, 1)
-        .to({}, { duration: 0.5 });
+        .to(badges, { y: 0, autoAlpha: 1, scale: 1, ease: "back.out(1.3)", duration: 1, stagger: 0.18 }, 0.7);
+
+      ScrollTrigger.create({
+        trigger: bareBlock,
+        start: "top 60%",
+        end: "bottom 40%",
+        onEnter: () => bareReveal.play(),
+        onEnterBack: () => bareReveal.play(),
+      });
+      // Rewind only once the block is fully off-screen, so it never blanks out while visible.
+      ScrollTrigger.create({
+        trigger: bareBlock,
+        start: "top bottom",
+        end: "bottom top",
+        onLeave: () => bareReveal.pause(0),
+        onLeaveBack: () => bareReveal.pause(0),
+      });
 
       return () => {
         html.style.overflow = "";
@@ -220,7 +228,7 @@ export function HeroScene() {
       </div>
 
       <StickyBackdrop>
-        <BrandBackground watermarkRef={watermark} />
+        <BrandBackground watermark={false} />
       </StickyBackdrop>
 
       {/* Hero content (Variant12 layout) — scrolls natively, as V12 → V15 does in the prototype */}
@@ -268,11 +276,11 @@ export function HeroScene() {
           <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-transparent from-[71.6%] to-black" />
         </div>
 
-        <h1 className="relative mt-[-12.5rem] flex flex-col items-center whitespace-nowrap text-center font-display font-black uppercase leading-[0.76] tracking-[-1.155rem]">
-          <span data-line-a className="invisible text-[16.5rem]">
+        <h1 className="relative -mt-[12.5rem] flex flex-col items-center whitespace-nowrap text-center font-display font-medium uppercase leading-[0.76] tracking-[-11.55px]">
+          <span data-line-a className="invisible text-[165px]">
             Expert Septic &amp;
           </span>
-          <span data-line-b className="invisible text-[16.8rem]">
+          <span data-line-b className="invisible text-[168px]">
             Site Solutions
           </span>
         </h1>
@@ -286,21 +294,40 @@ export function HeroScene() {
             Get a Free Estimate
           </PillLink>
         </div>
+      </div>
 
-        {/* Figma fills this frame with a video; the MCP can only export its poster frame. */}
-        <div className="relative mt-[5.5rem] h-[65.5rem] w-[142.5rem]">
+      {/* After the hero → end of "From Bare Land": 2% logo artwork behind the content */}
+      <div className="relative flex flex-col items-center">
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[2]">
           <Image
+            src="/assets/images/alfa-septics-logo-back.png"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+
+        <div className="relative mt-[5.5rem] h-[65.5rem] w-[142.5rem]">
+          {/* <Image
             src="/assets/images/video-poster.png"
             alt="Alfa Septics truck and excavator on a septic installation"
             fill
             sizes="75vw"
+          /> */}
+          <video
+            src="/assets/videos/main-video.mp4"
+            autoPlay
+            loop
+            muted
+            className="h-full w-full object-cover border-10 border-[rgba(255,255,255,0.70)] border-solid"
+            disablePictureInPicture
+            disableRemotePlayback
           />
         </div>
-      </div>
 
-      {/* "From Bare Land" pinned scene (Variant15 → Variant20) */}
-      <div data-bare-scene className="relative h-[380vh]">
-        <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden pt-[15.1rem]">
+        {/* "From Bare Land" (Variant15 → Variant20 layout); reveals itself on entering view */}
+        <div data-bare-block className="relative flex w-full flex-col items-center overflow-hidden pb-[12.6rem] pt-[15.1rem]">
           <div className="h-[34.8rem] w-[101.5rem]">
             <h2
               data-bare-heading

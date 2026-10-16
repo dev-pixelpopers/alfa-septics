@@ -8,6 +8,28 @@ html {
   font-size: calc(100vw / 192);
 }
 
+@font-face {
+  font-family: "Gotham";
+  src: url("/assets/fonts/Gotham-Black.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nohemi";
+  src: url("/assets/fonts/Nohemi-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nohemi-Med";
+  src: url("/assets/fonts/Nohemi-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -29,9 +51,10 @@ html {
   --color-frost: #e6e9ee;
 
   /* Gotham + Nohemi are licensed; the Google fonts are metric-close fallbacks. */
-  --font-display: "Gotham Black", "Gotham", var(--font-montserrat), sans-serif;
+  --font-display: "Gotham", var(--font-montserrat), sans-serif;
   --font-gotham: "Gotham", var(--font-montserrat), sans-serif;
-  --font-body: "Nohemi", var(--font-outfit), sans-serif;
+  /* --font-body: "Nohemi", var(--font-outfit), sans-serif; */
+  --font-body: "Nohemi-Med", var(--font-outfit), sans-serif;
   --font-albert: var(--font-albert-sans), sans-serif;
   --font-manrope: var(--font-manrope), sans-serif;
   --font-sans: var(--font-body);

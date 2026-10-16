@@ -58,7 +58,7 @@ export function GalleryScene() {
       <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden bg-white">
         <div aria-hidden data-panel className="absolute left-[calc(50%-42.3rem)] top-[8rem] h-[85.3rem] w-[86rem] bg-cloud" />
 
-        <div className="relative mt-[5.7rem] h-[14.8rem] w-[150.2rem]">
+        <div className="relative mt-[5.7rem] h-[14.8rem] w-[160.2rem]">
           <h2
             data-heading
             className="whitespace-nowrap text-center font-display text-[16.5rem] font-black uppercase leading-[0.9] tracking-[-1.155rem] text-brand-navy"

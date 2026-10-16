@@ -88,7 +88,7 @@ export function ProcessScene() {
 
   return (
     <section id="process" ref={root} className="relative h-[390vh]">
-      <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden bg-white">
+      <div className="sticky top-0 flex min-h-[120dvh] flex-col items-center overflow-hidden bg-white">
         <h2 className="relative z-10 mt-[1.3rem] w-[178.3rem] whitespace-nowrap text-center font-display text-[16.5rem] font-black uppercase leading-[0.9] tracking-[-1.155rem] text-brand-cyan">
           From Site to System
         </h2>

@@ -36,7 +36,7 @@ export function ServicesScene() {
       const q = gsap.utils.selector(root);
       const images = q("[data-service-image]");
 
-      gsap.set(q("[data-heading]"), { clipPath: "inset(0% 0% 100% 0%)", y: "5rem" });
+      gsap.set(q("[data-heading]"), { clipPath: "inset(0% 0% 100% 0%)" });
       gsap.set(q("[data-lede]"), { x: "15rem", autoAlpha: 0 });
       gsap.set(images.slice(1), { yPercent: 100 });
 
@@ -44,7 +44,7 @@ export function ServicesScene() {
       // scrolling into view. V28 → V29 is plain page movement, so it's native scroll.
       gsap
         .timeline({
-          scrollTrigger: { trigger: q("[data-intro]")[0], start: "top 85%", end: "top 15%", scrub: 0.8 },
+          scrollTrigger: { trigger: q("[data-intro]")[0], start: "top 60%", end: "top 15%", scrub: 0.8 },
         })
         .to(q("[data-heading]"), { clipPath: "inset(0% 0% 0% 0%)", y: 0, ease: EASE_REVEAL }, 0)
         .to(q("[data-lede]"), { x: 0, autoAlpha: 1, ease: EASE_REVEAL }, 0.25);
@@ -56,7 +56,7 @@ export function ServicesScene() {
         const step = i + 1;
         const at = step - 0.5;
         tl.to(image, { yPercent: 0 }, at)
-          .to(images[step - 1], { yPercent: -25 }, at)
+          // .to(images[step - 1], { yPercent: -25 }, at)
           .to(q("[data-copy]"), { y: `${-30.5 * step}rem` }, at)
           .to(q("[data-counter]"), { y: `${-4 * step}rem` }, at);
       });

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { PillLink } from "@/components/ui/PillLink";
 import { createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
+import { projectPhoto } from "@/lib/site";
 
 const STEPS = [
   {
@@ -33,12 +34,13 @@ const STEPS = [
   },
 ];
 
-// Figma mask layers "01", "02", "03", "4" — one per step; Inspection keeps the Installation shot.
+// One photo per step (Figma mask layers "01"–"03", then real job-site photos).
 const PHOTOS = [
   { src: "/assets/images/process-site-evaluation.png", alt: "Surveyor taking level readings on a staked-out lot" },
   { src: "/assets/images/process-engineering.png", alt: "Engineer drafting a septic system plan at a desk" },
   { src: "/assets/images/process-permitting.png", alt: "Approved septic permit held up on site" },
-  { src: "/assets/images/process-installation.png", alt: "Crew trenching beside a house with a mini excavator" },
+  { src: projectPhoto("tank-pit-crew"), alt: "Crew setting a concrete septic tank in an excavation" },
+  { src: projectPhoto("tank-backfilled-risers"), alt: "Finished tank risers ready for county inspection" },
 ];
 
 const ACTIVE = "#31a2ca";
@@ -132,7 +134,7 @@ export function ProcessScene() {
                 </li>
               ))}
             </ol>
-            <PillLink href="#contact" variant="gradient" className="ml-[2.3rem] mt-[3.5rem] w-[31.1rem]">
+            <PillLink href="/contact" variant="gradient" className="ml-[2.3rem] mt-[3.5rem] w-[31.1rem]">
               Start Your Project
             </PillLink>
           </div>

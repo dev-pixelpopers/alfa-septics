@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { label: "Services Areas", href: "#services" },
   { label: "Process", href: "#process" },
   { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // One sprite (trust-badges.png) cropped into the four badges, crops from Figma 203:600–603.
@@ -290,7 +290,7 @@ export function HeroScene() {
             Licensed septic, excavation, and utility services for homes, businesses, and new construction across
             Southeast Texas.
           </p>
-          <PillLink href="#contact" className="w-[37.1rem]">
+          <PillLink href="/contact" className="w-[37.1rem]">
             Get a Free Estimate
           </PillLink>
         </div>

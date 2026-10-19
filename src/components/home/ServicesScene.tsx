@@ -5,27 +5,7 @@ import { useRef } from "react";
 import { PillLink } from "@/components/ui/PillLink";
 import { StickyBackdrop } from "@/components/ui/StickyBackdrop";
 import { EASE_REVEAL, createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
-
-const SERVICES = [
-  {
-    title: "Aerobic Septic Systems",
-    body: "Efficient aerobic systems designed, installed, and maintained for Texas properties.",
-    image: "/assets/images/service-aerobic-septic.jpg",
-    alt: "Concrete aerobic septic tank with green access lids set in an open excavation",
-  },
-  {
-    title: "Conventional Septic Systems",
-    body: "Reliable septic solutions built around your property, soil, and site requirements.",
-    image: "/assets/images/service-conventional-septic.png",
-    alt: "Cutaway of a conventional septic tank and drain field beside a house",
-  },
-  {
-    title: "Commercial Utilities",
-    body: "Utility installation for commercial developments, new construction, and larger sites.",
-    image: "/assets/images/service-commercial-utilities.png",
-    alt: "Cutaway of commercial utility tanks and piping beside an office building",
-  },
-];
+import { SERVICES } from "@/lib/site";
 
 /** Variant26 → Variant31 */
 export function ServicesScene() {
@@ -35,7 +15,10 @@ export function ServicesScene() {
     () => {
       const q = gsap.utils.selector(root);
       const images = q("[data-service-image]");
+      const dots = q("[data-dot]");
 
+      gsap.set(dots[0], { scale: 1.3 });
+      gsap.set(dots.slice(1), { opacity: 0.4, scale: 0.8 });
       gsap.set(q("[data-heading]"), { clipPath: "inset(0% 0% 100% 0%)" });
       gsap.set(q("[data-lede]"), { x: "15rem", autoAlpha: 0 });
       gsap.set(images.slice(1), { yPercent: 100 });
@@ -58,7 +41,9 @@ export function ServicesScene() {
         tl.to(image, { yPercent: 0 }, at)
           // .to(images[step - 1], { yPercent: -25 }, at)
           .to(q("[data-copy]"), { y: `${-30.5 * step}rem` }, at)
-          .to(q("[data-counter]"), { y: `${-4 * step}rem` }, at);
+          .to(q("[data-counter]"), { y: `${-4 * step}rem` }, at)
+          .to(dots[step - 1], { opacity: 0.4, scale: 0.8, duration: 0.5 }, at + 0.25)
+          .to(dots[step], { opacity: 1, scale: 1.3, duration: 0.5 }, at + 0.25);
       });
       tl.to({}, { duration: 0.6 });
     },
@@ -88,16 +73,16 @@ export function ServicesScene() {
       </div>
 
       {/* Carousel (Variant29–31), pinned */}
-      <div data-carousel className="relative h-[290vh]">
+      <div data-carousel className="relative h-[410vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
           <div
             aria-hidden
             className="absolute inset-x-0 top-[26.4rem] h-[37.1rem] bg-gradient-to-r from-[rgba(44,60,146,0)] via-[rgba(44,60,146,0.5)] to-[rgba(44,60,146,0)]"
           />
-          <div aria-hidden className="absolute right-[6.8rem] top-[23.6rem] flex gap-[1rem]">
-            <span className="size-[1rem] rounded-full bg-white opacity-50" />
-            <span className="size-[1rem] rounded-full bg-white" />
-            <span className="size-[1rem] rounded-full bg-white" />
+          <div aria-hidden className="absolute right-[6.8rem] top-[23.6rem] flex items-center gap-[1rem]">
+            {SERVICES.map((service, i) => (
+              <span key={service.slug} data-dot className={`size-[1rem] rounded-full bg-white ${i === 0 ? "" : "opacity-40"}`} />
+            ))}
           </div>
 
           <div className="relative flex items-start">
@@ -133,8 +118,8 @@ export function ServicesScene() {
                   ))}
                 </ul>
               </div>
-              <PillLink href="#services" className="mt-[10.5rem] w-[29.4rem]">
-                View All Services
+              <PillLink href="/contact" className="mt-[10.5rem] w-[29.4rem]">
+                Book a Service
               </PillLink>
             </div>
           </div>

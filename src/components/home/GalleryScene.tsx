@@ -3,18 +3,20 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { EASE_REVEAL, createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
+import { projectPhoto } from "@/lib/site";
 
 type Shot = { src: string; alt: string; width: number; height: number; flyFrom?: string };
 
-// Left → right as laid out in Variant39. `flyFrom` is the Variant38 offset each thumb flies in from.
+// Left → right as laid out in Variant39 (box sizes in design px). `flyFrom` is the
+// Variant38 offset each thumb flies in from.
 const SHOTS: Shot[] = [
-  { src: "/assets/images/gallery-thumb-01.png", alt: "Precast septic tank set in the ground", width: 166, height: 331, flyFrom: "-192.6rem" },
-  { src: "/assets/images/gallery-thumb-02.png", alt: "Concrete riser installed beside a home", width: 166, height: 331, flyFrom: "-128.4rem" },
-  { src: "/assets/images/gallery-thumb-03.png", alt: "Septic tank risers in an open excavation", width: 165, height: 331, flyFrom: "-64.2rem" },
-  { src: "/assets/images/gallery-main-truck.png", alt: "Crane truck delivering a septic tank to a site", width: 627, height: 480 },
-  { src: "/assets/images/gallery-thumb-05.png", alt: "Green septic riser lid before backfill", width: 165, height: 331, flyFrom: "64.2rem" },
-  { src: "/assets/images/gallery-thumb-06.png", alt: "Concrete tank risers set below a house", width: 166, height: 331, flyFrom: "128.4rem" },
-  { src: "/assets/images/gallery-thumb-07.png", alt: "Finished septic access lid flush with the lawn", width: 166, height: 331, flyFrom: "192.6rem" },
+  { src: projectPhoto("crane-lowering-tank"), alt: "Crane lowering a concrete septic tank into place", width: 166, height: 331, flyFrom: "-192.6rem" },
+  { src: projectPhoto("tank-install-trench-worker"), alt: "Installer connecting a green poly tank in a trench", width: 166, height: 331, flyFrom: "-128.4rem" },
+  { src: projectPhoto("trench-to-tank"), alt: "Drain line trench leading to installed tank risers", width: 165, height: 331, flyFrom: "-64.2rem" },
+  { src: projectPhoto("crane-truck-site"), alt: "Crane truck delivering a septic tank across an open lot", width: 627, height: 480 },
+  { src: projectPhoto("poly-tank-excavator"), alt: "Green poly septic tank beside a mini excavator", width: 165, height: 331, flyFrom: "64.2rem" },
+  { src: projectPhoto("crane-tank-delivery"), alt: "Concrete septic tank lifted off a crane truck", width: 166, height: 331, flyFrom: "128.4rem" },
+  { src: projectPhoto("field-trench-excavator"), alt: "Long drain field trench cut across a grassy property", width: 166, height: 331, flyFrom: "192.6rem" },
 ];
 
 /** Variant34 → Variant39 */
@@ -80,7 +82,7 @@ export function GalleryScene() {
               data-thumb={shot.flyFrom ? "" : undefined}
               data-fly-from={shot.flyFrom}
               data-main={shot.flyFrom ? undefined : ""}
-              className="block"
+              className="block object-cover"
               style={{ width: `${shot.width / 10}rem`, height: `${shot.height / 10}rem` }}
             />
           ))}
@@ -88,7 +90,7 @@ export function GalleryScene() {
             data-meta
             className="invisible absolute left-[165.7rem] top-[7rem] w-[10rem] font-albert text-[2rem] font-light leading-[1.8] text-brand-navy"
           >
-            01 / 14
+            01 / {String(SHOTS.length).padStart(2, "0")}
           </p>
         </div>
 

@@ -1,12 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
+import { CONTACT } from "@/lib/site";
 
+// Absolute paths so the footer works on every page.
 const SITE_LINKS = [
-  { label: "Home", href: "#top" },
-  { label: "Services", href: "#services" },
-  { label: "Service Areas", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Service Areas", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const SOCIAL_LINKS = ["Facebook", "Instagram", "YouTube", "Pinterest"];
@@ -25,22 +28,22 @@ export function SiteFooter() {
 
       <div className="flex w-full pl-[39.6rem] pt-[7.3rem]">
         <div className="flex w-[39rem] flex-col gap-[4.2rem]">
-          <a href="tel:+17732334278" className="hover:opacity-80">
+          <a href={CONTACT.phoneHref} className="hover:opacity-80">
             Call Us Now →<br />
-            (773)233-4278
+            {CONTACT.phoneDisplay}
           </a>
-          <a href="mailto:info@alphaseptics.com" className="hover:opacity-80">
+          <a href={`mailto:${CONTACT.email}`} className="hover:opacity-80">
             Send Email →<br />
-            info@alphaseptics.com
+            {CONTACT.email}
           </a>
         </div>
         <nav aria-label="Footer" className="w-[28rem]">
           <ul>
             {SITE_LINKS.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="hover:opacity-80">
+                <Link href={link.href} className="hover:opacity-80">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

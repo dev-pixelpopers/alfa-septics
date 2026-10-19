@@ -58,6 +58,19 @@ html {
   --font-albert: var(--font-albert-sans), sans-serif;
   --font-manrope: var(--font-manrope), sans-serif;
   --font-sans: var(--font-body);
+
+  --animate-marquee: marquee 45s linear infinite;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }
 
 body {

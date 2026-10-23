@@ -6,10 +6,10 @@ import { NAV_LINKS } from "@/lib/site";
 export function SiteHeader({ current }: { current: string }) {
   return (
     <header className="absolute inset-x-0 top-0 z-20 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem] text-white">
-      <Link href="/" aria-label="Alfa Septics home" className="mt-[0.5rem]">
+      <Link href="/" aria-label="Alfa Septic home" className="mt-[0.5rem]">
         <Image
           src="/assets/images/logo-alfa-septics-white.png"
-          alt="Alfa Septics"
+          alt="Alfa Septic"
           width={1137}
           height={1410}
           preload

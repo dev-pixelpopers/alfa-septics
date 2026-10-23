@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/home/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Contact — Alfa Septics",
+  title: "Contact — Alfa Septic",
   description:
     "Request a free estimate for septic installation, repairs, pumping, maintenance, or design services across Southeast Texas.",
 };

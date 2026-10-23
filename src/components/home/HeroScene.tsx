@@ -234,11 +234,11 @@ export function HeroScene() {
       {/* Hero content (Variant12 layout) — scrolls natively, as V12 → V15 does in the prototype */}
       <div className="relative flex flex-col items-center">
         <header className="absolute inset-x-0 top-0 z-10 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem]">
-          <a href="#top" aria-label="Alfa Septics home" className="mt-[0.5rem]">
+          <a href="#top" aria-label="Alfa Septic home" className="mt-[0.5rem]">
             <Image
               data-hero-logo
               src="/assets/images/logo-alfa-septics-white.png"
-              alt="Alfa Septics"
+              alt="Alfa Septic"
               width={1137}
               height={1410}
               preload
@@ -309,20 +309,13 @@ export function HeroScene() {
         </div>
 
         <div className="relative mt-[5.5rem] h-[65.5rem] w-[142.5rem]">
-          {/* <Image
+          {/* The white frame is baked into the image. */}
+          <Image
             src="/assets/images/video-poster.png"
-            alt="Alfa Septics truck and excavator on a septic installation"
+            alt="Alfa Septic truck and excavator on a septic installation"
             fill
             sizes="75vw"
-          /> */}
-          <video
-            src="/assets/videos/main-video.mp4"
-            autoPlay
-            loop
-            muted
-            className="h-full w-full object-cover border-10 border-[rgba(255,255,255,0.70)] border-solid"
-            disablePictureInPicture
-            disableRemotePlayback
+            className="object-cover"
           />
         </div>
 

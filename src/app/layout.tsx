@@ -28,7 +28,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Alfa Septics — Expert Septic & Site Solutions",
+  title: "Alfa Septic — Expert Septic & Site Solutions",
   description:
     "Licensed septic, excavation, and utility services for homes, businesses, and new construction across Southeast Texas.",
 };

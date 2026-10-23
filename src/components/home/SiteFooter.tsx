@@ -12,7 +12,13 @@ const SITE_LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
-const SOCIAL_LINKS = ["Facebook", "Instagram", "YouTube", "Pinterest"];
+// TODO: swap "#" for the real profile URLs once the client provides them.
+const SOCIAL_LINKS = [
+  { label: "Facebook", href: "#" },
+  { label: "Instagram", href: "#" },
+  { label: "YouTube", href: "#" },
+  { label: "Pinterest", href: "#" },
+];
 
 /** Variant44 footer */
 export function SiteFooter() {
@@ -48,10 +54,18 @@ export function SiteFooter() {
             ))}
           </ul>
         </nav>
-        {/* Social URLs aren't in the design yet. */}
         <ul className="pt-[1.1rem]">
-          {SOCIAL_LINKS.map((label) => (
-            <li key={label}>{label}</li>
+          {SOCIAL_LINKS.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80"
+              >
+                {link.label}
+              </a>
+            </li>
           ))}
         </ul>
       </div>
@@ -62,7 +76,7 @@ export function SiteFooter() {
         aria-hidden
         className="mt-[21.5rem] whitespace-nowrap font-display text-[22.6rem] font-black uppercase leading-[1.1] tracking-[-0.452rem]"
       >
-        Alfa Septics
+        Alfa Septic
       </p>
     </footer>
   );

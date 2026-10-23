@@ -1,9 +1,9 @@
 // Shared site content used by the homepage, contact page, header and footer.
 
 export const CONTACT = {
-  phoneDisplay: "(773) 233-4278",
-  phoneHref: "tel:+17732334278",
-  email: "info@alphaseptics.com",
+  phoneDisplay: "+1 (832) 998-2541",
+  phoneHref: "tel:+1(832)998-2541",
+  email: "alfaseptics@gmail.com",
   region: "Southeast Texas",
 };
 
@@ -59,3 +59,5 @@ export const SERVICES = [
 export type ServiceSlug = (typeof SERVICES)[number]["slug"];
 
 export const projectPhoto = photo;
+
+export const sitePrepPhoto = (name: string) => `/assets/images/site-preparation/${name}.jpeg`;

@@ -18,7 +18,7 @@ const QUICK_CONTACTS = [
 ];
 
 const NEXT_STEPS = [
-  { title: "We review your request", body: "Your details go straight to the Alfa Septics team." },
+  { title: "We review your request", body: "Your details go straight to the Alfa Septic team." },
   { title: "We talk through your site", body: "A quick conversation about your property, soil, and goals." },
   { title: "You get a clear estimate", body: "A written plan and price before any work begins." },
 ];
@@ -62,7 +62,7 @@ export function ContactView({ initialService }: { initialService?: string }) {
         </div>
         <div className="mx-auto flex w-[164rem] flex-col items-center text-center">
           <p data-hero-lede className="invisible text-[2rem] uppercase tracking-[0.6rem] text-white/70">
-            Contact Alfa Septics
+            Contact Alfa Septic
           </p>
           <h1 className="mt-[2.4rem] font-display text-[14rem] uppercase leading-[0.88] tracking-[-0.8rem]">
             <span className="block overflow-hidden pb-[1rem]">
@@ -120,7 +120,7 @@ export function ContactView({ initialService }: { initialService?: string }) {
               <div className="relative h-[42rem] -rotate-[1.5deg] overflow-hidden rounded-[3.2rem] shadow-[0_2rem_5rem_rgba(0,0,0,0.2)]">
                 <Image
                   src={projectPhoto("crane-tank-crew-2")}
-                  alt="Alfa Septics crew unloading a concrete septic tank from a crane truck"
+                  alt="Alfa Septic crew unloading a concrete septic tank from a crane truck"
                   fill
                   sizes="30vw"
                   className="object-cover"

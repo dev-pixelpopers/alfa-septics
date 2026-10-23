@@ -233,7 +233,7 @@ export function HeroScene() {
 
       {/* Hero content (Variant12 layout) — scrolls natively, as V12 → V15 does in the prototype */}
       <div className="relative flex flex-col items-center">
-        <header className="absolute inset-x-0 top-0 z-10 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem]">
+        <header className="fixed inset-x-0 top-0 z-10 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem]">
           <a href="#top" aria-label="Alfa Septic home" className="mt-[0.5rem]">
             <Image
               data-hero-logo

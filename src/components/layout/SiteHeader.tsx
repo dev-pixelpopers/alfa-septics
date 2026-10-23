@@ -5,7 +5,7 @@ import { NAV_LINKS } from "@/lib/site";
 /** Static version of the homepage header (white logo + stacked nav), for inner pages. */
 export function SiteHeader({ current }: { current: string }) {
   return (
-    <header className="absolute inset-x-0 top-0 z-20 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem] text-white">
+    <header className="fixed inset-x-0 top-0 z-20 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem] text-white">
       <Link href="/" aria-label="Alfa Septic home" className="mt-[0.5rem]">
         <Image
           src="/assets/images/logo-alfa-septics-white.png"

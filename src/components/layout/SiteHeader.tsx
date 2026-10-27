@@ -25,7 +25,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-20 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem] text-white">
+    <header className="absolute inset-x-0 top-0 z-20 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem] text-white">
       <div
         aria-hidden
         className={`pointer-events-none absolute inset-x-0 top-0 -z-10 h-[28rem] bg-gradient-to-b from-brand-navy/90 via-brand-navy/70 via-55% to-transparent transition-opacity duration-500 ${

@@ -80,6 +80,17 @@ export function ServiceDetailView({ slug }: { slug: string }) {
             <p data-hero-copy className="invisible mt-[3.6rem] w-[72rem] text-[2.6rem] leading-[1.5] text-white/85">
               {service.body}
             </p>
+            {"price" in service && (
+              <div data-hero-copy className="invisible mt-[4rem]">
+                <p className="text-[1.7rem] uppercase tracking-[0.4rem] text-[#8fd8f0]">Starting from</p>
+                <p className="mt-[1.4rem] flex items-end gap-[1rem]">
+                  <span className="font-display text-[9.6rem] font-black leading-[0.8] tracking-[-0.3rem]">
+                    ${service.price.amount}+
+                  </span>
+                  <span className="pb-[0.4rem] text-[2.4rem] text-white/70">/{service.price.unit}</span>
+                </p>
+              </div>
+            )}
             <div data-hero-copy className="invisible mt-[5.6rem] flex items-center gap-[3.2rem]">
               <Link
                 href={`/contact?service=${service.slug}`}

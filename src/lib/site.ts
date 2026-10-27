@@ -19,6 +19,9 @@ export const NAV_LINKS = [
 
 const photo = (name: string) => `/assets/images/projects/${name}.jpeg`;
 
+/** Septic pumping starting price, shared by the pumping service pages and /pricing. */
+export const PUMPING_PRICE = 650;
+
 export const SERVICES = [
   {
     slug: "installation",
@@ -84,6 +87,8 @@ export const SERVICES = [
     slug: "pumping",
     title: "Septic Tank Pumping",
     body: "Routine and emergency pumping to protect your tank, drain field, and property.",
+    // Starting price, shown like the contract price on /pricing.
+    price: { amount: PUMPING_PRICE, unit: "pump-out" },
     image: photo("tank-pit-risers-pipe"),
     alt: "Open septic tank with access risers and outlet piping in an excavation",
     points: [
@@ -125,7 +130,6 @@ export const SERVICES = [
 export type ServiceSlug = (typeof SERVICES)[number]["slug"];
 
 export const servicePath = (slug: string) => `/services/${slug}`;
-
 /**
  * Counties and towns listed on /service-areas.
  * TODO: placeholder Houston-area list — confirm with the client which areas they actually serve.

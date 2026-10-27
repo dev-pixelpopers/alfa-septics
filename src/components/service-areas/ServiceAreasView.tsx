@@ -54,7 +54,7 @@ export function ServiceAreasView() {
   return (
     <div ref={root}>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[22rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
@@ -99,9 +99,9 @@ export function ServiceAreasView() {
       </section>
 
       {/* Areas */}
-      <section className="relative z-10 bg-snow pb-[14rem]">
-        <div className="mx-auto -mt-[10rem] w-[164rem]">
-          {/* Search panel overlapping the hero */}
+      <section className="relative z-10 bg-snow py-[14rem]">
+        <div className="mx-auto w-[164rem]">
+          {/* Search panel */}
           <div className="flex items-center gap-[4rem] rounded-[4rem] bg-white p-[4.8rem] shadow-[0_4rem_12rem_rgba(44,60,146,0.16)]">
             <div className="flex-1">
               <label htmlFor="area-search" className="font-display text-[4rem] uppercase leading-none text-brand-navy">

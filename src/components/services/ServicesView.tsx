@@ -178,6 +178,17 @@ export function ServicesView() {
                     <p data-panel-copy className="invisible mt-[2.4rem] text-[2.4rem] leading-[1.5] text-ink-muted">
                       {service.body}
                     </p>
+                    {"price" in service && (
+                      <div data-panel-copy className="invisible mt-[3.2rem]">
+                        <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-brand-cyan">Starting from</p>
+                        <p className="mt-[1.2rem] flex items-end gap-[1rem] text-brand-navy">
+                          <span className="font-display text-[7.2rem] font-black leading-[0.8] tracking-[-0.2rem]">
+                            ${service.price.amount}+
+                          </span>
+                          <span className="pb-[0.2rem] text-[2.2rem] text-ink-muted">/{service.price.unit}</span>
+                        </p>
+                      </div>
+                    )}
                     <div data-panel-copy className="invisible mt-[4rem] flex items-center gap-[1.6rem]">
                       <Link
                         href={servicePath(service.slug)}

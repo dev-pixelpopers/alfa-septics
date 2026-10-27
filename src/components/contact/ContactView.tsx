@@ -56,7 +56,7 @@ export function ContactView({ initialService }: { initialService?: string }) {
   return (
     <div ref={root}>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[22rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
@@ -104,8 +104,8 @@ export function ContactView({ initialService }: { initialService?: string }) {
       </section>
 
       {/* Form + sidebar */}
-      <section className="relative z-10 bg-snow pb-[12rem]">
-        <div className="mx-auto -mt-[12rem] grid w-[164rem] grid-cols-[1fr_54rem] items-start gap-[4.8rem]">
+      <section className="relative z-10 bg-snow py-[14rem]">
+        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_54rem] items-start gap-[4.8rem]">
           <div
             data-panel
             className="invisible rounded-[4rem] bg-white p-[6.4rem] shadow-[0_4rem_12rem_rgba(44,60,146,0.16)]"
@@ -113,7 +113,8 @@ export function ContactView({ initialService }: { initialService?: string }) {
             <ContactForm initialService={initialService} />
           </div>
 
-          <aside data-panel className="invisible sticky top-[4rem] flex flex-col gap-[3.2rem]">
+          {/* Sticks below the fixed site header. */}
+          <aside data-panel className="invisible sticky top-[22rem] flex flex-col gap-[3.2rem]">
             {/* Photo card echoing the homepage's tilted navy square */}
             <div className="relative px-[2rem] pt-[2rem]">
               <div aria-hidden className="absolute inset-x-[2rem] bottom-0 top-[2rem] rotate-[3deg] rounded-[3.2rem] bg-brand-navy" />
@@ -154,7 +155,7 @@ export function ContactView({ initialService }: { initialService?: string }) {
       </section>
 
       {/* Recent work */}
-      <section data-work-section className="bg-snow pb-[14rem]">
+      <section data-work-section className="bg-white py-[14rem]">
         <div className="mx-auto mb-[5.6rem] flex w-[164rem] items-end justify-between">
           <h2
             data-work

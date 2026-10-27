@@ -7,14 +7,14 @@ import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { BrandBackground } from "@/components/ui/BrandBackground";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { EASE_REVEAL, gsap, useGSAP } from "@/lib/gsap";
-import { CONTACT, servicePath } from "@/lib/site";
+import { CONTACT, PUMPING_PRICE, servicePath } from "@/lib/site";
 
 const PLAN = {
   name: "Maintenance Contract",
   price: 47,
   period: "mo",
   summary: "Year-round care for your aerobic septic system, handled by a licensed local team.",
-  features: ["1-Yr Maintenance Contract", "Septic Pumping From $650+"],
+  features: ["1-Yr Maintenance Contract", `Septic Pumping From $${PUMPING_PRICE}+`],
 };
 
 const INCLUDED = [
@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: "How much does septic pumping cost?",
-    a: "Pumping starts at $650. The final price depends on your tank size, how deep it is, and how easy it is to reach.",
+    a: `Pumping starts at $${PUMPING_PRICE}. The final price depends on your tank size, how deep it is, and how easy it is to reach.`,
   },
   {
     q: "What kinds of systems do you maintain?",
@@ -78,7 +78,7 @@ export function PricingView() {
   return (
     <div ref={root}>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[30rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
@@ -105,9 +105,9 @@ export function PricingView() {
         </div>
       </section>
 
-      {/* Plan card overlapping the hero */}
-      <section className="relative z-10 bg-snow pb-[14rem]">
-        <div className="mx-auto -mt-[20rem] w-[120rem]">
+      {/* Plan card */}
+      <section className="relative z-10 bg-snow py-[14rem]">
+        <div className="mx-auto w-[120rem]">
           <div
             data-plan
             className="invisible grid grid-cols-[1fr_48rem] overflow-hidden rounded-[4rem] bg-white shadow-[0_4rem_12rem_rgba(44,60,146,0.18)]"

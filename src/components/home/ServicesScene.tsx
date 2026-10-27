@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { PillLink } from "@/components/ui/PillLink";
 import { StickyBackdrop } from "@/components/ui/StickyBackdrop";
 import { EASE_REVEAL, createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
-import { SERVICES } from "@/lib/site";
+import { SERVICES, servicePath } from "@/lib/site";
 
 /** Variant26 → Variant31 */
 export function ServicesScene() {
@@ -111,7 +112,12 @@ export function ServicesScene() {
                   {SERVICES.map((service) => (
                     <li key={service.title} className="h-[30.5rem]">
                       <h3 className="flex h-[13.3rem] w-[58.5rem] items-center font-display text-[7rem] font-black capitalize leading-[7.3rem]">
-                        {service.title}
+                        <Link
+                          href={servicePath(service.slug)}
+                          className="decoration-[0.4rem] underline-offset-[1rem] hover:underline"
+                        >
+                          {service.title}
+                        </Link>
                       </h3>
                       <p className="mt-[4.5rem] w-[62.6rem] text-[2.9rem] leading-[4rem]">{service.body}</p>
                     </li>

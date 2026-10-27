@@ -4,44 +4,14 @@ import Image from "next/image";
 import { useRef } from "react";
 import { PillLink } from "@/components/ui/PillLink";
 import { createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
-import { projectPhoto } from "@/lib/site";
+import { PROCESS_STEPS } from "@/lib/site";
 
-const STEPS = [
-  {
-    title: "Site Evaluation",
-    body: "We assess your property. Soil, layout, access, and site conditions are evaluated.",
-    width: "35.4rem",
-  },
-  {
-    title: "Engineering",
-    body: "We plan the system. The right septic or utility solution is designed for your site.",
-    width: "38.2rem",
-  },
-  {
-    title: "Permitting",
-    body: "We handle the paperwork. Required permits and county requirements are addressed.",
-    width: "37.6rem",
-  },
-  {
-    title: "Installation",
-    body: "We build it right. Our team handles excavation, installation, and site work.",
-    width: "32.4rem",
-  },
-  {
-    title: "Inspection",
-    body: "We finish with confidence. The completed system is prepared for county inspection and final approval.",
-    width: "44.2rem",
-  },
-];
+// Body text widths from the Figma frames, one per step.
+const BODY_WIDTHS = ["35.4rem", "38.2rem", "37.6rem", "32.4rem", "44.2rem"];
+const STEPS = PROCESS_STEPS.map((step, i) => ({ ...step, width: BODY_WIDTHS[i] }));
 
 // One photo per step (Figma mask layers "01"–"03", then real job-site photos).
-const PHOTOS = [
-  { src: "/assets/images/process-site-evaluation.png", alt: "Surveyor taking level readings on a staked-out lot" },
-  { src: "/assets/images/process-engineering.png", alt: "Engineer drafting a septic system plan at a desk" },
-  { src: "/assets/images/process-permitting.png", alt: "Approved septic permit held up on site" },
-  { src: projectPhoto("tank-pit-crew"), alt: "Crew setting a concrete septic tank in an excavation" },
-  { src: projectPhoto("tank-backfilled-risers"), alt: "Finished tank risers ready for county inspection" },
-];
+const PHOTOS = PROCESS_STEPS.map((step) => ({ src: step.image, alt: step.alt }));
 
 const ACTIVE = "#31a2ca";
 const IDLE = "#666666";

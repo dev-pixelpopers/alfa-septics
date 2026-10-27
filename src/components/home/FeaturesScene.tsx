@@ -3,30 +3,8 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { EASE_REVEAL, createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
-
 // Card stack from Figma "Features" C001–C004 (shown in that order).
-const FEATURES = [
-  {
-    title: "Licensed Expertise",
-    body: "TCEQ Installer II expertise for compliant OSSF installations.",
-    icon: { src: "/assets/icons/feature-licensed.png", width: 216, height: 257 },
-  },
-  {
-    title: "Turnkey Service",
-    body: "From site evaluation and permitting to installation and inspection.",
-    icon: { src: "/assets/icons/feature-turnkey.png", width: 272, height: 271 },
-  },
-  {
-    title: "Clear Communication",
-    body: "Straightforward answers, clear expectations, and transparent project guidance.",
-    icon: { src: "/assets/icons/feature-communication.png", width: 270, height: 239 },
-  },
-  {
-    title: "Built for the Site",
-    body: "Every solution is planned around your property, soil, and project requirements.",
-    icon: { src: "/assets/icons/feature-site.png", width: 418, height: 265 },
-  },
-];
+import { FEATURES } from "@/lib/site";
 
 /** Variant21 → Variant26 */
 export function FeaturesScene() {

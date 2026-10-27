@@ -7,15 +7,6 @@ import { PillLink } from "@/components/ui/PillLink";
 import { StickyBackdrop } from "@/components/ui/StickyBackdrop";
 import { EASE_REVEAL, FIGMA_EASE_OUT, ScrollTrigger, gsap, useGSAP } from "@/lib/gsap";
 
-const NAV_ITEMS = [
-  { label: "Home", href: "#top" },
-  { label: "Services", href: "#services" },
-  { label: "Services Areas", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "/contact" },
-];
-
 // One sprite (trust-badges.png) cropped into the four badges, crops from Figma 203:600–603.
 const BADGES = [
   { label: "TCEQ OSSF Installer II", width: "14.4rem", imgWidth: "402.78%", left: "0%" },
@@ -41,7 +32,10 @@ export function HeroScene() {
       const [preLogo] = q("[data-pre-logo]");
       const [preBar] = q("[data-pre-bar]");
       const [preCount] = q("[data-pre-count]");
-      const [heroLogo] = q("[data-hero-logo]");
+      // The header lives in the root layout (SiteHeader), outside this section.
+      const heroLogo = document.querySelector("[data-hero-logo]")!;
+      const nav = document.querySelector("[data-nav]");
+      const navLine = document.querySelector("[data-nav-line]");
       const [bareBlock] = q("[data-bare-block]");
       const [bareHeading] = q("[data-bare-heading]");
       const [bareDesc] = q("[data-bare-desc]");
@@ -51,8 +45,8 @@ export function HeroScene() {
       // --- Initial states (elements also carry `invisible` to avoid FOUC) ---
       gsap.set(gateLeft, { clipPath: "inset(0% 50% 0% 0%)" });
       gsap.set(gateRight, { clipPath: "inset(0% 0% 0% 50%)" });
-      gsap.set(q("[data-nav]"), { x: "22rem", autoAlpha: 0 });
-      gsap.set(q("[data-nav-line]"), { scaleX: 0, transformOrigin: "right center" });
+      gsap.set(nav, { x: "22rem", autoAlpha: 0 });
+      gsap.set(navLine, { scaleX: 0, transformOrigin: "right center" });
       gsap.set(q("[data-line-a]"), { x: "-29rem", autoAlpha: 0 });
       gsap.set(q("[data-line-b]"), { x: "29rem", autoAlpha: 0 });
       gsap.set(q("[data-hero-support]"), { autoAlpha: 0 });
@@ -71,8 +65,8 @@ export function HeroScene() {
       });
       heroTl
         .to(q("[data-line-a], [data-line-b]"), { x: 0, autoAlpha: 1, duration: 1, ease: EASE_REVEAL, stagger: 0.08 })
-        .to(q("[data-nav]"), { x: 0, autoAlpha: 1, duration: 0.9, ease: EASE_REVEAL }, "<0.1")
-        .to(q("[data-nav-line]"), { scaleX: 1, duration: 0.8, ease: EASE_REVEAL }, "-=0.5")
+        .to(nav, { x: 0, autoAlpha: 1, duration: 0.9, ease: EASE_REVEAL }, "<0.1")
+        .to(navLine, { scaleX: 1, duration: 0.8, ease: EASE_REVEAL }, "-=0.5")
         .fromTo(
           q("[data-hero-support]"),
           { y: "3rem" },
@@ -233,35 +227,6 @@ export function HeroScene() {
 
       {/* Hero content (Variant12 layout) — scrolls natively, as V12 → V15 does in the prototype */}
       <div className="relative flex flex-col items-center">
-        <header className="fixed inset-x-0 top-0 z-10 flex items-start justify-between pl-[7.5rem] pr-[6.8rem] pt-[3.4rem]">
-          <a href="#top" aria-label="Alfa Septic home" className="mt-[0.5rem]">
-            <Image
-              data-hero-logo
-              src="/assets/images/logo-alfa-septics-white.png"
-              alt="Alfa Septic"
-              width={1137}
-              height={1410}
-              preload
-              className="invisible h-[13.3rem] w-[10.7rem]"
-            />
-          </a>
-          <nav data-nav aria-label="Primary" className="invisible">
-            <ul className="flex flex-col items-end font-gotham text-[1.6rem] font-medium uppercase leading-[1.46]">
-              {NAV_ITEMS.map((item, i) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className={i === 0 ? "text-white" : "text-white/45 transition-colors hover:text-white"}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <span data-nav-line aria-hidden className="absolute right-0 top-[5rem] h-px w-[5.7rem] bg-white" />
-        </header>
-
         <div data-hero-image className="relative h-[90.3rem] w-full overflow-hidden">
           <div className="absolute inset-y-0 left-1/2 w-[219.8rem] -translate-x-1/2">
             <Image

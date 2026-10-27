@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Albert_Sans, Manrope, Montserrat, Outfit } from "next/font/google";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 import "./globals.css";
 
 // Fallbacks for the licensed Gotham (display) and Nohemi (body) faces.
@@ -39,7 +41,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${montserrat.variable} ${outfit.variable} ${albertSans.variable} ${manrope.variable} antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }

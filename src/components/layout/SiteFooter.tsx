@@ -5,10 +5,11 @@ import { CONTACT } from "@/lib/site";
 // Absolute paths so the footer works on every page.
 const SITE_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
-  { label: "Service Areas", href: "/#services" },
-  { label: "Process", href: "/#process" },
-  { label: "About", href: "/#about" },
+  { label: "Services", href: "/services" },
+  { label: "Service Areas", href: "/service-areas" },
+  { label: "Process", href: "/process" },
+  { label: "About", href: "/about" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -70,7 +71,7 @@ export function SiteFooter() {
         </ul>
       </div>
 
-      <p className="mt-[13.4rem]">© alfaseptics — All Rights Reserved</p>
+      <p className="mt-[13.4rem]">© alfaseptic — All Rights Reserved</p>
 
       <p
         aria-hidden

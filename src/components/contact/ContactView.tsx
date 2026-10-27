@@ -14,7 +14,7 @@ import { ProjectMarquee } from "./ProjectMarquee";
 const QUICK_CONTACTS = [
   { icon: PhoneIcon, label: "Call us", value: CONTACT.phoneDisplay, href: CONTACT.phoneHref },
   { icon: MailIcon, label: "Email us", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
-  { icon: PinIcon, label: "Service area", value: CONTACT.region, href: "/#services" },
+  { icon: PinIcon, label: "Service area", value: CONTACT.region, href: "/service-areas" },
 ];
 
 const NEXT_STEPS = [

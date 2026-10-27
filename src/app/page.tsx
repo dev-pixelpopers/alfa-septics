@@ -5,7 +5,6 @@ import { HeroScene } from "@/components/home/HeroScene";
 import { ProcessScene } from "@/components/home/ProcessScene";
 import { ReviewsScene } from "@/components/home/ReviewsScene";
 import { ServicesScene } from "@/components/home/ServicesScene";
-import { SiteFooter } from "@/components/home/SiteFooter";
 
 // Figma "Prototype" (203:13): Default → Variant44, one scene per prototype chapter.
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
       <GalleryScene />
       <ReviewsScene />
       <ContactSection />
-      <SiteFooter />
     </main>
   );
 }

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { ContactView } from "@/components/contact/ContactView";
-import { SiteFooter } from "@/components/home/SiteFooter";
-import { SiteHeader } from "@/components/layout/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Contact — Alfa Septic",
@@ -19,9 +17,7 @@ export default async function ContactPage({
 
   return (
     <main className="relative">
-      <SiteHeader current="/contact" />
       <ContactView initialService={typeof service === "string" ? service : undefined} />
-      <SiteFooter />
     </main>
   );
 }

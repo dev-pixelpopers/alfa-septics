@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   turbopack: {
     rules: {
       "*.css": {
+        // Only our own CSS: next/font's generated stylesheets break if Tailwind rewrites them.
+        condition: { not: "foreign" },
         loaders: ["@tailwindcss/turbopack"],
         as: "*.css",
       },

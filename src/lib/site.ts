@@ -18,6 +18,7 @@ export const NAV_LINKS = [
 ];
 
 const photo = (name: string) => `/assets/images/projects/${name}.jpeg`;
+export const sitePrepPhoto = (name: string) => `/assets/images/site-preparation/${name}.jpeg`;
 
 /** Septic pumping starting price, shared by the pumping service pages and /pricing. */
 export const PUMPING_PRICE = 650;
@@ -109,8 +110,8 @@ export const SERVICES = [
     slug: "design",
     title: "Septic Design Services",
     body: "Site-specific system designs built around your soil, layout, and county requirements.",
-    image: photo("tank-lids-excavator"),
-    alt: "Septic tank layout with access lids beside a mini excavator",
+    image: sitePrepPhoto("aerobic-lids-graded-lot"),
+    alt: "Aerobic system lids, vents, and control panel laid out across a newly graded lot",
     points: [
       "Designs based on your soil and site evaluation",
       "System sized for your home or building",
@@ -238,5 +239,3 @@ export const PROCESS_STEPS = [
 ] as const;
 
 export const projectPhoto = photo;
-
-export const sitePrepPhoto = (name: string) => `/assets/images/site-preparation/${name}.jpeg`;

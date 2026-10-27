@@ -6,6 +6,7 @@ import { BrandBackground } from "@/components/ui/BrandBackground";
 import { PillLink } from "@/components/ui/PillLink";
 import { StickyBackdrop } from "@/components/ui/StickyBackdrop";
 import { EASE_REVEAL, FIGMA_EASE_OUT, ScrollTrigger, gsap, useGSAP } from "@/lib/gsap";
+import { projectPhoto } from "@/lib/site";
 
 // One sprite (trust-badges.png) cropped into the four badges, crops from Figma 203:600–603.
 const BADGES = [
@@ -46,7 +47,8 @@ export function HeroScene() {
       gsap.set(gateLeft, { clipPath: "inset(0% 50% 0% 0%)" });
       gsap.set(gateRight, { clipPath: "inset(0% 0% 0% 50%)" });
       gsap.set(nav, { x: "22rem", autoAlpha: 0 });
-      gsap.set(navLine, { scaleX: 0, transformOrigin: "right center" });
+      // navLine is a hamburger bar that also rotates into the close ✕, so it keeps a centre origin.
+      gsap.set(navLine, { scaleX: 0 });
       gsap.set(q("[data-line-a]"), { x: "-29rem", autoAlpha: 0 });
       gsap.set(q("[data-line-b]"), { x: "29rem", autoAlpha: 0 });
       gsap.set(q("[data-hero-support]"), { autoAlpha: 0 });
@@ -273,14 +275,14 @@ export function HeroScene() {
           />
         </div>
 
-        <div className="relative mt-[5.5rem] h-[65.5rem] w-[142.5rem]">
-          {/* The white frame is baked into the image. */}
+        <div className="relative mt-[5.5rem] h-[65.5rem] w-[142.5rem] border-[1rem] border-white/80">
           <Image
-            src="/assets/images/video-poster.png"
-            alt="Alfa Septic truck and excavator on a septic installation"
+            src={projectPhoto("crane-truck-site")}
+            alt="Crane truck lowering a concrete septic tank on an open lot"
             fill
             sizes="75vw"
-            className="object-cover"
+            quality={90}
+            className="object-cover object-[50%_55%]"
           />
         </div>
 

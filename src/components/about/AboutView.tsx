@@ -75,15 +75,19 @@ export function AboutView() {
         </div>
       </section>
 
-      {/* Framed crew photo overlapping the hero; the white frame is baked into the image. */}
+      {/* Framed job-site photo overlapping the hero */}
       <div className="relative z-10 -mt-[24rem] flex justify-center">
-        <div data-hero-photo className="invisible relative h-[65.5rem] w-[142.5rem] shadow-[0_4rem_12rem_rgba(44,60,146,0.25)]">
+        <div
+          data-hero-photo
+          className="invisible relative h-[65.5rem] w-[142.5rem] border-[1rem] border-white shadow-[0_4rem_12rem_rgba(44,60,146,0.25)]"
+        >
           <Image
-            src="/assets/images/video-poster.png"
-            alt="Alfa Septic truck and excavator on a septic installation"
+            src={projectPhoto("crane-truck-site")}
+            alt="Crane truck lowering a concrete septic tank on an open lot"
             fill
             sizes="75vw"
-            className="object-cover"
+            quality={90}
+            className="object-cover object-[50%_55%]"
           />
         </div>
       </div>

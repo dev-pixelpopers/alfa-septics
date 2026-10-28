@@ -81,7 +81,7 @@ export function SiteHeader() {
       <Link href="/" aria-label="Alfa Septic home" onClick={() => setOpen(false)} className="relative z-10 shrink-0">
         <Image
           data-hero-logo
-          src="/assets/images/logo-alfa-septics-white.png"
+          src="/assets/images/alfa-septic-logo.png"
           alt="Alfa Septic"
           width={1137}
           height={1410}
@@ -102,15 +102,13 @@ export function SiteHeader() {
           <span className="w-[5.2rem] text-left">{open ? "Close" : "Menu"}</span>
           <span aria-hidden className="relative block h-[1.4rem] w-[2.6rem]">
             <span
-              className={`absolute left-0 h-[0.2rem] w-full rounded-full bg-white transition-all duration-300 ${
-                open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"
-              }`}
+              className={`absolute left-0 h-[0.2rem] w-full rounded-full bg-white transition-all duration-300 ${open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"
+                }`}
             />
             <span
               data-nav-line
-              className={`absolute bottom-0 right-0 h-[0.2rem] rounded-full bg-white transition-all duration-300 ${
-                open ? "bottom-1/2 w-full translate-y-1/2 -rotate-45" : "w-[65%] group-hover:w-full"
-              }`}
+              className={`absolute bottom-0 right-0 h-[0.2rem] rounded-full bg-white transition-all duration-300 ${open ? "bottom-1/2 w-full translate-y-1/2 !-rotate-45" : "w-[65%] group-hover:w-full"
+                }`}
             />
           </span>
         </button>
@@ -137,9 +135,8 @@ export function SiteHeader() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       onClick={() => setOpen(false)}
-                      className={`group flex items-baseline gap-[3.2rem] py-[0.4rem] font-display text-[7.6rem] font-black uppercase leading-[1] tracking-[-0.3rem] transition-colors ${
-                        active ? "text-[#8fd8f0]" : "text-white hover:text-[#8fd8f0]"
-                      }`}
+                      className={`group flex items-baseline gap-[3.2rem] py-[0.4rem] font-display text-[7.6rem] font-black uppercase leading-[1] tracking-[-0.3rem] transition-colors ${active ? "text-[#8fd8f0]" : "text-white hover:text-[#8fd8f0]"
+                        }`}
                     >
                       <span className="w-[4rem] font-body text-[1.8rem] font-normal tracking-[0.2rem] text-white/50">
                         {String(i + 1).padStart(2, "0")}

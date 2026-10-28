@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { Lightbox } from "@/components/ui/Lightbox";
 import { EASE_REVEAL, createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
 import { projectPhoto, sitePrepPhoto } from "@/lib/site";
 
@@ -68,6 +69,7 @@ export function GalleryScene() {
   const [active, setActive] = useState(DEFAULT_CATEGORY);
   const activeRef = useRef(DEFAULT_CATEGORY);
   const switched = useRef(false);
+  const [lightbox, setLightbox] = useState<number | null>(null);
   const photos = CATEGORIES[active].photos;
 
   // Centres the underline beneath the active category label.
@@ -167,21 +169,28 @@ export function GalleryScene() {
 
         <div data-shots className="relative mt-[6.6rem] flex items-end gap-[3rem]">
           {SLOTS.map((slot, i) => (
-            <Image
-              // Keyed by slot so GSAP's fly-in state survives a category switch.
+            // Keyed by slot so GSAP's fly-in state survives a category switch.
+            <button
               key={i}
-              src={photos[i].src}
-              alt={photos[i].alt}
-              width={slot.width}
-              height={slot.height}
-              sizes={slot.flyFrom ? "10vw" : "35vw"}
-              loading="eager"
-              data-thumb={slot.flyFrom ? "" : undefined}
-              data-fly-from={slot.flyFrom}
-              data-main={slot.flyFrom ? undefined : ""}
-              className="block object-cover"
-              style={{ width: `${slot.width / 10}rem`, height: `${slot.height / 10}rem` }}
-            />
+              type="button"
+              onClick={() => setLightbox(i)}
+              aria-label={`Open photo ${i + 1} of ${photos.length}: ${photos[i].alt}`}
+              className="group block shrink-0 cursor-zoom-in"
+            >
+              <Image
+                src={photos[i].src}
+                alt={photos[i].alt}
+                width={slot.width}
+                height={slot.height}
+                sizes={slot.flyFrom ? "10vw" : "35vw"}
+                loading="eager"
+                data-thumb={slot.flyFrom ? "" : undefined}
+                data-fly-from={slot.flyFrom}
+                data-main={slot.flyFrom ? undefined : ""}
+                className="block object-cover transition-[filter] duration-300 group-hover:brightness-110"
+                style={{ width: `${slot.width / 10}rem`, height: `${slot.height / 10}rem` }}
+              />
+            </button>
           ))}
           <p
             data-meta
@@ -218,6 +227,8 @@ export function GalleryScene() {
           <span data-meta data-underline aria-hidden className="invisible mt-[5.5rem] h-[0.3rem] w-[3.5rem] bg-brand-navy" />
         </div>
       </div>
+
+      <Lightbox photos={photos} index={lightbox} onIndexChange={setLightbox} onClose={() => setLightbox(null)} />
     </section>
   );
 }

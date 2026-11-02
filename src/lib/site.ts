@@ -7,6 +7,11 @@ export const CONTACT = {
   region: "Southeast Texas",
 };
 
+export const SOCIAL_LINKS = [
+  { label: "Facebook", href: "https://www.facebook.com/alfaseptics" },
+  { label: "Instagram", href: "https://www.instagram.com/alfaseptics/" },
+];
+
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },

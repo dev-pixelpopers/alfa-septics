@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CONTACT } from "@/lib/site";
+import { CONTACT, SOCIAL_LINKS } from "@/lib/site";
 
 // Absolute paths so the footer works on every page.
 const SITE_LINKS = [
@@ -11,14 +11,6 @@ const SITE_LINKS = [
   { label: "About", href: "/about" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
-];
-
-// TODO: swap "#" for the real profile URLs once the client provides them.
-const SOCIAL_LINKS = [
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "YouTube", href: "#" },
-  { label: "Pinterest", href: "#" },
 ];
 
 /** Variant44 footer */

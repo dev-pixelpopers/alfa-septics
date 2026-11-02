@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { BrandBackground } from "@/components/ui/BrandBackground";
 import { PillLink } from "@/components/ui/PillLink";
 import { EASE_REVEAL, gsap, useGSAP } from "@/lib/gsap";
-import { CONTACT, NAV_LINKS } from "@/lib/site";
+import { CONTACT, NAV_LINKS, SOCIAL_LINKS } from "@/lib/site";
 
 // The menu wipes open as a circle from the hamburger button.
 const CLOSED = "circle(0% at calc(100% - 9rem) 5.7rem)";
@@ -84,7 +84,7 @@ export function SiteHeader() {
           src="/assets/images/alfa-septic-logo.png"
           alt="Alfa Septic"
           width={1137}
-          height={1410}
+          height={1414}
           preload
           className={`h-[7.4rem] w-[6rem] ${isHome ? "invisible" : ""}`}
         />
@@ -168,6 +168,23 @@ export function SiteHeader() {
             <div>
               <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-white/50">Service area</p>
               <p className="mt-[1.2rem] text-[2.6rem]">{CONTACT.region}</p>
+            </div>
+            <div>
+              <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-white/50">Follow us</p>
+              <ul className="mt-[1.2rem] flex gap-[2.4rem] text-[2.4rem]">
+                {SOCIAL_LINKS.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-white/30 underline-offset-[0.5rem] transition-colors hover:text-[#8fd8f0] hover:decoration-[#8fd8f0]"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div onClick={() => setOpen(false)}>
               <PillLink href="/contact" variant="gradient" className="w-full">

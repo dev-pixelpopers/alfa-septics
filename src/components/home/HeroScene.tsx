@@ -202,10 +202,10 @@ export function HeroScene() {
         <div className="relative grid place-items-center [grid-area:1/1]">
           <Image
             data-pre-logo
-            src="/assets/images/logo-alfa-septics-white.png"
+            src="/assets/images/alfa-septic-logo.png"
             alt=""
             width={1137}
-            height={1410}
+            height={1414}
             preload
             className="h-[31.5rem] w-[25.4rem]"
           />

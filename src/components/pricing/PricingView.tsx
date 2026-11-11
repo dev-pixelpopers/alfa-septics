@@ -12,7 +12,7 @@ import { CONTACT, PUMPING_PRICE, servicePath } from "@/lib/site";
 const PLAN = {
   name: "Maintenance Contract",
   price: 660,
-  period: "Yearly and 55/ Monthly",
+  period: "Yearly and 50/ Monthly",
   summary: "Year-round care for your aerobic septic system, handled by a licensed local team.",
   features: ["1-Yr Maintenance Contract", `Septic Pumping From $${PUMPING_PRICE}+`],
 };

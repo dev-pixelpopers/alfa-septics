@@ -244,10 +244,10 @@ export function HeroScene() {
         </div>
 
         <h1 className="relative -mt-[12.5rem] flex flex-col items-center whitespace-nowrap text-center font-display font-medium uppercase leading-[0.76] tracking-[-11.55px]">
-          <span data-line-a className="invisible text-[165px]">
+          <span data-line-a className="invisible text-[170px]">
             Expert Septic &amp;
           </span>
-          <span data-line-b className="invisible text-[168px]">
+          <span data-line-b className="invisible text-[170px]">
             Site Solutions
           </span>
         </h1>

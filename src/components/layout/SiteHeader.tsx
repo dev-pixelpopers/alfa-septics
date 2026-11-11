@@ -199,7 +199,7 @@ export function SiteHeader() {
                 {CONTACT.phoneDisplay}
               </a>
             </div>
-            <div>
+            {/* <div>
               <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-white/50">Email us</p>
               <a
                 href={`mailto:${CONTACT.email}`}
@@ -207,7 +207,7 @@ export function SiteHeader() {
               >
                 {CONTACT.email}
               </a>
-            </div>
+            </div> */}
             <div>
               <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-white/50">Service area</p>
               <p className="mt-[1.2rem] text-[2.6rem]">{CONTACT.region}</p>

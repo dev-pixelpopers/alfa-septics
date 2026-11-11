@@ -124,7 +124,7 @@ export function PricingView() {
                 <span className="font-display text-[10rem] font-black leading-[0.8] tracking-[-0.4rem]">
                   ${PLAN.price}
                 </span>
-                <span className="pb-[0.6rem] text-[2.6rem] text-ink-muted">/{PLAN.period}</span>
+                <span className="pb-[0.6rem] text-[2.6rem] text-ink-muted">Per&nbsp;{PLAN.period}</span>
               </p>
               <div className="mt-[5.6rem] flex items-center gap-[3.2rem]">
                 <Link

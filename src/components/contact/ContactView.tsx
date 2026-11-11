@@ -8,12 +8,12 @@ import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { EASE_REVEAL, gsap, useGSAP } from "@/lib/gsap";
 import { CONTACT, projectPhoto } from "@/lib/site";
 import { ContactForm } from "./ContactForm";
-import { MailIcon, PhoneIcon, PinIcon } from "./icons";
+import { PhoneIcon, PinIcon } from "./icons";
 import { ProjectMarquee } from "./ProjectMarquee";
 
 const QUICK_CONTACTS = [
   { icon: PhoneIcon, label: "Call us", value: CONTACT.phoneDisplay, href: CONTACT.phoneHref },
-  { icon: MailIcon, label: "Email us", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
+  // { icon: MailIcon, label: "Email us", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
   { icon: PinIcon, label: "Service area", value: CONTACT.region, href: "/service-areas" },
 ];
 
@@ -81,7 +81,7 @@ export function ContactView({ initialService }: { initialService?: string }) {
             we&apos;ll put together a clear, no-obligation estimate.
           </p>
 
-          <ul className="mt-[7.2rem] grid w-full grid-cols-3 gap-[2.4rem]">
+          <ul className="mt-[7.2rem] grid w-full grid-cols-2 gap-[2.4rem]">
             {QUICK_CONTACTS.map(({ icon: Icon, label, value, href }) => (
               <li key={label} data-quick className="invisible">
                 <Link

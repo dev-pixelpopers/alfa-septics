@@ -11,8 +11,8 @@ import { CONTACT, PUMPING_PRICE, servicePath } from "@/lib/site";
 
 const PLAN = {
   name: "Maintenance Contract",
-  price: 47,
-  period: "mo",
+  price: 660,
+  period: "Yearly and 55/ Monthly",
   summary: "Year-round care for your aerobic septic system, handled by a licensed local team.",
   features: ["1-Yr Maintenance Contract", `Septic Pumping From $${PUMPING_PRICE}+`],
 };
@@ -20,14 +20,14 @@ const PLAN = {
 const INCLUDED = [
   { title: "TCEQ Licensed Technicians", body: "Every visit is handled by trained, licensed septic professionals." },
   { title: "Scheduled Inspections", body: "Routine checks on a set schedule, so nothing slips through the cracks." },
-  { title: "Compliance Support", body: "Upkeep that keeps your system in line with Texas OSSF requirements." },
+  { title: "Compliance Support", body: "Support that keeps your system in line with Texas OSSF requirements." },
   { title: "Great Customer Service", body: "Straight answers and a real person on the phone when you call." },
 ];
 
 const FAQS = [
   {
     q: "What does the maintenance contract cover?",
-    a: "A one-year contract with scheduled inspections and routine upkeep of your system. Repairs and pumping aren't part of the monthly price, and we always quote them before doing the work.",
+    a: "A one-year contract with scheduled inspections of your system. Repairs and pumping aren't part of the monthly price, and we always quote them before doing the work.",
   },
   {
     q: "How much does septic pumping cost?",
@@ -121,7 +121,7 @@ export function PricingView() {
               </h2>
               <p className="mt-[2rem] w-[52rem] text-[2.2rem] leading-[1.5] text-ink-muted">{PLAN.summary}</p>
               <p className="mt-[4rem] flex items-end gap-[1rem] text-brand-navy">
-                <span className="font-display text-[12rem] font-black leading-[0.8] tracking-[-0.4rem]">
+                <span className="font-display text-[10rem] font-black leading-[0.8] tracking-[-0.4rem]">
                   ${PLAN.price}
                 </span>
                 <span className="pb-[0.6rem] text-[2.6rem] text-ink-muted">/{PLAN.period}</span>

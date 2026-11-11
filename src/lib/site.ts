@@ -72,16 +72,16 @@ export const SERVICES = [
   {
     slug: "maintenance",
     title: "Maintenance Contract",
-    body: "Scheduled inspections and upkeep that keep your system compliant and running clean.",
+    body: "Scheduled inspections that keep your system compliant and running clean.",
     image: photo("aerobic-system-complete"),
     alt: "Completed aerobic septic system with access lids and piping",
     points: [
       "Routine inspections on a set schedule",
-      "Upkeep that keeps aerobic systems compliant",
+      "Routine checks that keep aerobic systems compliant",
       "Early warning on parts that need attention",
     ],
     intro:
-      "Aerobic systems need regular attention to keep working properly and stay compliant. A maintenance contract puts your system on a schedule, so inspections and upkeep happen on time without you having to remember.",
+      "Aerobic systems need regular attention to keep working properly and stay compliant. A maintenance contract puts your system on a schedule, so inspections happen on time without you having to remember.",
     signs: [
       "You have an aerobic treatment unit",
       "Your current maintenance contract is ending",

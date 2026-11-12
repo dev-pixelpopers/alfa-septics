@@ -15,6 +15,9 @@ export type ContactRequest = {
   email: string;
   contactMethod: string;
   message: string;
+  bedrooms?: string;
+  bathrooms?: string;
+  county?: string;
 };
 
 export type ContactField = keyof ContactRequest;
@@ -22,7 +25,7 @@ export type ContactErrors = Partial<Record<ContactField, string>>;
 
 export const MESSAGE_LIMIT = 1000;
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export const phoneDigits = (value: string) => value.replace(/\D/g, "");
 
@@ -39,15 +42,16 @@ export function validateContact(data: ContactRequest): ContactErrors {
   if (data.services.length === 0) errors.services = "Pick at least one option so we know where to start.";
   if (!data.firstName.trim()) errors.firstName = "Please tell us your first name.";
 
-  const hasPhone = phoneDigits(data.phone).length > 0;
-  const hasEmail = data.email.trim().length > 0;
-  if (!hasPhone && !hasEmail) {
-    errors.phone = "Add a phone number or email so we can reach you.";
+  const trimmedEmail = data.email.trim();
+  if (!trimmedEmail) {
+    errors.email = "Please enter your email address.";
+  } else if (!EMAIL_RE.test(trimmedEmail)) {
+    errors.email = "That email doesn't look quite right.";
   }
+
+  const hasPhone = phoneDigits(data.phone).length > 0;
   if (hasPhone && phoneDigits(data.phone).length !== 10) errors.phone = "Enter a 10-digit phone number.";
-  if (hasEmail && !EMAIL_RE.test(data.email.trim())) errors.email = "That email doesn't look quite right.";
-  if (data.contactMethod === "Email" && !hasEmail) errors.email = "Add an email, or choose call or text.";
-  if ((data.contactMethod === "Call" || data.contactMethod === "Text") && !hasPhone && hasEmail) {
+  if ((data.contactMethod === "Call" || data.contactMethod === "Text") && !hasPhone) {
     errors.phone = `Add a phone number, or choose email.`;
   }
   if (data.message.length > MESSAGE_LIMIT) errors.message = `Keep it under ${MESSAGE_LIMIT} characters.`;
@@ -66,5 +70,8 @@ export function readContactForm(formData: FormData): ContactRequest {
     email: text("email"),
     contactMethod: text("contactMethod"),
     message: text("message"),
+    bedrooms: text("bedrooms"),
+    bathrooms: text("bathrooms"),
+    county: text("county"),
   };
 }

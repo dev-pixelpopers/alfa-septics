@@ -9,17 +9,18 @@ import {
   type ContactErrors,
   type ContactField,
   type ContactRequest,
+  EMAIL_RE,
   MESSAGE_LIMIT,
   NOT_SURE,
   PROPERTY_TYPES,
   TIMELINES,
   formatPhone,
-  phoneDigits,
   validateContact,
 } from "@/lib/contact";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { CONTACT, SERVICES } from "@/lib/site";
 import { CheckIcon } from "./icons";
+import { SepticInstallationModal } from "./SepticInstallationModal";
 
 const SERVICE_OPTIONS = [
   ...SERVICES.map((s) => ({ value: s.slug as string, label: s.title as string })),
@@ -36,6 +37,9 @@ const EMPTY: ContactRequest = {
   email: "",
   contactMethod: CONTACT_METHODS[0],
   message: "",
+  bedrooms: "",
+  bathrooms: "",
+  county: "",
 };
 
 /** Remounts the form on "Send another request" so action state starts clean. */
@@ -46,6 +50,7 @@ export function ContactForm({ initialService }: { initialService?: string }) {
 
 function ContactFormBody({ initialService, onReset }: { initialService?: string; onReset: () => void }) {
   const [state, formAction, pending] = useActionState<ContactState, FormData>(submitContactRequest, { status: "idle" });
+  const [isInstallationModalOpen, setIsInstallationModalOpen] = useState(false);
   const [values, setValues] = useState<ContactRequest>(() => ({
     ...EMPTY,
     services: SERVICE_OPTIONS.some((o) => o.value === initialService) ? [initialService!] : [],
@@ -71,12 +76,26 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
     set("services", has ? values.services.filter((s) => s !== value) : [...values.services, value]);
   };
 
+  const handleServiceSelect = (optionValue: string) => {
+    const isSelected = values.services.includes(optionValue);
+    if (optionValue === "installation") {
+      if (!isSelected) {
+        set("services", [...values.services, "installation"]);
+        setIsInstallationModalOpen(true);
+      } else {
+        setIsInstallationModalOpen(true);
+      }
+    } else {
+      toggleService(optionValue);
+    }
+  };
+
   // Five things make a complete request; the bar fills as each is done.
   const checks = [
     values.services.length > 0,
     Boolean(values.timeline),
     Boolean(values.firstName.trim()),
-    phoneDigits(values.phone).length === 10 || /\S+@\S+\.\S{2,}/.test(values.email),
+    EMAIL_RE.test(values.email.trim()),
     Boolean(values.message.trim()),
   ];
   const progress = Math.round((checks.filter(Boolean).length / checks.length) * 100);
@@ -131,14 +150,31 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
         <div className="flex flex-wrap gap-[1.4rem]" role="group" aria-label="Services">
           {SERVICE_OPTIONS.map((option) => {
             const checked = values.services.includes(option.value);
+            const isInstallation = option.value === "installation";
+
             return (
-              <label key={option.value} className="cursor-pointer">
+              <label
+                key={option.value}
+                className="cursor-pointer"
+                onClick={(e) => {
+                  if (isInstallation) {
+                    e.preventDefault();
+                    handleServiceSelect("installation");
+                  }
+                }}
+              >
                 <input
                   type="checkbox"
                   name="services"
                   value={option.value}
                   checked={checked}
-                  onChange={() => toggleService(option.value)}
+                  onChange={() => {
+                    if (!isInstallation) {
+                      toggleService(option.value);
+                    } else {
+                      handleServiceSelect("installation");
+                    }
+                  }}
                   onBlur={() => blur("services")}
                   aria-invalid={Boolean(errors.services)}
                   aria-describedby={errors.services ? "services-error" : undefined}
@@ -158,12 +194,71 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
                   >
                     <CheckIcon className={`size-[1.6rem] transition-opacity ${checked ? "opacity-100" : "opacity-0"}`} />
                   </span>
-                  {option.label}
+                  <span>{option.label}</span>
+                  {isInstallation && checked && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        set("services", values.services.filter((s) => s !== "installation"));
+                      }}
+                      title="Remove Septic Installation"
+                      aria-label="Remove Septic Installation"
+                      className="ml-[0.6rem] grid size-[2.2rem] place-items-center rounded-full bg-white/20 text-white transition-colors hover:bg-white/35"
+                    >
+                      <span className="text-[1.3rem] leading-none">✕</span>
+                    </button>
+                  )}
                 </span>
               </label>
             );
           })}
         </div>
+
+        {/* Septic Installation Sizing Details Preview Banner */}
+        {values.services.includes("installation") && (
+          <div className="mt-[2.4rem] flex flex-wrap items-center justify-between gap-[2rem] rounded-[2.4rem] border-[0.2rem] border-brand-cyan/40 bg-gradient-to-r from-brand-cyan/10 via-mist/60 to-brand-navy/5 p-[2.4rem_3.2rem]">
+            <div className="flex items-center gap-[1.8rem]">
+              <span className="grid size-[4.8rem] shrink-0 place-items-center rounded-[1.6rem] bg-brand-navy text-white shadow-[0_0.8rem_2rem_rgba(44,60,146,0.25)]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="size-[2.6rem]">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+              </span>
+              <div>
+                <div className="flex items-center gap-[1rem]">
+                  <p className="font-display text-[2rem] uppercase tracking-[-0.05rem] text-brand-navy">
+                    Septic Installation Project Details
+                  </p>
+                  <span className="rounded-full bg-brand-cyan/20 px-[1.2rem] py-[0.2rem] text-[1.3rem] font-medium text-brand-navy">
+                    Sizing Info
+                  </span>
+                </div>
+                <p className="mt-[0.4rem] text-[1.7rem] text-ink-muted">
+                  {values.bedrooms || values.bathrooms || values.county ? (
+                    <span className="font-medium text-brand-navy">
+                      {[
+                        values.bedrooms ? `${values.bedrooms} ${Number(values.bedrooms) === 1 ? "Bedroom" : "Bedrooms"}` : null,
+                        values.bathrooms ? `${values.bathrooms} ${Number(values.bathrooms) === 1 ? "Bathroom" : "Bathrooms"}` : null,
+                        values.county ? `${values.county} County` : null,
+                      ].filter(Boolean).join(" • ")}
+                    </span>
+                  ) : (
+                    "No bedroom, bathroom, or county added yet. Click to add details for an accurate quote."
+                  )}
+                </p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setIsInstallationModalOpen(true)}
+              className="cursor-pointer rounded-full border-[0.2rem] border-brand-navy bg-white px-[2.8rem] py-[1.2rem] text-[1.7rem] font-medium text-brand-navy shadow-sm transition-all hover:bg-brand-navy hover:text-white"
+            >
+              {values.bedrooms || values.bathrooms || values.county ? "Edit project details" : "Add project details"}
+            </button>
+          </div>
+        )}
       </Step>
 
       <Step number={2} title="About the property">
@@ -241,6 +336,7 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
             label="Email"
             type="email"
             autoComplete="email"
+            required
             value={values.email}
             onChange={(v) => set("email", v)}
             onBlur={() => blur("email")}
@@ -298,6 +394,31 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
       <p aria-live="polite" className={`-mt-[3rem] text-[1.8rem] ${state.status === "error" ? "text-[#c0392b]" : "sr-only"}`}>
         {state.status === "error" ? state.message : ""}
       </p>
+
+      {/* Hidden inputs to pass bedroom, bathroom, and county info with form submission */}
+      <input type="hidden" name="bedrooms" value={values.bedrooms || ""} />
+      <input type="hidden" name="bathrooms" value={values.bathrooms || ""} />
+      <input type="hidden" name="county" value={values.county || ""} />
+
+      {/* Pop up for Septic Installation Project Details */}
+      <SepticInstallationModal
+        isOpen={isInstallationModalOpen}
+        onClose={() => setIsInstallationModalOpen(false)}
+        initialBedrooms={values.bedrooms || ""}
+        initialBathrooms={values.bathrooms || ""}
+        initialCounty={values.county || ""}
+        onSave={(details) => {
+          setValues((prev) => ({
+            ...prev,
+            bedrooms: details.bedrooms,
+            bathrooms: details.bathrooms,
+            county: details.county,
+          }));
+        }}
+        onRemove={() => {
+          set("services", values.services.filter((s) => s !== "installation"));
+        }}
+      />
     </form>
   );
 }
@@ -400,9 +521,10 @@ type FloatingInputProps = {
   inputMode?: "tel" | "email" | "text";
   autoComplete?: string;
   multiline?: boolean;
+  required?: boolean;
 };
 
-function FloatingInput({ name, label, value, onChange, onBlur, error, hint, multiline, ...rest }: FloatingInputProps) {
+function FloatingInput({ name, label, value, onChange, onBlur, error, hint, multiline, required, ...rest }: FloatingInputProps) {
   const id = `field-${name}`;
   const errorId = `${id}-error`;
   const shared = {
@@ -411,6 +533,8 @@ function FloatingInput({ name, label, value, onChange, onBlur, error, hint, mult
     value,
     placeholder: " ",
     onBlur,
+    required,
+    "aria-required": required ? true : undefined,
     "aria-invalid": Boolean(error),
     "aria-describedby": error ? errorId : undefined,
     className: `peer w-full rounded-[1.6rem] border-[0.2rem] bg-snow px-[2.4rem] pb-[0.8rem] pt-[3.4rem] text-[2.2rem] text-brand-navy outline-none transition-all duration-300 focus:bg-white focus:shadow-[0_0_0_0.5rem_rgba(49,162,202,0.15)] ${
@@ -491,6 +615,18 @@ function SuccessPanel({ values, onReset }: { values: ContactRequest; onReset: ()
             </li>
           ))}
         </ul>
+      )}
+      {values.services.includes("installation") && (values.bedrooms || values.bathrooms || values.county) && (
+        <div data-success-item className="mt-[2.4rem] rounded-full border border-brand-navy/15 bg-white px-[2.8rem] py-[1.2rem] text-[1.8rem] text-brand-navy shadow-sm">
+          Property sizing noted:{" "}
+          <span className="font-semibold">
+            {[
+              values.bedrooms ? `${values.bedrooms} ${Number(values.bedrooms) === 1 ? "Bedroom" : "Bedrooms"}` : null,
+              values.bathrooms ? `${values.bathrooms} ${Number(values.bathrooms) === 1 ? "Bathroom" : "Bathrooms"}` : null,
+              values.county ? `${values.county} County` : null,
+            ].filter(Boolean).join(" • ")}
+          </span>
+        </div>
       )}
       <div data-success-item className="mt-[5.6rem] flex gap-[2rem]">
         <Link

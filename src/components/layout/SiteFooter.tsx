@@ -25,16 +25,16 @@ export function SiteFooter() {
         className="-z-10 object-cover"
       />
 
-      <div className="flex w-full pl-[39.6rem] pt-[7.3rem]">
+      <div className="flex w-full pl-[39.6rem] pt-[7.3rem] footer-inner">
         <div className="flex w-[39rem] flex-col gap-[4.2rem]">
           <a href={CONTACT.phoneHref} className="hover:opacity-80">
             Call Us Now →<br />
             {CONTACT.phoneDisplay}
           </a>
-          <a href={`mailto:${CONTACT.email}`} className="hover:opacity-80">
+          {/* <a href={`mailto:${CONTACT.email}`} className="hover:opacity-80">
             Send Email →<br />
             {CONTACT.email}
-          </a>
+          </a> */}
         </div>
         <nav aria-label="Footer" className="w-[28rem]">
           <ul>
@@ -61,6 +61,11 @@ export function SiteFooter() {
             </li>
           ))}
         </ul>
+
+        <div className="pl-50">
+          <h3 className="pb-10 font-display text-[3rem] uppercase leading-none">Our Affiliations</h3>
+          <p>Proudly affiliated with Alfa Plumbing and Alfa Services.</p>
+        </div>
       </div>
 
       <p className="mt-[13.4rem]">© alfaseptic — All Rights Reserved</p>

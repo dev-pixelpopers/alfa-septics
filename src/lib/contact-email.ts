@@ -17,6 +17,9 @@ export function buildContactEmail(data: ContactRequest) {
     ["Email", data.email.trim() || "—"],
     ["Preferred contact", data.contactMethod],
     ["Services", data.services.map(serviceLabel).join(", ")],
+    ...(data.bedrooms ? [["Bedrooms", data.bedrooms] as [string, string]] : []),
+    ...(data.bathrooms ? [["Bathrooms", data.bathrooms] as [string, string]] : []),
+    ...(data.county ? [["County", `${data.county} County`] as [string, string]] : []),
     ["Property type", data.propertyType],
     ["Timeline", data.timeline || "—"],
   ];

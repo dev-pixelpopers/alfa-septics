@@ -189,7 +189,7 @@ export function HeroScene() {
   );
 
   return (
-    <section id="top" ref={root} className="relative text-white">
+    <section id="top" ref={root} className="relative text-white hero-sec">
       {/* Preloader overlay (Figma Default → Variant8) */}
       <div data-preloader className="fixed inset-0 z-50 grid text-white" role="status" aria-label="Loading">
         {/* Gate: two clipped halves of the same background, opened outwards on exit */}
@@ -229,7 +229,7 @@ export function HeroScene() {
 
       {/* Hero content (Variant12 layout) — scrolls natively, as V12 → V15 does in the prototype */}
       <div className="relative flex flex-col items-center">
-        <div data-hero-image className="relative h-[90.3rem] w-full overflow-hidden">
+        <div data-hero-image className="hero-sec-inner relative h-[90.3rem] w-full overflow-hidden">
           <div className="absolute inset-y-0 left-1/2 w-[219.8rem] -translate-x-1/2">
             <Image
               src="/assets/images/hero-site-excavator.png"
@@ -244,15 +244,15 @@ export function HeroScene() {
         </div>
 
         <h1 className="relative -mt-[12.5rem] flex flex-col items-center whitespace-nowrap text-center font-display font-medium uppercase leading-[0.76] tracking-[-11.55px]">
-          <span data-line-a className="invisible text-[165px]">
+          <span data-line-a className="invisible text-[170px]">
             Expert Septic &amp;
           </span>
-          <span data-line-b className="invisible text-[168px]">
+          <span data-line-b className="invisible text-[170px]">
             Site Solutions
           </span>
         </h1>
 
-        <div data-hero-support className="invisible mt-[3.4rem] flex w-[97.9rem] items-center justify-between">
+        <div data-hero-support className="invisible mt-[3.4rem] flex w-[97.9rem] items-center justify-between second-home">
           <p className="w-[62.5rem] text-[2rem] leading-[3rem]">
             Licensed septic, excavation, and utility services for homes, businesses, and new construction across
             Southeast Texas.
@@ -287,7 +287,7 @@ export function HeroScene() {
         </div>
 
         {/* "From Bare Land" (Variant15 → Variant20 layout); reveals itself on entering view */}
-        <div data-bare-block className="relative flex w-full flex-col items-center overflow-hidden pb-[12.6rem] pt-[15.1rem]">
+        <div data-bare-block className="relative flex w-full flex-col items-center overflow-hidden pb-[12.6rem] pt-[15.1rem] land-home">
           <div className="h-[34.8rem] w-[101.5rem]">
             <h2
               data-bare-heading

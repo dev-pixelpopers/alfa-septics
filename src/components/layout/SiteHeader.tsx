@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { SearchModal } from "@/components/layout/SearchModal";
 import { BrandBackground } from "@/components/ui/BrandBackground";
 import { PillLink } from "@/components/ui/PillLink";
 import { EASE_REVEAL, gsap, useGSAP } from "@/lib/gsap";
@@ -23,6 +24,20 @@ export function SiteHeader() {
   const isHome = pathname === "/";
   const root = useRef<HTMLElement>(null);
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  // Global shortcut (Cmd+K / Ctrl+K) to open search
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setOpen(false);
+        setSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   // Esc closes the menu; the page behind it doesn't scroll while it's open.
   useEffect(() => {
@@ -90,13 +105,41 @@ export function SiteHeader() {
         />
       </Link>
 
-      <div data-nav className={`relative z-10 ${isHome ? "invisible" : ""}`}>
+      <div data-nav className={`relative z-10 flex items-center gap-[1.2rem] ${isHome ? "invisible" : ""}`}>
+        <button
+          type="button"
+          aria-label="Search"
+          title="Search"
+          onClick={() => {
+            setOpen(false);
+            setSearchOpen(true);
+          }}
+          className="group flex h-[5.4rem] w-[5.4rem] cursor-pointer items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-[0.8rem] transition-colors hover:border-white/60 hover:bg-white/20"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="size-[2.2rem] text-white transition-transform duration-200 group-hover:scale-110"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+
         <button
           type="button"
           aria-expanded={open}
           aria-controls="site-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((o) => !o)}
+          onClick={() => {
+            setSearchOpen(false);
+            setOpen((o) => !o);
+          }}
           className="group flex h-[5.4rem] cursor-pointer items-center gap-[1.6rem] rounded-full border border-white/30 bg-white/10 pl-[2.4rem] pr-[1.8rem] font-gotham text-[1.5rem] font-medium uppercase tracking-[0.15rem] backdrop-blur-[0.8rem] transition-colors hover:border-white/60 hover:bg-white/20"
         >
           <span className="w-[5.2rem] text-left">{open ? "Close" : "Menu"}</span>
@@ -156,7 +199,7 @@ export function SiteHeader() {
                 {CONTACT.phoneDisplay}
               </a>
             </div>
-            <div>
+            {/* <div>
               <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-white/50">Email us</p>
               <a
                 href={`mailto:${CONTACT.email}`}
@@ -164,7 +207,7 @@ export function SiteHeader() {
               >
                 {CONTACT.email}
               </a>
-            </div>
+            </div> */}
             <div>
               <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-white/50">Service area</p>
               <p className="mt-[1.2rem] text-[2.6rem]">{CONTACT.region}</p>
@@ -194,6 +237,8 @@ export function SiteHeader() {
           </aside>
         </div>
       </div>
+
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }

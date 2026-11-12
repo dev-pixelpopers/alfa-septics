@@ -39,7 +39,7 @@ export function FeaturesScene() {
 
   return (
     <section id="about" ref={root} className="relative h-[440vh]">
-      <div className="sticky top-0 flex h-screen flex-col overflow-hidden bg-white">
+      <div className="sticky top-0 flex h-screen flex-col overflow-hidden bg-white driven-home">
         <div className="mx-auto mt-[23rem] h-[29.6rem] w-[178.3rem]">
           <h2
             data-heading

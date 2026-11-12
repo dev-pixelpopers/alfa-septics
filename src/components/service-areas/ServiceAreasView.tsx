@@ -52,7 +52,7 @@ export function ServiceAreasView() {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="service-inner">
       {/* Hero */}
       <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white">
         <div className="absolute inset-0 -z-10">
@@ -99,10 +99,10 @@ export function ServiceAreasView() {
       </section>
 
       {/* Areas */}
-      <section className="relative z-10 bg-snow py-[14rem]">
+      <section className="relative z-10 bg-snow py-[14rem] area-two">
         <div className="mx-auto w-[164rem]">
           {/* Search panel */}
-          <div className="flex items-center gap-[4rem] rounded-[4rem] bg-white p-[4.8rem] shadow-[0_4rem_12rem_rgba(44,60,146,0.16)]">
+          <div className="area-two-content flex items-center gap-[4rem] rounded-[4rem] bg-white p-[4.8rem] shadow-[0_4rem_12rem_rgba(44,60,146,0.16)]">
             <div className="flex-1">
               <label htmlFor="area-search" className="font-display text-[4rem] uppercase leading-none text-brand-navy">
                 Check your area
@@ -187,8 +187,8 @@ export function ServiceAreasView() {
       </section>
 
       {/* Services available everywhere */}
-      <section data-reveal-group className="bg-white py-[14rem]">
-        <div className="mx-auto flex w-[164rem] items-center justify-between gap-[8rem]">
+      <section data-reveal-group className="bg-white py-[14rem] area-three">
+        <div className="mx-auto flex w-[164rem] items-center justify-between gap-[8rem] area-three-inner">
           <h2
             data-reveal
             className="invisible font-display text-[8rem] uppercase leading-[0.9] tracking-[-0.3rem] text-brand-navy"

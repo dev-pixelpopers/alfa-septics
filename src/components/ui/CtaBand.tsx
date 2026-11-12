@@ -5,7 +5,7 @@ import { CONTACT } from "@/lib/site";
 /** Closing "free estimate" band for inner pages. */
 export function CtaBand() {
   return (
-    <section className="relative isolate overflow-hidden py-[16rem] text-white">
+    <section className="relative isolate overflow-hidden py-[16rem] text-white cta-all">
       <div className="absolute inset-0 -z-10">
         <BrandBackground />
       </div>

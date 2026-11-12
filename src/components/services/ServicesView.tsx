@@ -81,7 +81,7 @@ export function ServicesView() {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="service-inner">
       {/* Hero — same cyan wash as the homepage services scene */}
       <section className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#3fcdf1_0%,#2b9fdc_55%,#2c3c92_100%)] pb-[18rem] pt-[24rem] text-white">
         <div className="mx-auto flex w-[164rem] flex-col items-center text-center">
@@ -108,7 +108,7 @@ export function ServicesView() {
 
       {/* Sticky index + service panels */}
       <section className="bg-snow py-[14rem]">
-        <div className="mx-auto grid w-[164rem] grid-cols-[38rem_1fr] items-start gap-[10rem]">
+        <div className="mx-auto grid w-[164rem] grid-cols-[38rem_1fr] items-start gap-[10rem] service-second">
           <nav data-index aria-label="Services" className="invisible sticky top-[22rem]">
             <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-ink-soft">{SERVICES.length} services</p>
             <ol className="mt-[2.4rem] flex flex-col gap-[0.8rem]">
@@ -228,7 +228,7 @@ export function ServicesView() {
       {/* Site work */}
       <section data-site-work-section className="bg-white py-[14rem]">
         <div className="mx-auto w-[164rem]">
-          <div className="flex items-end justify-between">
+          <div className="flex items-end justify-between tank-col">
             <h2 className="font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy">
               Beyond
               <br />
@@ -239,7 +239,7 @@ export function ServicesView() {
               project never stalls waiting on another crew.
             </p>
           </div>
-          <ul className="mt-[7.2rem] grid grid-cols-3 gap-[3.2rem]">
+          <ul className="mt-[7.2rem] grid grid-cols-3 gap-[3.2rem] tank-grid">
             {SITE_WORK.map((item) => (
               <li
                 key={item.title}

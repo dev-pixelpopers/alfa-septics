@@ -46,7 +46,7 @@ export function AboutView() {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="innerpages">
       {/* Hero */}
       <section className="relative isolate overflow-hidden pb-[34rem] pt-[24rem] text-white about-hero">
         <div className="absolute inset-0 -z-10">
@@ -175,9 +175,9 @@ export function AboutView() {
       </section>
 
       {/* Services */}
-      <section data-reveal-group className="bg-white py-[16rem]">
+      <section data-reveal-group className="bg-white py-[16rem] third-about">
         <div className="mx-auto w-[164rem]">
-          <div className="flex items-end justify-between">
+          <div className="flex items-end justify-between about-ctn">
             <h2
               data-reveal
               className="invisible font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy"

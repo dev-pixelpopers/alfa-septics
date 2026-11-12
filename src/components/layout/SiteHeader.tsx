@@ -105,7 +105,7 @@ export function SiteHeader() {
         />
       </Link>
 
-      <div data-nav className={`relative z-10 flex items-center gap-[1.2rem] ${isHome ? "invisible" : ""}`}>
+      <div data-nav className={`mob-menu relative z-10 flex items-center gap-[1.2rem] ${isHome ? "invisible" : ""}`}>
         <button
           type="button"
           aria-label="Search"
@@ -114,7 +114,7 @@ export function SiteHeader() {
             setOpen(false);
             setSearchOpen(true);
           }}
-          className="group flex h-[5.4rem] w-[5.4rem] cursor-pointer items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-[0.8rem] transition-colors hover:border-white/60 hover:bg-white/20"
+          className="hide-mob group flex h-[5.4rem] w-[5.4rem] cursor-pointer items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-[0.8rem] transition-colors hover:border-white/60 hover:bg-white/20"
         >
           <svg
             aria-hidden="true"
@@ -140,7 +140,7 @@ export function SiteHeader() {
             setSearchOpen(false);
             setOpen((o) => !o);
           }}
-          className="group flex h-[5.4rem] cursor-pointer items-center gap-[1.6rem] rounded-full border border-white/30 bg-white/10 pl-[2.4rem] pr-[1.8rem] font-gotham text-[1.5rem] font-medium uppercase tracking-[0.15rem] backdrop-blur-[0.8rem] transition-colors hover:border-white/60 hover:bg-white/20"
+          className="humburger group flex h-[5.4rem] cursor-pointer items-center gap-[1.6rem] rounded-full border border-white/30 bg-white/10 pl-[2.4rem] pr-[1.8rem] font-gotham text-[1.5rem] font-medium uppercase tracking-[0.15rem] backdrop-blur-[0.8rem] transition-colors hover:border-white/60 hover:bg-white/20"
         >
           <span className="w-[5.2rem] text-left">{open ? "Close" : "Menu"}</span>
           <span aria-hidden className="relative block h-[1.4rem] w-[2.6rem]">

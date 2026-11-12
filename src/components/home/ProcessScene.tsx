@@ -65,11 +65,11 @@ export function ProcessScene() {
           From Site to System
         </h2>
 
-        <div className="-mt-[1.1rem] flex h-[92.4rem] w-[171.9rem] shrink-0 items-start bg-mist pl-[16.8rem] pt-[4rem]">
+        <div className="box-system -mt-[1.1rem] flex h-[92.4rem] w-[171.9rem] shrink-0 items-start bg-mist pl-[16.8rem] pt-[4rem]">
           {/* Photo card: navy square tilted behind a slightly tilted photo mask */}
           <div className="relative grid size-[76rem] shrink-0 place-items-center">
-            <div aria-hidden className="absolute size-[71.14rem] rotate-[4.09deg] bg-brand-navy" />
-            <div className="relative size-[71.14rem] rotate-[2deg] overflow-hidden">
+            <div aria-hidden className="system-bg absolute size-[71.14rem] rotate-[4.09deg] bg-brand-navy" />
+            <div className="relative size-[71.14rem] rotate-[2deg] overflow-hidden site-system">
               {PHOTOS.map((photo) => (
                 <div key={photo.src} data-photo className="absolute inset-0">
                   <Image src={photo.src} alt={photo.alt} fill sizes="40vw" loading="eager" className="object-cover" />
@@ -78,7 +78,7 @@ export function ProcessScene() {
             </div>
           </div>
 
-          <div className="ml-[14.1rem] pt-[2.2rem]">
+          <div className="ml-[14.1rem] pt-[2.2rem] system-content">
             <ol className="relative flex flex-col gap-[4.5rem]">
               <span aria-hidden className="absolute left-[2.15rem] top-[2.4rem] h-[55.1rem] w-[0.3rem] bg-ink-muted" />
               {STEPS.map((step, i) => (

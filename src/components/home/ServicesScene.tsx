@@ -75,7 +75,7 @@ export function ServicesScene() {
 
       {/* Carousel (Variant29–31), pinned */}
       <div data-carousel className="relative h-[410vh]">
-        <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="sticky top-0 h-screen overflow-hidden solution-sec">
           <div
             aria-hidden
             className="absolute inset-x-0 top-[26.4rem] h-[37.1rem] bg-gradient-to-r from-[rgba(44,60,146,0)] via-[rgba(44,60,146,0.5)] to-[rgba(44,60,146,0)]"

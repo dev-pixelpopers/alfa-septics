@@ -25,7 +25,7 @@ export function SiteFooter() {
         className="-z-10 object-cover"
       />
 
-      <div className="flex w-full pl-[39.6rem] pt-[7.3rem]">
+      <div className="flex w-full pl-[39.6rem] pt-[7.3rem] footer-inner">
         <div className="flex w-[39rem] flex-col gap-[4.2rem]">
           <a href={CONTACT.phoneHref} className="hover:opacity-80">
             Call Us Now →<br />

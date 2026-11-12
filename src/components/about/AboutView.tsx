@@ -48,7 +48,7 @@ export function AboutView() {
   return (
     <div ref={root}>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[34rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[34rem] pt-[24rem] text-white about-hero">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
@@ -93,7 +93,7 @@ export function AboutView() {
       </div>
 
       {/* Who we are */}
-      <section data-reveal-group className="bg-white py-[16rem]">
+      <section data-reveal-group className="bg-white py-[16rem] about-second">
         <div className="mx-auto grid w-[164rem] grid-cols-[1fr_62rem] items-center gap-[12rem]">
           <div>
             <p data-reveal className="invisible text-[1.8rem] uppercase tracking-[0.4rem] text-brand-cyan">
@@ -151,7 +151,7 @@ export function AboutView() {
           >
             What sets us <span className="text-brand-cyan">apart</span>
           </h2>
-          <ul className="mt-[8rem] grid grid-cols-4 gap-[2.8rem]">
+          <ul className="mt-[8rem] grid grid-cols-4 gap-[2.8rem] about-cols">
             {FEATURES.map((feature) => (
               <li
                 key={feature.title}
@@ -190,7 +190,7 @@ export function AboutView() {
               Septic work for homes, businesses, and new construction — from the first design to years of upkeep.
             </p>
           </div>
-          <ul className="mt-[7.2rem] grid grid-cols-3 gap-[3.2rem]">
+          <ul className="mt-[7.2rem] grid grid-cols-3 gap-[3.2rem] about-what">
             {SERVICES.map((service) => (
               <li key={service.slug} data-reveal className="invisible">
                 <Link

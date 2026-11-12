@@ -259,6 +259,32 @@ header.fixed a img {
 .land-home ul li {
     width: 20rem !important;
 }
+    .footer-inner {
+        padding-left: 90px;
+    }
+.about-second .grid {
+    grid-template-columns: 1fr;
+}
+.about-cols, .about-what {
+    grid-template-columns: 1fr 1fr;
+}
+.about-cols h3, .about-what h3 {
+    font-size: 22px;
+}
+.about-cols p, .about-what p {
+    font-size: 16px;
+}
+.about-what span {
+font-size: 15px;
+}
 }
 
+
+@media (max-width: 600px) {
+     .footer-inner {
+    padding-left: 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+}
 

@@ -80,7 +80,8 @@ export function GalleryScene() {
       x: tab.offsetLeft + tab.offsetWidth / 2 - tabs.offsetWidth / 2,
       duration,
       ease: EASE_REVEAL,
-      overwrite: true,
+      // "auto" only cancels other x tweens; `true` would also kill the scroll timeline's fade-in.
+      overwrite: "auto",
     });
   };
 
@@ -154,20 +155,33 @@ export function GalleryScene() {
     })();
 
   return (
-    <section id="gallery" ref={root} className="relative h-[400vh]">
-      <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden bg-white">
-        <div aria-hidden data-panel className="absolute left-[calc(50%-42.3rem)] top-[8rem] h-[85.3rem] w-[86rem] bg-cloud" />
+    <section
+      id="gallery"
+      ref={root}
+      className="relative h-[400vh] [--gallery-hero:calc((100vw-32px)*0.7656)]"
+    >
+      {/* Mobile (max-sm): hero shot spans the width, the six thumbs sit in one row beneath it. */}
+      <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden bg-white max-sm:h-svh max-sm:justify-center max-sm:gap-0!">
+        {/* Mobile: content is centred, so the panel is placed from the centre (hero height = 76.56% of its width). */}
+        <div
+          aria-hidden
+          data-panel
+          className="absolute left-[calc(50%-42.3rem)] top-[8rem] h-[85.3rem] w-[86rem] bg-cloud max-sm:left-0! max-sm:top-[calc(50%-(var(--gallery-hero)+248px)/2+36px)]! max-sm:h-[calc(var(--gallery-hero)+176px)] max-sm:w-full"
+        />
 
-        <div className="relative mt-[5.7rem] h-[14.8rem] w-[160.2rem]">
+        <div className="relative mt-[5.7rem] h-[14.8rem] w-[160.2rem] max-sm:mt-0 max-sm:h-auto max-sm:w-full max-sm:px-[16px]">
           <h2
             data-heading
-            className="whitespace-nowrap text-center font-display text-[16.5rem] font-black uppercase leading-[0.9] tracking-[-1.155rem] text-brand-navy"
+            className="whitespace-nowrap text-center font-display text-[16.5rem] font-black uppercase leading-[0.9] tracking-[-1.155rem] text-brand-navy max-sm:whitespace-normal max-sm:text-[clamp(32px,11vw,46px)] max-sm:tracking-[-0.04em]"
           >
             Built in the Field
           </h2>
         </div>
 
-        <div data-shots className="relative mt-[6.6rem] flex items-end gap-[3rem]">
+        <div
+          data-shots
+          className="relative mt-[6.6rem] flex items-end gap-[3rem] max-sm:mt-[20px] max-sm:w-[calc(100%-32px)] max-sm:flex-wrap max-sm:justify-between max-sm:gap-x-0 max-sm:gap-y-[8px]"
+        >
           {SLOTS.map((slot, i) => (
             // Keyed by slot so GSAP's fly-in state survives a category switch.
             <button
@@ -175,7 +189,9 @@ export function GalleryScene() {
               type="button"
               onClick={() => setLightbox(i)}
               aria-label={`Open photo ${i + 1} of ${photos.length}: ${photos[i].alt}`}
-              className="group block shrink-0 cursor-zoom-in"
+              className={`group block shrink-0 cursor-zoom-in ${
+                slot.flyFrom ? "max-sm:w-[calc((100%-30px)/6)]" : "max-sm:order-first max-sm:w-full"
+              }`}
             >
               <Image
                 src={photos[i].src}
@@ -187,14 +203,16 @@ export function GalleryScene() {
                 data-thumb={slot.flyFrom ? "" : undefined}
                 data-fly-from={slot.flyFrom}
                 data-main={slot.flyFrom ? undefined : ""}
-                className="block object-cover transition-[filter] duration-300 group-hover:brightness-110"
-                style={{ width: `${slot.width / 10}rem`, height: `${slot.height / 10}rem` }}
+                className={`block h-(--h) w-(--w) object-cover transition-[filter] duration-300 group-hover:brightness-110 max-sm:w-full ${
+                  slot.flyFrom ? "max-sm:h-[96px]" : "max-sm:aspect-[627/480] max-sm:h-auto"
+                }`}
+                style={{ "--w": `${slot.width / 10}rem`, "--h": `${slot.height / 10}rem` } as React.CSSProperties}
               />
             </button>
           ))}
           <p
             data-meta
-            className="invisible absolute left-[165.7rem] top-[7rem] w-[10rem] font-albert text-[2rem] font-light leading-[1.8] text-brand-navy"
+            className="invisible absolute left-[165.7rem] top-[7rem] w-[10rem] font-albert text-[2rem] font-light leading-[1.8] text-brand-navy max-sm:-top-[18px] max-sm:left-auto max-sm:right-0 max-sm:w-auto! max-sm:text-[12px]! max-sm:leading-none!"
           >
             01 / {String(photos.length).padStart(2, "0")}
           </p>
@@ -206,7 +224,7 @@ export function GalleryScene() {
             data-tabs
             role="group"
             aria-label="Project categories"
-            className="invisible mt-[7.1rem] flex gap-[2.2rem] text-[2rem] leading-[1.8]"
+            className="invisible mt-[7.1rem] flex gap-[2.2rem] text-[2rem] leading-[1.8] max-sm:mt-[16px] max-sm:gap-[14px] max-sm:whitespace-nowrap max-sm:text-[13px]"
           >
             {CATEGORIES.map((category, i) => (
               <button
@@ -224,7 +242,7 @@ export function GalleryScene() {
               </button>
             ))}
           </div>
-          <span data-meta data-underline aria-hidden className="invisible mt-[5.5rem] h-[0.3rem] w-[3.5rem] bg-brand-navy" />
+          <span data-meta data-underline aria-hidden className="invisible mt-[5.5rem] h-[0.3rem] w-[3.5rem] bg-brand-navy max-sm:mt-[6px] max-sm:h-[2px] max-sm:w-[28px]" />
         </div>
       </div>
 

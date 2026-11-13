@@ -46,9 +46,9 @@ const REVIEWS = [
 
 function Stars() {
   return (
-    <span className="flex gap-[0.3rem]" aria-label="Rated 5 out of 5">
+    <span className="flex gap-[0.3rem] max-sm:gap-[2px]" aria-label="Rated 5 out of 5">
       {Array.from({ length: 5 }, (_, i) => (
-        <svg key={i} viewBox="0 0 24 24" className="size-[2rem]" aria-hidden>
+        <svg key={i} viewBox="0 0 24 24" className="size-[2rem] max-sm:size-[16px]" aria-hidden>
           <path
             fill="#fbbc04"
             d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
@@ -103,55 +103,61 @@ export function ReviewsScene() {
 
   return (
     <section id="reviews" ref={root} className="relative h-[320vh]">
-      <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden bg-white pt-[14.8rem]">
-        <h2 className="w-[125.3rem] whitespace-nowrap text-center font-display text-[16.5rem] font-black uppercase leading-[0.9] tracking-[-1.155rem] text-brand-cyan">
+      <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden bg-white pt-[14.8rem] max-sm:h-svh max-sm:justify-center max-sm:gap-0! max-sm:pt-0">
+        <h2 className="w-[125.3rem] whitespace-nowrap text-center font-display text-[16.5rem] font-black uppercase leading-[0.9] tracking-[-1.155rem] text-brand-cyan max-sm:w-full max-sm:px-[16px] max-sm:text-[clamp(32px,11vw,46px)] max-sm:tracking-[-0.04em]">
           <span className="block">What Our</span>
           <span className="block">Clients Say</span>
         </h2>
 
-        {/* Review cards, styled after a Google review */}
-        <ul className="relative mt-[6.1rem] h-[27rem] w-[89.9rem]">
+        {/* Review cards, styled after a Google review. Stacked absolutely so they can cross-fade. */}
+        <ul className="relative mt-[6.1rem] h-[27rem] w-[89.9rem] max-sm:mt-[24px] max-sm:h-[264px] max-sm:w-[calc(100%-32px)]">
           {REVIEWS.map((review) => (
             <li
               key={review.name}
               data-review
-              className="absolute inset-0 rounded-[2.4rem] border border-[#dadce0] bg-white p-[4rem] text-left font-[family-name:Arial,Helvetica,sans-serif] shadow-[0_0.2rem_0.6rem_rgba(60,64,67,0.15)]"
+              className="absolute inset-0 rounded-[2.4rem] border border-[#dadce0] bg-white p-[4rem] text-left font-[family-name:Arial,Helvetica,sans-serif] shadow-[0_0.2rem_0.6rem_rgba(60,64,67,0.15)] max-sm:rounded-[16px] max-sm:p-[20px] max-sm:shadow-[0_2px_6px_rgba(60,64,67,0.15)]"
             >
-              <div className="flex items-center gap-[1.6rem]">
+              <div className="flex items-center gap-[1.6rem] max-sm:gap-[12px]">
                 <span
                   aria-hidden
-                  className="grid size-[4.8rem] shrink-0 place-items-center rounded-full text-[2.2rem] font-medium text-white"
+                  className="grid size-[4.8rem] shrink-0 place-items-center rounded-full text-[2.2rem] font-medium text-white max-sm:size-[40px] max-sm:text-[18px]"
                   style={{ backgroundColor: review.color }}
                 >
                   {review.initial}
                 </span>
                 <div>
-                  <p className="text-[1.9rem] font-medium leading-[1.3] text-[#202124]">{review.name}</p>
-                  <p className="text-[1.5rem] leading-[1.3] text-[#70757a]">{review.meta}</p>
+                  <p className="text-[1.9rem] font-medium leading-[1.3] text-[#202124] max-sm:w-auto! max-sm:text-[15px]! max-sm:leading-[1.3]!">
+                    {review.name}
+                  </p>
+                  <p className="text-[1.5rem] leading-[1.3] text-[#70757a] max-sm:w-auto! max-sm:text-[12px]! max-sm:leading-[1.3]!">
+                    {review.meta}
+                  </p>
                 </div>
               </div>
-              <div className="mt-[1.6rem] flex items-center gap-[1.2rem]">
+              <div className="mt-[1.6rem] flex items-center gap-[1.2rem] max-sm:mt-[12px] max-sm:gap-[8px]">
                 <Stars />
-                <span className="text-[1.5rem] text-[#70757a]">{review.when}</span>
+                <span className="text-[1.5rem] text-[#70757a] max-sm:text-[12px]">{review.when}</span>
               </div>
-              <blockquote className="mt-[1.4rem] text-[1.9rem] leading-[1.55] text-[#3c4043]">{review.quote}</blockquote>
+              <blockquote className="mt-[1.4rem] text-[1.9rem] leading-[1.55] text-[#3c4043] max-sm:mt-[10px] max-sm:text-[14px] max-sm:leading-[1.5]">
+                {review.quote}
+              </blockquote>
             </li>
           ))}
         </ul>
 
-        <div className="mt-[4.4rem] flex w-[89.9rem] items-center justify-between font-albert text-[2rem] leading-[1.4] tracking-[0.1rem] text-brand-navy">
-          <button type="button" onClick={() => go(-1)} className="flex items-center gap-[1rem] hover:opacity-70">
-            <ArrowIcon direction="right" className="w-[1.6rem] rotate-180" />
+        <div className="mt-[4.4rem] flex w-[89.9rem] items-center justify-between font-albert text-[2rem] leading-[1.4] tracking-[0.1rem] text-brand-navy max-sm:mt-[20px] max-sm:w-[calc(100%-32px)] max-sm:text-[15px]">
+          <button type="button" onClick={() => go(-1)} className="flex items-center gap-[1rem] hover:opacity-70 max-sm:gap-[8px] max-sm:py-[8px]">
+            <ArrowIcon direction="right" className="w-[1.6rem] rotate-180 max-sm:w-[14px]" />
             Prev
           </button>
-          <span aria-hidden className="flex gap-[1rem]">
+          <span aria-hidden className="flex gap-[1rem] max-sm:gap-[8px]">
             {REVIEWS.map((review) => (
-              <span key={review.name} data-dot className="size-[1rem] rounded-full bg-brand-navy" />
+              <span key={review.name} data-dot className="size-[1rem] rounded-full bg-brand-navy max-sm:size-[8px]" />
             ))}
           </span>
-          <button type="button" onClick={() => go(1)} className="flex items-center gap-[1rem] hover:opacity-70">
+          <button type="button" onClick={() => go(1)} className="flex items-center gap-[1rem] hover:opacity-70 max-sm:gap-[8px] max-sm:py-[8px]">
             Next
-            <ArrowIcon direction="right" className="w-[1.6rem]" />
+            <ArrowIcon direction="right" className="w-[1.6rem] max-sm:w-[14px]" />
           </button>
         </div>
       </div>

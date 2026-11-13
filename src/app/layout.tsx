@@ -3,6 +3,7 @@ import { Albert_Sans, Manrope, Montserrat, Outfit } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import "./globals.css";
+import "./external.css";
 
 // Fallbacks for the licensed Gotham (display) and Nohemi (body) faces.
 const montserrat = Montserrat({

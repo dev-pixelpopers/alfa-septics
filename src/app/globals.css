@@ -585,5 +585,19 @@ li#site-evaluation {
         .tank-grid p {
         width: 100% !important;
     }
-    
+    header a.relative.z-10.shrink-0 img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+.driven-home .mx-auto.mt-\[23rem\] {
+    text-align: center !important;
+}
+.driven-home p.invisible.ml-\[23\.2rem\].mt-\[8\.7rem\].w-\[72\.8rem\].text-right.text-\[2\.9rem\].leading-\[4rem\].text-ink-muted {
+    text-align: center;
+    margin: 20px auto 30px auto;
+}
+section#gallery .absolute.left-\[calc\(50\%-42\.3rem\)\].top-\[8rem\].h-\[85\.3rem\].w-\[86rem\].bg-cloud.max-sm\:left-0\!.max-sm\:top-\[calc\(50\%-\(var\(--gallery-hero\)\+248px\)\/2\+36px\)\]\!.max-sm\:h-\[calc\(var\(--gallery-hero\)\+176px\)\].max-sm\:w-full {
+    display: none;
+}
 }

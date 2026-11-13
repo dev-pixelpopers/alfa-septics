@@ -192,7 +192,7 @@ export function SiteHeader() {
             </ol>
           </nav>
 
-          <aside data-menu-aside className="flex flex-col gap-[4.8rem] border-l border-white/15 pl-[6rem]">
+          <aside data-menu-aside className="flex flex-col gap-[4.8rem] border-l border-white/15 pl-[6rem] main-nav">
             <div>
               <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-white/50">Call us</p>
               <a href={CONTACT.phoneHref} className="mt-[1.2rem] block text-[3.2rem] transition-colors hover:text-[#8fd8f0]">

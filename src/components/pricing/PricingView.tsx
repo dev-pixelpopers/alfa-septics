@@ -211,7 +211,7 @@ export function PricingView() {
               <br />
               <span className="text-brand-cyan">FAQs</span>
             </h2>
-            <p className="mt-[3.2rem] text-[2rem] leading-[1.5] text-ink-muted">
+            <p className="mt-[3.2rem] text-[2rem] leading-[1.5] text-ink-muted max-w-[500px] mx-auto lg:mx-0 faq-text">
               Have a question that isn&apos;t answered here? Call us at{" "}
               <a href={CONTACT.phoneHref} className="text-brand-navy underline decoration-brand-cyan underline-offset-[0.4rem]">
                 {CONTACT.phoneDisplay}

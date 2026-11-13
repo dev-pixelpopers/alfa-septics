@@ -81,6 +81,11 @@ body {
 }
 
 
+
+section#reviews button {
+    cursor: pointer;
+}
+
 /* Responsive Homepage styles */
 @media (max-width: 1690px) and (min-width: 1620px) {
   .hero-sec-inner {
@@ -111,10 +116,7 @@ body {
   .hero-sec h1 span {
     font-size: 150px;
   }
-  header.fixed a img {
-    width: 10rem;
-    height: 10rem;
-  }
+ 
   .solution-sec {
     top: 80px;
   }
@@ -130,10 +132,7 @@ body {
   .hero-sec h1 span {
     font-size: 130px;
   }
-  header.fixed a img {
-    width: 10rem;
-    height: 10rem;
-  }
+  
   .solution-sec {
     top: 50px;
   }
@@ -164,10 +163,7 @@ body {
   .hero-sec h1 span {
     font-size: 130px;
   }
-  header.fixed a img {
-    width: 10rem;
-    height: 10rem;
-  }
+  
   .solution-sec {
     top: 40px;
   }
@@ -198,10 +194,7 @@ body {
   .hero-sec h1 span {
     font-size: 100px;
   }
-  header.fixed a img {
-    width: 10rem;
-    height: 10rem;
-  }
+  
   .solution-sec {
     top: 40px;
   }
@@ -224,13 +217,16 @@ body {
     justify-content: center;
   }
   .driven-home ul.absolute {
-    top: 78rem;
+    top: 60rem;
   }
-  section#process .sticky.top-0,
   section#gallery .sticky.top-0,
   section#reviews .sticky.top-0 {
     justify-content: center;
     gap: 60px;
+  }
+  section#process .sticky.top-0 {
+        justify-content: center;
+    gap: 20px;
   }
   section#gallery .sticky.top-0 .absolute.left-\[calc\(50\%-42\.3rem\)\].top-\[8rem\].h-\[85\.3rem\].w-\[86rem\].bg-cloud {
     top: 50rem;
@@ -238,6 +234,16 @@ body {
   .footer-inner {
     padding-left: 130px;
   }
+  .faq-text {
+    max-width: 100%;
+}
+section#reviews .sticky {
+    gap: 0px !important;
+}
+    .service-article-detail-grid li {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+    }
 }
 
 @media (max-width: 981px) {
@@ -291,9 +297,171 @@ body {
   footer {
     height: 100%;
   }
+  .pricing-includes-container .pricing-includes-grid span {
+    margin: auto;
+}
+.pricing-includes-container .pricing-includes-grid, .pricing-faq-header {
+    text-align: center;
+}
+.service-detail-others-grid .relative.h-\[24rem\].overflow-hidden {
+    height: 200px;
+}
+.service-detail-others-grid .flex.flex-1 {
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+}
+.service-detail-others-container {
+    text-align: center;
+}
+.service-detail-hero-grid nav ol {
+    justify-content: center;
+    font-size: 12px;
+}
+.service-detail-hero-grid, .service-detail-signs-grid li {
+    text-align: center;
+}
+.service-detail-hero-grid .service-detail-hero-photo {
+    order: 1;
+    max-width: 100% !important;
+}
+.service-detail-hero-grid div:first-child {
+    order: 2;
+}
+.service-detail-overview-grid ul li {
+    font-size: 14px;
+}
+.service-detail-process-steps li {
+    flex-direction: column;
+    text-align: center;
+    align-items: center !important;
+}
+.service-detail-process-header {
+    align-items: center !important;
+    text-align: center;
+}
+.service-detail-process-header a {
+    font-size: 14px;
+}
+.service-detail-overview-grid ul li {
+    font-size: 14px;
+}
+    .services-sticky-nav ol {
+        flex-flow: wrap !important;
+        gap: 10px !important;
+        justify-content: center;
+    }
+    .text-ink-soft, .service-article-detail-grid {
+    text-align: center;
+}
+.service-article-detail-grid .invisible {
+    text-align: center;
+}
+
+.service-article-detail-grid .invisible ul {
+    justify-content: center;
+    align-items: center;
+}
+
+.service-article-detail-grid .invisible p {
+    justify-content: center;
+}
+    .tank-col {
+        text-align: center;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+        .service-areas-counties-grid ul li {
+        padding: 6px 12px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
+        .service-areas-everywhere ul li a {
+        padding: 8px 16px !important;
+        font-size: 14.5px !important;
+        font-weight: 500 !important;
+    }
+    .service-areas-counties-grid li .flex {
+    justify-content: center;
+    gap: 10px;
+}
+.area-three.service-areas-everywhere .area-three-inner {
+    justify-content: center;
+    align-items: center !important;
+    text-align: center;
+}
+.area-three-inner ul {
+        justify-content: center !important;
+        width: 100% !important;
+    }
+      .process-step-content li {
+    font-size: 15.5px !important;
+    line-height: 1.45 !important;
+  }
+      .process-promises-grid li {
+        text-align: center;
+    }
+        .about-creds-list li {
+        font-size: 15.5px !important;
+        line-height: 1.45 !important;
+    }
+    .about-ctn {
+    align-items: center !important;
+    text-align: center;
+}
+.about-what .flex {
+    text-align: center;
+}
+.about-what .flex p {
+    width: 100% !important;
+}
+.about-what .flex span.mt-auto {
+    justify-content: center;
+}
+    .about-what a span.mt-auto {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+    }
+    .about-what .flex span.mt-auto svg {
+    width: 15px;
+    height: 15px;
+}
+    .pricing-plan-card .relative.isolate li {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+    }
+        .pricing-plan-card .relative.isolate a {
+        font-size: 14.5px !important;
+    }
+        .pricing-plan-container .relative.isolate, .contact-form-grid header, .contact-work-section .contact-work-header {
+        text-align: center;
+    } 
+    .pricing-plan-container .relative.isolate ul {
+    justify-content: center;
+    align-items: center;
+}
+.pricing-plan-container .relative.isolate ul svg {
+    width: 10px;
+    height: 10px;
+}
+.contact-work-header {
+    align-items: center !important;
+}
+.main-nav a.group {
+    font-size: 14px;
+    padding: 18px 20px;
+}
+.main-nav a.group svg {
+    width: 15px;
+    height: 15px;
+}
 }
 
 @media (max-width: 600px) {
+      .contact-next-card li span {
+        width: 20px;
+        height: 20px;
+    }
   .footer-inner {
     flex-direction: column;
     gap: 20px;
@@ -322,4 +490,100 @@ body {
   footer .pl-50 h3 {
     font-size: 18px;
   }
+  .area-two-content .flex-1 {
+    text-align: center;
+}
+    .area-two-content .flex-1 {
+    text-align: center;
+}
+.process-promises-section .process-promises-grid {
+    text-align: center;
+}
+.process-promises-section .process-promises-grid p {
+    width: 100% !important;
+}
+.cta-band-actions a svg {
+    width: 14px;
+}
+li#site-evaluation {
+    display: flex;
+    flex-direction: column;
+}
+.about-second p {
+    width: 100% !important;
+}
+
+.about-second p, .service-detail-signs-grid li p {
+    width: 100% !important;
+}
+.about-ctn {
+    align-items: center !important;
+    text-align: center;
+}
+    .pricing-plan-card .pricing-plan-details {
+        padding: 20px !important;
+    }
+    .pricing-plan-container p {
+    width: 100% !important;
+}
+.pricing-plan-card .pricing-plan-details {
+    text-align: center;
+}
+.pricing-plan-card .pricing-plan-details .text-brand-navy {
+    justify-content: center;
+}
+.pricing-plan-card .pricing-plan-details .text-brand-navy {
+    justify-content: center;
+}
+.pricing-plan-container .relative.isolate, .contact-form-grid header, .contact-work-section .contact-work-header {
+    text-align: center;
+}
+
+.pricing-includes-grid span {
+    width: 20px;
+    height: 20px;
+}
+
+.pricing-includes-grid span svg, .contact-quick-list svg {
+    width: 10px;
+    height: 10px;
+}
+
+.pricing-includes-grid p, .pricing-faq-header p, .pricing-faq-list p, .contact-form-grid header p, .contact-form-footer p, .service-detail-overview-grid p {
+    width: 100% !important;
+}
+.contact-form-grid header .mt-\[3\.2rem\].flex.items-center.gap-\[2rem\] {
+    display: none;
+}
+.contact-form-grid .contact-form section {
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+}
+.contact-form-grid section h3 {
+    align-items: baseline;
+    gap: 10px;
+}
+.contact-form fieldset label span {
+    font-size: 10px;
+}
+    .contact-work-header {
+        align-items: center !important;
+    }
+.service-detail-process-steps li span {
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+}
+    .tank-col {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
+        .tank-grid {
+       text-align: center;
+    }
+        .tank-grid p {
+        width: 100% !important;
+    }
+    
 }

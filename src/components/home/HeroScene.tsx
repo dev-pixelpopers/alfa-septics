@@ -243,7 +243,7 @@ export function HeroScene() {
           <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-transparent from-[71.6%] to-black" />
         </div>
 
-        <h1 className="relative -mt-[12.5rem] flex flex-col items-center whitespace-nowrap text-center font-display font-medium uppercase leading-[0.76] tracking-[-11.55px]">
+        <h1 className="relative -mt-[12.5rem] flex flex-col items-center whitespace-nowrap text-center font-display font-medium uppercase leading-[0.76] tracking-[-9px]">
           <span data-line-a className="invisible text-[170px]">
             Expert Septic &amp;
           </span>

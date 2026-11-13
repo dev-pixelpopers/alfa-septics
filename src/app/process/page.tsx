@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ProcessPage() {
   return (
-    <main className="relative">
+    <main className="relative inner-page">
       <ProcessView />
     </main>
   );

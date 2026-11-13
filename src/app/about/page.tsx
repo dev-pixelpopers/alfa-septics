@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="relative">
+    <main className="relative inner-page">
       <AboutView />
     </main>
   );

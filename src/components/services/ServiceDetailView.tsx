@@ -47,13 +47,13 @@ export function ServiceDetailView({ slug }: { slug: string }) {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="service-detail-view">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[14rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[14rem] pt-[24rem] text-white service-detail-hero">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
-        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_66rem] items-center gap-[10rem]">
+        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_66rem] items-center gap-[10rem] service-detail-hero-grid">
           <div>
             <nav data-hero-copy aria-label="Breadcrumb" className="invisible text-[1.8rem] text-white/60">
               <ol className="flex items-center gap-[1.2rem]">
@@ -91,7 +91,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                 </p>
               </div>
             )}
-            <div data-hero-copy className="invisible mt-[5.6rem] flex items-center gap-[3.2rem]">
+            <div data-hero-copy className="invisible mt-[5.6rem] flex items-center gap-[3.2rem] service-detail-hero-actions">
               <Link
                 href={`/contact?service=${service.slug}`}
                 className="group inline-flex h-[6.9rem] items-center gap-[2rem] rounded-full border border-white bg-gradient-to-b from-[rgba(32,100,172,0.9)] to-[rgba(49,162,202,0.9)] px-[4rem] text-[2.4rem] transition-[filter] hover:brightness-110"
@@ -110,7 +110,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           </div>
 
           {/* Photo card: navy square tilted behind a slightly tilted photo mask, as on the homepage */}
-          <div data-hero-photo className="invisible relative p-[3rem]">
+          <div data-hero-photo className="invisible relative p-[3rem] service-detail-hero-photo">
             <div aria-hidden className="absolute inset-[3rem] rotate-[4deg] rounded-[4rem] bg-brand-navy" />
             <div className="relative aspect-square rotate-[2deg] overflow-hidden rounded-[4rem] shadow-[0_3rem_8rem_rgba(0,0,0,0.3)]">
               <Image src={service.image} alt={service.alt} fill preload sizes="40vw" className="object-cover" />
@@ -120,8 +120,8 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* Overview */}
-      <section data-reveal-group className="bg-white py-[14rem]">
-        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_56rem] items-start gap-[10rem]">
+      <section data-reveal-group className="bg-white py-[14rem] service-detail-overview">
+        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_56rem] items-start gap-[10rem] service-detail-overview-grid">
           <div>
             <p data-reveal className="invisible text-[1.8rem] uppercase tracking-[0.4rem] text-brand-cyan">
               Overview
@@ -138,7 +138,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           </div>
           <div
             data-reveal
-            className="invisible rounded-[3.2rem] bg-snow p-[4.8rem] shadow-[0_2rem_6rem_rgba(44,60,146,0.08)]"
+            className="invisible rounded-[3.2rem] bg-snow p-[4.8rem] shadow-[0_2rem_6rem_rgba(44,60,146,0.08)] service-detail-included-card"
           >
             <h3 className="text-[1.6rem] uppercase tracking-[0.4rem] text-brand-cyan">What&apos;s included</h3>
             <ul className="mt-[3.2rem] flex flex-col gap-[2.4rem]">
@@ -156,15 +156,15 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* When to call */}
-      <section data-reveal-group className="bg-snow py-[14rem]">
-        <div className="mx-auto w-[164rem]">
+      <section data-reveal-group className="bg-snow py-[14rem] service-detail-signs-section">
+        <div className="mx-auto w-[164rem] service-detail-signs-container">
           <h2
             data-reveal
             className="invisible text-center font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy"
           >
             When to <span className="text-brand-cyan">call us</span>
           </h2>
-          <ul className="mt-[7.2rem] grid grid-cols-4 gap-[2.8rem]">
+          <ul className="mt-[7.2rem] grid grid-cols-4 gap-[2.8rem] service-detail-signs-grid">
             {service.signs.map((sign, i) => (
               <li
                 key={sign}
@@ -182,9 +182,9 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* How it works */}
-      <section data-reveal-group className="bg-white py-[14rem]">
-        <div className="mx-auto w-[164rem]">
-          <div className="flex items-end justify-between">
+      <section data-reveal-group className="bg-white py-[14rem] service-detail-process-section">
+        <div className="mx-auto w-[164rem] service-detail-process-container">
+          <div className="flex items-end justify-between service-detail-process-header">
             <h2
               data-reveal
               className="invisible font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy"
@@ -202,10 +202,10 @@ export function ServiceDetailView({ slug }: { slug: string }) {
               <ArrowIcon className="w-[2.2rem] transition-transform duration-300 group-hover:-translate-y-[0.3rem] group-hover:translate-x-[0.3rem]" />
             </Link>
           </div>
-          <ol className="relative mt-[8rem] grid grid-cols-5 gap-[2.4rem]">
-            <span aria-hidden className="absolute inset-x-[4rem] top-[2.3rem] h-[0.2rem] bg-mist" />
+          <ol className="relative mt-[8rem] grid grid-cols-5 gap-[2.4rem] service-detail-process-steps">
+            <span aria-hidden className="absolute inset-x-[4rem] top-[2.3rem] h-[0.2rem] bg-mist service-detail-line" />
             {PROCESS_STEPS.map((step, i) => (
-              <li key={step.slug} data-reveal className="invisible relative">
+              <li key={step.slug} data-reveal className="invisible relative service-detail-step-card">
                 <span className="relative grid size-[4.6rem] place-items-center rounded-full bg-gradient-to-br from-brand-cyan to-brand-navy font-display text-[1.6rem] text-white">
                   {i + 1}
                 </span>
@@ -220,15 +220,15 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* Other services */}
-      <section data-reveal-group className="bg-snow py-[14rem]">
-        <div className="mx-auto w-[164rem]">
+      <section data-reveal-group className="bg-snow py-[14rem] service-detail-others-section">
+        <div className="mx-auto w-[164rem] service-detail-others-container">
           <h2
             data-reveal
             className="invisible font-display text-[7.2rem] uppercase leading-[0.9] tracking-[-0.3rem] text-brand-navy"
           >
             Other <span className="text-brand-cyan">services</span>
           </h2>
-          <ul className="mt-[5.6rem] grid grid-cols-4 gap-[2.4rem]">
+          <ul className="mt-[5.6rem] grid grid-cols-4 gap-[2.4rem] service-detail-others-grid">
             {others.map((other) => (
               <li key={other.slug} data-reveal className="invisible">
                 <Link

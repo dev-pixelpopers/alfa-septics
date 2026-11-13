@@ -160,7 +160,7 @@ function SepticInstallationDialog({
       {/* Modal Dialog Card */}
       <div
         ref={card}
-        className="relative flex w-full max-w-[76rem] max-h-[90vh] flex-col overflow-y-auto rounded-[3.2rem] border border-brand-navy/15 bg-white p-[3.6rem] sm:p-[5.2rem] text-brand-navy shadow-[0_4rem_12rem_rgba(44,60,146,0.28)]"
+        className="relative flex w-full max-w-[76rem] max-h-[90vh] flex-col overflow-y-auto rounded-[3.2rem] border border-brand-navy/15 bg-white p-[3.6rem] sm:p-[5.2rem] text-brand-navy shadow-[0_4rem_12rem_rgba(44,60,146,0.28)] installation-modal-card"
       >
         {/* Close Button */}
         <button

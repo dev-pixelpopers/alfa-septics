@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="relative">
+    <main className="relative inner-page">
       <PricingView />
     </main>
   );

@@ -54,9 +54,9 @@ export function ContactView({ initialService }: { initialService?: string }) {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="contact-view">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white contact-hero">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
@@ -81,7 +81,7 @@ export function ContactView({ initialService }: { initialService?: string }) {
             we&apos;ll put together a clear, no-obligation estimate.
           </p>
 
-          <ul className="mt-[7.2rem] grid w-full grid-cols-2 gap-[2.4rem]">
+          <ul className="mt-[7.2rem] grid w-full grid-cols-2 gap-[2.4rem] contact-quick-list">
             {QUICK_CONTACTS.map(({ icon: Icon, label, value, href }) => (
               <li key={label} data-quick className="invisible">
                 <Link
@@ -104,19 +104,19 @@ export function ContactView({ initialService }: { initialService?: string }) {
       </section>
 
       {/* Form + sidebar */}
-      <section className="relative z-10 bg-snow py-[14rem]">
-        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_54rem] items-start gap-[4.8rem]">
+      <section className="relative z-10 bg-snow py-[14rem] contact-form-section">
+        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_54rem] items-start gap-[4.8rem] contact-form-grid">
           <div
             data-panel
-            className="invisible rounded-[4rem] bg-white p-[6.4rem] shadow-[0_4rem_12rem_rgba(44,60,146,0.16)]"
+            className="invisible rounded-[4rem] bg-white p-[6.4rem] shadow-[0_4rem_12rem_rgba(44,60,146,0.16)] contact-form-card"
           >
             <ContactForm initialService={initialService} />
           </div>
 
           {/* Sticks below the fixed site header. */}
-          <aside data-panel className="invisible sticky top-[22rem] flex flex-col gap-[3.2rem]">
+          <aside data-panel className="invisible sticky top-[22rem] flex flex-col gap-[3.2rem] contact-sidebar">
             {/* Photo card echoing the homepage's tilted navy square */}
-            <div className="relative px-[2rem] pt-[2rem]">
+            <div className="relative px-[2rem] pt-[2rem] contact-sidebar-photo">
               <div aria-hidden className="absolute inset-x-[2rem] bottom-0 top-[2rem] rotate-[3deg] rounded-[3.2rem] bg-brand-navy" />
               <div className="relative h-[42rem] -rotate-[1.5deg] overflow-hidden rounded-[3.2rem] shadow-[0_2rem_5rem_rgba(0,0,0,0.2)]">
                 <Image
@@ -133,7 +133,7 @@ export function ContactView({ initialService }: { initialService?: string }) {
               </div>
             </div>
 
-            <div className="rounded-[3.2rem] bg-white p-[4.4rem] shadow-[0_2rem_6rem_rgba(44,60,146,0.08)]">
+            <div className="rounded-[3.2rem] bg-white p-[4.4rem] shadow-[0_2rem_6rem_rgba(44,60,146,0.08)] contact-next-card">
               <h2 className="font-display text-[3.2rem] uppercase leading-none text-brand-navy">What happens next</h2>
               <ol className="relative mt-[3.6rem] flex flex-col gap-[3.2rem]">
                 <span aria-hidden className="absolute bottom-[2rem] left-[1.9rem] top-[2rem] w-[0.2rem] bg-mist" />
@@ -155,8 +155,8 @@ export function ContactView({ initialService }: { initialService?: string }) {
       </section>
 
       {/* Recent work */}
-      <section data-work-section className="bg-white py-[14rem]">
-        <div className="mx-auto mb-[5.6rem] flex w-[164rem] items-end justify-between">
+      <section data-work-section className="bg-white py-[14rem] contact-work-section">
+        <div className="mx-auto mb-[5.6rem] flex w-[164rem] items-end justify-between contact-work-header">
           <h2
             data-work
             className="invisible font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy"

@@ -1,0 +1,2397 @@
+/* ==========================================================================
+   ALFA SEPTICS — INNER PAGES RESPONSIVE STYLESHEET
+   Exclusively scoped to inner pages (.inner-page and body:has(.inner-page)).
+   Homepage layout, spacing, and styles remain 100% untouched.
+
+   Target Breakpoints:
+   1680px, 1600px, 1440px, 1366px, 1280px, 1024px, 786px, 425px, 375px, 320px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   BASE STYLES FOR ALL INNER PAGES
+   -------------------------------------------------------------------------- */
+.inner-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.inner-page * {
+  box-sizing: border-box;
+}
+
+body:has(.inner-page) {
+  overflow-x: hidden;
+}
+
+body:has(.inner-page) footer {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.inner-page img {
+  max-width: 100%;
+  height: auto;
+}
+
+.inner-page h1,
+.inner-page h2,
+.inner-page h3,
+.inner-page p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 1680px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1680px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 64px !important;
+    max-width: 56px !important;
+  }
+  .inner-page .w-\[164rem\] {
+    width: 100% !important;
+    max-width: 1560px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .inner-page .w-\[120rem\] {
+    width: 100% !important;
+    max-width: 1180px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 200px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 110px !important;
+    line-height: 0.92 !important;
+    letter-spacing: -4px !important;
+  }
+
+  .inner-page h2 {
+    font-size: 76px !important;
+    letter-spacing: -2.5px !important;
+  }
+
+  .about-hero-photo-wrap {
+    margin-top: -160px !important;
+  }
+
+  .about-hero-photo {
+    width: 90% !important;
+    max-width: 1360px !important;
+    height: 520px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 1600px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1600px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 44px !important;
+    padding-right: 44px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 60px !important;
+    max-width: 52px !important;
+  }
+  .inner-page .w-\[164rem\] {
+    max-width: 1480px !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+  }
+
+  .inner-page .w-\[120rem\] {
+    max-width: 1120px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 185px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 100px !important;
+    line-height: 0.92 !important;
+    letter-spacing: -3.5px !important;
+  }
+
+  .inner-page h2 {
+    font-size: 70px !important;
+    letter-spacing: -2px !important;
+  }
+
+  .about-hero-photo-wrap {
+    margin-top: -140px !important;
+  }
+
+  .about-hero-photo {
+    height: 480px !important;
+    max-width: 1280px !important;
+  }
+
+  .process-step-item {
+    gap: 80px !important;
+  }
+
+  .process-step-number {
+    font-size: 130px !important;
+  }
+
+  .pricing-plan-card > div {
+    padding: 50px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 1440px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1440px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 38px !important;
+    padding-right: 38px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 56px !important;
+    max-width: 48px !important;
+  }
+  .inner-page .w-\[164rem\] {
+    max-width: 1320px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  .inner-page .w-\[120rem\] {
+    max-width: 1040px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 170px !important;
+    padding-bottom: 100px !important;
+  }
+
+  .inner-page section {
+    padding-top: 110px !important;
+    padding-bottom: 110px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 88px !important;
+    line-height: 0.94 !important;
+    letter-spacing: -3px !important;
+  }
+
+  .inner-page section:first-of-type p[data-hero-lede] {
+    font-size: 20px !important;
+    max-width: 680px !important;
+    width: 100% !important;
+  }
+
+  .inner-page h2 {
+    font-size: 62px !important;
+    letter-spacing: -2px !important;
+  }
+
+  .inner-page h3 {
+    font-size: 28px !important;
+  }
+
+  .inner-page p {
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* About */
+  .about-hero-photo-wrap {
+    margin-top: -120px !important;
+  }
+
+  .about-hero-photo {
+    height: 440px !important;
+    max-width: 1200px !important;
+  }
+
+  .about-second-grid {
+    grid-template-columns: 1fr 480px !important;
+    gap: 60px !important;
+  }
+
+  .about-cols {
+    gap: 20px !important;
+  }
+
+  .about-cols li {
+    height: 380px !important;
+    padding: 30px !important;
+  }
+
+  .about-cols h3 {
+    font-size: 30px !important;
+  }
+
+  .about-what {
+    gap: 24px !important;
+  }
+
+  .about-what .relative {
+    height: 260px !important;
+  }
+
+  /* Contact */
+  .contact-form-grid {
+    grid-template-columns: 1fr 460px !important;
+    gap: 36px !important;
+  }
+
+  .contact-form-card {
+    padding: 48px !important;
+  }
+
+  .contact-sidebar-photo .relative.h-\[42rem\] {
+    height: 360px !important;
+  }
+
+  /* Pricing */
+  .pricing-plan-card {
+    grid-template-columns: 1fr 420px !important;
+  }
+
+  .pricing-plan-card .pricing-plan-details {
+    padding: 48px !important;
+  }
+
+  .pricing-plan-card [class*="font-display"][class*="text-[10rem]"] {
+    font-size: 78px !important;
+  }
+
+  .pricing-includes-grid {
+    gap: 20px !important;
+  }
+
+  .pricing-includes-grid li {
+    padding: 32px !important;
+  }
+
+  .pricing-faq-grid {
+    grid-template-columns: 440px 1fr !important;
+    gap: 60px !important;
+  }
+
+  /* Process */
+  .process-step-item {
+    gap: 70px !important;
+  }
+
+  .process-step-number {
+    font-size: 110px !important;
+  }
+
+  .process-step-content h2 {
+    font-size: 56px !important;
+  }
+
+  .process-promises-grid {
+    gap: 24px !important;
+  }
+
+  /* Service Areas */
+  .service-areas-stats div[data-hero-stat] {
+    width: 200px !important;
+    padding: 20px !important;
+  }
+
+  .service-areas-stats dd.text-\[6rem\] {
+    font-size: 48px !important;
+  }
+
+  .area-two-content {
+    padding: 36px !important;
+  }
+
+  .service-areas-counties-grid {
+    gap: 20px !important;
+  }
+
+  /* Services */
+  .services-main-grid {
+    grid-template-columns: 320px 1fr !important;
+    gap: 60px !important;
+  }
+
+  .service-article-image {
+    height: 440px !important;
+  }
+
+  .service-article-detail-grid {
+    grid-template-columns: 1fr 380px !important;
+    gap: 40px !important;
+  }
+
+  .service-article-detail-grid h2 {
+    font-size: 52px !important;
+  }
+
+  .tank-grid li {
+    height: 420px !important;
+  }
+
+  /* Service Detail */
+  .service-detail-hero-grid {
+    grid-template-columns: 1fr 540px !important;
+    gap: 60px !important;
+  }
+
+  .service-detail-hero h1 {
+    font-size: 78px !important;
+  }
+
+  .service-detail-overview-grid {
+    grid-template-columns: 1fr 460px !important;
+    gap: 60px !important;
+  }
+
+  .service-detail-signs-grid {
+    gap: 20px !important;
+  }
+
+  .service-detail-signs-grid li {
+    height: 260px !important;
+  }
+
+  /* CtaBand */
+  .cta-band-title {
+    font-size: 78px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 1366px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1366px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 54px !important;
+    max-width: 46px !important;
+  }
+  .inner-page .w-\[164rem\] {
+    max-width: 1240px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  .inner-page .w-\[120rem\] {
+    max-width: 980px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 160px !important;
+    padding-bottom: 90px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 82px !important;
+    line-height: 0.95 !important;
+    letter-spacing: -2.5px !important;
+  }
+
+  .inner-page section:first-of-type p[data-hero-lede] {
+    font-size: 19px !important;
+    max-width: 640px !important;
+  }
+
+  .inner-page h2 {
+    font-size: 58px !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .inner-page h3 {
+    font-size: 26px !important;
+  }
+
+  .inner-page p {
+    font-size: 16px !important;
+  }
+
+  /* About */
+  .about-hero-photo-wrap {
+    margin-top: -110px !important;
+  }
+
+  .about-hero-photo {
+    height: 400px !important;
+  }
+
+  .about-second-grid {
+    grid-template-columns: 1fr 450px !important;
+    gap: 50px !important;
+  }
+
+  .about-cols li {
+    height: 360px !important;
+    padding: 26px !important;
+  }
+
+  .about-cols li img {
+    height: 75px !important;
+  }
+
+  /* Contact */
+  .contact-form-grid {
+    grid-template-columns: 1fr 420px !important;
+    gap: 32px !important;
+  }
+
+  .contact-form-card {
+    padding: 40px !important;
+  }
+
+  .contact-sidebar-photo .relative.h-\[42rem\] {
+    height: 340px !important;
+  }
+
+  /* Pricing */
+  .pricing-plan-card {
+    grid-template-columns: 1fr 380px !important;
+  }
+
+  .pricing-faq-grid {
+    grid-template-columns: 380px 1fr !important;
+    gap: 50px !important;
+  }
+
+  /* Process */
+  .process-step-item {
+    gap: 60px !important;
+  }
+
+  .process-step-number {
+    font-size: 95px !important;
+  }
+
+  .process-step-content h2 {
+    font-size: 50px !important;
+  }
+
+  /* Services */
+  .services-main-grid {
+    grid-template-columns: 290px 1fr !important;
+    gap: 50px !important;
+  }
+
+  .service-article-image {
+    height: 400px !important;
+  }
+
+  .service-article-detail-grid {
+    grid-template-columns: 1fr 340px !important;
+    gap: 32px !important;
+  }
+
+  /* Service Detail */
+  .service-detail-hero-grid {
+    grid-template-columns: 1fr 480px !important;
+    gap: 50px !important;
+  }
+
+  .service-detail-hero h1 {
+    font-size: 70px !important;
+  }
+
+  .service-detail-overview-grid {
+    grid-template-columns: 1fr 420px !important;
+    gap: 50px !important;
+  }
+
+  /* CtaBand */
+  .cta-band-title {
+    font-size: 70px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 1280px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 52px !important;
+    max-width: 44px !important;
+  }
+  .inner-page .w-\[164rem\] {
+    max-width: 1160px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .inner-page .w-\[120rem\] {
+    max-width: 920px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 150px !important;
+    padding-bottom: 85px !important;
+  }
+
+  .inner-page section {
+    padding-top: 95px !important;
+    padding-bottom: 95px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 74px !important;
+    line-height: 0.95 !important;
+    letter-spacing: -2px !important;
+  }
+
+  .inner-page section:first-of-type p[data-hero-lede] {
+    font-size: 18px !important;
+    max-width: 600px !important;
+  }
+
+  .inner-page h2 {
+    font-size: 52px !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .inner-page h3 {
+    font-size: 24px !important;
+  }
+
+  .inner-page p {
+    font-size: 16px !important;
+  }
+
+  /* About */
+  .about-hero-photo-wrap {
+    margin-top: -90px !important;
+  }
+
+  .about-hero-photo {
+    height: 380px !important;
+  }
+
+  .about-second-grid {
+    grid-template-columns: 1fr 420px !important;
+    gap: 40px !important;
+  }
+
+  .about-cols {
+    gap: 16px !important;
+  }
+
+  .about-cols li {
+    height: 340px !important;
+    padding: 24px !important;
+  }
+
+  .about-cols h3 {
+    font-size: 26px !important;
+  }
+
+  .about-cols li img {
+    height: 70px !important;
+  }
+
+  .about-what .relative {
+    height: 240px !important;
+  }
+
+  .about-what h3 {
+    font-size: 26px !important;
+  }
+
+  /* Contact */
+  .contact-quick-list li a {
+    padding: 20px !important;
+  }
+
+  .contact-quick-list li span.size-\[7\.2rem\] {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .contact-quick-list li span.text-\[2\.4rem\] {
+    font-size: 20px !important;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr 390px !important;
+    gap: 28px !important;
+  }
+
+  .contact-form-card {
+    padding: 36px !important;
+  }
+
+  .contact-sidebar-photo .relative.h-\[42rem\] {
+    height: 320px !important;
+  }
+
+  .contact-next-card {
+    padding: 36px !important;
+  }
+
+  /* Pricing */
+  .pricing-plan-card {
+    grid-template-columns: 1fr 360px !important;
+  }
+
+  .pricing-plan-card [class*="font-display"][class*="text-[10rem]"] {
+    font-size: 70px !important;
+  }
+
+  .pricing-includes-grid {
+    gap: 16px !important;
+  }
+
+  .pricing-includes-grid li {
+    padding: 26px !important;
+  }
+
+  .pricing-includes-grid h3 {
+    font-size: 22px !important;
+  }
+
+  .pricing-faq-grid {
+    grid-template-columns: 340px 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* Process */
+  .process-step-item {
+    gap: 50px !important;
+  }
+
+  .process-step-number {
+    font-size: 85px !important;
+  }
+
+  .process-step-content h2 {
+    font-size: 44px !important;
+  }
+
+  /* Service Areas */
+  .area-two-content {
+    padding: 30px !important;
+  }
+
+  .area-two-content input#area-search {
+    height: 60px !important;
+    font-size: 18px !important;
+  }
+
+  .service-areas-counties-grid {
+    gap: 18px !important;
+  }
+
+  .service-areas-counties-grid li {
+    padding: 28px !important;
+  }
+
+  .service-areas-counties-grid h2 {
+    font-size: 26px !important;
+  }
+
+  /* Services */
+  .services-main-grid {
+    grid-template-columns: 260px 1fr !important;
+    gap: 40px !important;
+  }
+
+  .service-article-image {
+    height: 360px !important;
+  }
+
+  .service-article-detail-grid {
+    grid-template-columns: 1fr 310px !important;
+    gap: 28px !important;
+  }
+
+  .service-article-detail-grid h2 {
+    font-size: 46px !important;
+  }
+
+  .tank-grid li {
+    height: 380px !important;
+  }
+
+  .tank-grid h3 {
+    font-size: 32px !important;
+  }
+
+  /* Service Detail */
+  .service-detail-hero-grid {
+    grid-template-columns: 1fr 420px !important;
+    gap: 40px !important;
+  }
+
+  .service-detail-hero h1 {
+    font-size: 64px !important;
+  }
+
+  .service-detail-overview-grid {
+    grid-template-columns: 1fr 380px !important;
+    gap: 40px !important;
+  }
+
+  .service-detail-signs-grid {
+    gap: 16px !important;
+  }
+
+  .service-detail-signs-grid li {
+    height: 240px !important;
+    padding: 28px !important;
+  }
+
+  .service-detail-signs-grid span {
+    font-size: 48px !important;
+  }
+
+  /* CtaBand */
+  .cta-band-title {
+    font-size: 64px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 1024px — TABLET LANDSCAPE / SMALL LAPTOP
+   Layout reshapes into adaptive grids and stacked columns
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 48px !important;
+    max-width: 42px !important;
+  }
+
+  body:has(.inner-page) header.fixed button.humburger {
+    height: 46px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+  }
+
+  body:has(.inner-page) header.fixed button.hide-mob {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .contact-work-section figure {
+    height: 260px !important;
+  }
+
+  .contact-work-section figure.w-\[26rem\] {
+    width: 200px !important;
+  }
+
+  .contact-work-section figure.w-\[46rem\] {
+    width: 320px !important;
+  }
+
+  .installation-modal-card {
+    width: 100% !important;
+    max-width: 680px !important;
+  }
+  .inner-page .w-\[164rem\],
+  .inner-page .w-\[120rem\] {
+    width: 100% !important;
+    max-width: 960px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 130px !important;
+    padding-bottom: 70px !important;
+  }
+
+  .inner-page section {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 60px !important;
+    line-height: 0.98 !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .inner-page section:first-of-type p[data-hero-lede] {
+    font-size: 17px !important;
+    max-width: 580px !important;
+    width: 100% !important;
+  }
+
+  .inner-page h2 {
+    font-size: 44px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .inner-page h3 {
+    font-size: 22px !important;
+  }
+
+  .inner-page p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Header Menu overlay on tablet */
+  body:has(.inner-page) #site-menu > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 90px 30px 40px !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    overflow-y: auto !important;
+  }
+
+  body:has(.inner-page) #site-menu [data-menu-item] {
+    font-size: 38px !important;
+  }
+
+  body:has(.inner-page) #site-menu [data-menu-aside] {
+    border-left: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding-left: 0 !important;
+    padding-top: 24px !important;
+    gap: 24px !important;
+  }
+
+  /* About */
+  .about-hero-photo-wrap {
+    margin-top: -60px !important;
+  }
+
+  .about-hero-photo {
+    height: 320px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-width: 6px !important;
+  }
+
+  .about-second-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .about-photo-card {
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .about-cols {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .about-cols li {
+    height: 280px !important;
+    padding: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .about-cols li img {
+    height: 60px !important;
+  }
+
+  .about-ctn {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .about-ctn p {
+    width: 100% !important;
+  }
+
+  .about-what {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  .about-what li {
+    border-radius: 24px !important;
+  }
+
+  .about-what .relative {
+    height: 220px !important;
+  }
+
+  .about-what div.p-\[4rem\] {
+    padding: 24px !important;
+  }
+
+  /* Contact */
+  .contact-quick-list {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .contact-form-card {
+    padding: 36px !important;
+    border-radius: 28px !important;
+  }
+
+  .contact-form-card h2 {
+    font-size: 38px !important;
+  }
+
+  .contact-sidebar {
+    position: static !important;
+    width: 100% !important;
+  }
+
+  .contact-sidebar-photo {
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .contact-sidebar-photo .relative.h-\[42rem\] {
+    height: 280px !important;
+  }
+
+  .contact-next-card {
+    padding: 32px !important;
+    border-radius: 24px !important;
+  }
+
+  .contact-work-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .contact-work-header p {
+    width: 100% !important;
+  }
+
+  /* Pricing */
+  .pricing-plan-container {
+    max-width: 760px !important;
+  }
+
+  .pricing-plan-card {
+    grid-template-columns: 1fr !important;
+    border-radius: 28px !important;
+  }
+
+  .pricing-plan-details {
+    padding: 36px !important;
+  }
+
+  .pricing-plan-details h2 {
+    font-size: 38px !important;
+  }
+
+  .pricing-plan-details p.w-\[52rem\] {
+    width: 100% !important;
+  }
+
+  .pricing-plan-card [class*="font-display"][class*="text-[10rem]"] {
+    font-size: 64px !important;
+  }
+
+  .pricing-plan-card .relative.isolate {
+    padding: 36px !important;
+  }
+
+  .pricing-includes-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .pricing-includes-grid li {
+    padding: 28px !important;
+    border-radius: 24px !important;
+  }
+
+  .pricing-faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .pricing-faq-header {
+    position: static !important;
+  }
+
+  .pricing-faq-list details summary {
+    padding: 24px !important;
+    font-size: 19px !important;
+  }
+
+  .pricing-faq-list details p {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  /* Process */
+  .process-steps-list {
+    gap: 80px !important;
+  }
+
+  .process-step-item {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .process-step-photo {
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  .process-step-content {
+    order: 2 !important;
+  }
+
+  .process-step-number {
+    font-size: 72px !important;
+  }
+
+  .process-step-content h2 {
+    font-size: 36px !important;
+    margin-top: 16px !important;
+  }
+
+  .process-step-content p {
+    width: 100% !important;
+  }
+
+  .process-promises-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .process-promises-grid li {
+    padding: 28px !important;
+    border-radius: 24px !important;
+  }
+
+  /* Service Areas */
+  .service-areas-stats {
+    gap: 16px !important;
+  }
+
+  .service-areas-stats div[data-hero-stat] {
+    width: 180px !important;
+    padding: 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .service-areas-stats dd.text-\[6rem\] {
+    font-size: 44px !important;
+  }
+
+  .area-two-content {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    padding: 32px !important;
+    border-radius: 28px !important;
+  }
+
+  .area-two-content p {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .service-areas-counties-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .area-three-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+  }
+
+  .area-three-inner ul {
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Services */
+  .services-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .services-sticky-nav {
+    position: static !important;
+    width: 100% !important;
+  }
+
+  .services-sticky-nav ol {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .services-sticky-nav ol a {
+    padding: 10px 18px !important;
+    font-size: 15px !important;
+    border-radius: 14px !important;
+  }
+
+  .services-sticky-nav ol span {
+    display: none !important;
+  }
+
+  .services-sticky-nav > a {
+    margin-top: 16px !important;
+    padding: 12px 18px !important;
+    font-size: 15px !important;
+  }
+
+  .services-articles-list {
+    gap: 60px !important;
+  }
+
+  .service-article-image {
+    height: 320px !important;
+    border-radius: 24px !important;
+  }
+
+  .service-article-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .service-article-detail-grid h2 {
+    font-size: 38px !important;
+  }
+
+  .service-article-actions a {
+    height: 52px !important;
+    font-size: 16px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .tank-col {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .tank-col p {
+    width: 100% !important;
+  }
+
+  .tank-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .tank-grid li {
+    height: 320px !important;
+    border-radius: 24px !important;
+  }
+
+  .tank-grid h3 {
+    font-size: 28px !important;
+  }
+
+  /* Service Detail */
+  .service-detail-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .service-detail-hero h1 {
+    font-size: 54px !important;
+  }
+
+  .service-detail-hero p.w-\[72rem\] {
+    width: 100% !important;
+  }
+
+  .service-detail-hero-photo {
+    max-width: 440px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .service-detail-hero-actions a {
+    height: 54px !important;
+    font-size: 17px !important;
+  }
+
+  .service-detail-overview-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .service-detail-signs-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .service-detail-signs-grid li {
+    height: 200px !important;
+    padding: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .service-detail-line {
+    display: none !important;
+  }
+
+  .service-detail-process-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .service-detail-process-steps {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    margin-top: 40px !important;
+  }
+
+  .service-detail-others-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* CtaBand */
+  .cta-band-title {
+    font-size: 52px !important;
+    line-height: 1 !important;
+    letter-spacing: -2px !important;
+  }
+
+  .cta-band-desc {
+    width: 100% !important;
+    font-size: 18px !important;
+    margin-top: 20px !important;
+  }
+
+  .cta-all {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+
+  .cta-band-btn {
+    width: 300px !important;
+    height: 54px !important;
+    font-size: 17px !important;
+  }
+
+  .cta-band-phone {
+    font-size: 18px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 786px — TABLET PORTRAIT
+   Single-column stacks and full-width touch elements
+   -------------------------------------------------------------------------- */
+@media (max-width: 786px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 42px !important;
+    max-width: 36px !important;
+  }
+
+  body:has(.inner-page) header.fixed button.humburger {
+    height: 40px !important;
+    padding: 0 14px !important;
+    font-size: 12px !important;
+  }
+
+  .contact-work-section figure {
+    height: 210px !important;
+  }
+
+  .contact-work-section figure.w-\[26rem\] {
+    width: 160px !important;
+  }
+
+  .contact-work-section figure.w-\[46rem\] {
+    width: 260px !important;
+  }
+  .inner-page .w-\[164rem\],
+  .inner-page .w-\[120rem\] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 115px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .inner-page section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 46px !important;
+    line-height: 1 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .inner-page section:first-of-type p[data-hero-lede] {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-top: 20px !important;
+  }
+
+  .inner-page h2 {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  .inner-page h3 {
+    font-size: 20px !important;
+  }
+
+  .inner-page p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Header menu on tablet portrait */
+  body:has(.inner-page) #site-menu > div {
+    padding: 80px 20px 30px !important;
+    gap: 24px !important;
+  }
+
+  body:has(.inner-page) #site-menu [data-menu-item] {
+    font-size: 30px !important;
+  }
+
+  /* Search Modal */
+  div[data-search-card] {
+    max-width: 96vw !important;
+    border-radius: 20px !important;
+  }
+
+  div[data-search-card] > div:first-child {
+    padding: 16px !important;
+    gap: 12px !important;
+  }
+
+  div[data-search-card] div.h-\[6\.4rem\] {
+    height: 52px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  div[data-search-card] button.size-\[6\.4rem\] {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* About */
+  .about-hero-photo-wrap {
+    margin-top: -40px !important;
+  }
+
+  .about-hero-photo {
+    height: 260px !important;
+    border-width: 4px !important;
+  }
+
+  .about-cols {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .about-cols li {
+    height: auto !important;
+    min-height: 200px !important;
+    padding: 22px !important;
+  }
+
+  .about-what {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .about-what .relative {
+    height: 240px !important;
+  }
+
+  /* Contact */
+  .contact-quick-list {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 36px !important;
+  }
+
+  .contact-form-card {
+    padding: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .contact-form-card h2 {
+    font-size: 30px !important;
+  }
+
+  .contact-fields-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Floating inputs on tablet */
+  .contact-form input.h-\[7\.2rem\] {
+    height: 56px !important;
+    padding-top: 24px !important;
+    padding-bottom: 6px !important;
+    padding-left: 18px !important;
+    font-size: 16px !important;
+  }
+
+  .contact-form label[for^="field-"] {
+    left: 18px !important;
+    top: 6px !important;
+    font-size: 12px !important;
+  }
+
+  .contact-form input:placeholder-shown + label[for^="field-"] {
+    top: 17px !important;
+    font-size: 16px !important;
+  }
+
+  .installation-sizing-banner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    padding: 18px !important;
+  }
+
+  .installation-sizing-banner button {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .contact-form-footer {
+    flex-direction: column-reverse !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    padding-top: 24px !important;
+  }
+
+  .contact-form-footer button[type="submit"] {
+    width: 100% !important;
+    height: 52px !important;
+    font-size: 16px !important;
+    justify-content: center !important;
+  }
+
+  .contact-form-footer p {
+    text-align: center !important;
+  }
+
+  .contact-sidebar-photo .relative.h-\[42rem\] {
+    height: 240px !important;
+  }
+
+  .contact-next-card {
+    padding: 24px !important;
+  }
+
+  /* Installation Modal */
+  .installation-modal-card {
+    width: 94vw !important;
+    max-width: 94vw !important;
+    padding: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .installation-modal-card h2 {
+    font-size: 28px !important;
+  }
+
+  .installation-modal-card button.h-\[5\.2rem\] {
+    height: 44px !important;
+    min-width: 44px !important;
+    padding: 0 16px !important;
+    font-size: 16px !important;
+  }
+
+  /* Pricing */
+  .pricing-plan-card [class*="font-display"][class*="text-[10rem]"] {
+    font-size: 52px !important;
+  }
+
+  .pricing-plan-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    margin-top: 28px !important;
+  }
+
+  .pricing-plan-actions a:first-child {
+    width: 100% !important;
+    height: 50px !important;
+    font-size: 16px !important;
+    justify-content: center !important;
+  }
+
+  .pricing-plan-actions a:last-child {
+    justify-content: center !important;
+    font-size: 16px !important;
+  }
+
+  .pricing-includes-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .pricing-faq-list details summary {
+    padding: 20px !important;
+    font-size: 17px !important;
+  }
+
+  /* Process */
+  .process-steps-list {
+    gap: 60px !important;
+  }
+
+  .process-step-number {
+    font-size: 56px !important;
+  }
+
+  .process-step-content h2 {
+    font-size: 28px !important;
+  }
+
+  .process-promises-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Service Areas */
+  .service-areas-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 36px !important;
+  }
+
+  .service-areas-stats div[data-hero-stat] {
+    width: 100% !important;
+    padding: 14px !important;
+  }
+
+  .service-areas-stats dd.text-\[6rem\] {
+    font-size: 36px !important;
+  }
+
+  .service-areas-stats dd.text-\[1\.7rem\] {
+    font-size: 12px !important;
+  }
+
+  .area-two-content input#area-search {
+    height: 52px !important;
+    font-size: 15px !important;
+    padding-left: 56px !important;
+  }
+
+  .service-areas-counties-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Services */
+  .service-article-image {
+    height: 260px !important;
+  }
+
+  .service-article-detail-grid h2 {
+    font-size: 32px !important;
+  }
+
+  .service-article-actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .service-article-actions a {
+    width: 100% !important;
+    height: 48px !important;
+    justify-content: center !important;
+    font-size: 15px !important;
+  }
+
+  .tank-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .tank-grid li {
+    height: 260px !important;
+  }
+
+  /* Service Detail */
+  .service-detail-hero h1 {
+    font-size: 44px !important;
+  }
+
+  .service-detail-hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .service-detail-hero-actions a {
+    width: 100% !important;
+    height: 50px !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+  }
+
+  .service-detail-signs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .service-detail-signs-grid li {
+    height: auto !important;
+    min-height: 140px !important;
+    padding: 20px !important;
+  }
+
+  .service-detail-process-steps {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .service-detail-step-card {
+    display: flex !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+
+  .service-detail-step-card > span {
+    flex-shrink: 0 !important;
+    margin-top: 4px !important;
+  }
+
+  .service-detail-step-card h3 {
+    margin-top: 0 !important;
+  }
+
+  .service-detail-others-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* CtaBand */
+  .cta-band-title {
+    font-size: 42px !important;
+  }
+
+  .cta-band-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 28px auto 0 !important;
+  }
+
+  .cta-band-btn {
+    width: 100% !important;
+    height: 50px !important;
+    font-size: 16px !important;
+    justify-content: center !important;
+  }
+
+  .cta-band-phone {
+    text-align: center !important;
+    font-size: 15px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 425px — LARGE MOBILE
+   -------------------------------------------------------------------------- */
+@media (max-width: 425px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 38px !important;
+    max-width: 32px !important;
+  }
+
+  body:has(.inner-page) header.fixed button.humburger {
+    height: 38px !important;
+    padding: 0 10px !important;
+  }
+
+  .contact-work-section figure {
+    height: 170px !important;
+  }
+
+  .contact-work-section figure.w-\[26rem\] {
+    width: 130px !important;
+  }
+
+  .contact-work-section figure.w-\[46rem\] {
+    width: 210px !important;
+  }
+  .inner-page .w-\[164rem\],
+  .inner-page .w-\[120rem\] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 105px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .inner-page section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 36px !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  .inner-page section:first-of-type p[data-hero-lede] {
+    font-size: 15px !important;
+  }
+
+  .inner-page h2 {
+    font-size: 28px !important;
+  }
+
+  .inner-page h3 {
+    font-size: 18px !important;
+  }
+
+  .inner-page p {
+    font-size: 14px !important;
+  }
+
+  /* Menu */
+  body:has(.inner-page) #site-menu > div {
+    padding: 70px 16px 24px !important;
+  }
+
+  body:has(.inner-page) #site-menu [data-menu-item] {
+    font-size: 24px !important;
+    gap: 14px !important;
+  }
+
+  /* Search */
+  div[data-search-card] div.h-\[6\.4rem\] {
+    height: 48px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  div[data-search-card] button.size-\[6\.4rem\] {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* About */
+  .about-hero-photo-wrap {
+    margin-top: -30px !important;
+  }
+
+  .about-hero-photo {
+    height: 210px !important;
+    border-width: 3px !important;
+  }
+
+  .about-creds-list {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .about-creds-list li {
+    font-size: 14px !important;
+  }
+
+  /* Contact */
+  .contact-quick-list li a {
+    padding: 16px !important;
+    gap: 14px !important;
+  }
+
+  .contact-quick-list li span.size-\[7\.2rem\] {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .contact-quick-list li span.text-\[2\.4rem\] {
+    font-size: 18px !important;
+  }
+
+  .contact-form-card {
+    padding: 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .contact-form-card h2 {
+    font-size: 26px !important;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 15px !important;
+  }
+
+  .contact-form input.h-\[7\.2rem\] {
+    height: 50px !important;
+  }
+
+  .contact-form input:placeholder-shown + label[for^="field-"] {
+    top: 14px !important;
+    font-size: 15px !important;
+  }
+
+  .contact-form label span {
+    font-size: 14px !important;
+  }
+
+  .installation-modal-card {
+    padding: 20px !important;
+    border-radius: 20px !important;
+  }
+
+  .installation-modal-card h2 {
+    font-size: 24px !important;
+  }
+
+  /* Pricing */
+  .pricing-plan-card {
+    border-radius: 20px !important;
+  }
+
+  .pricing-plan-card [class*="font-display"][class*="text-[10rem]"] {
+    font-size: 46px !important;
+  }
+
+  .pricing-plan-details {
+    padding: 22px !important;
+  }
+
+  .pricing-plan-card .relative.isolate {
+    padding: 22px !important;
+  }
+
+  .pricing-plan-card .relative.isolate li {
+    font-size: 15px !important;
+    gap: 12px !important;
+  }
+
+  .pricing-plan-card .relative.isolate span.size-\[4rem\] {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  /* Process */
+  .process-step-number {
+    font-size: 48px !important;
+  }
+
+  .process-step-content h2 {
+    font-size: 24px !important;
+  }
+
+  .process-step-photo {
+    height: 240px !important;
+  }
+
+  /* Service Areas */
+  .service-areas-stats dd.text-\[6rem\] {
+    font-size: 30px !important;
+  }
+
+  .service-areas-stats dd.text-\[1\.7rem\] {
+    font-size: 11px !important;
+  }
+
+  .area-two-content {
+    padding: 20px !important;
+  }
+
+  /* Services */
+  .service-article-image {
+    height: 200px !important;
+  }
+
+  .service-article-detail-grid h2 {
+    font-size: 26px !important;
+  }
+
+  /* Service Detail */
+  .service-detail-hero h1 {
+    font-size: 36px !important;
+  }
+
+  .service-detail-hero nav {
+    font-size: 13px !important;
+  }
+
+  .service-detail-hero span.text-\[9\.6rem\] {
+    font-size: 44px !important;
+  }
+
+  /* CtaBand */
+  .cta-band-title {
+    font-size: 34px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 375px — STANDARD MOBILE
+   -------------------------------------------------------------------------- */
+@media (max-width: 375px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 35px !important;
+    max-width: 30px !important;
+  }
+
+  body:has(.inner-page) header.fixed button.humburger {
+    height: 36px !important;
+    padding: 0 10px !important;
+  }
+
+  .contact-work-section figure {
+    height: 150px !important;
+  }
+
+  .contact-work-section figure.w-\[26rem\] {
+    width: 120px !important;
+  }
+
+  .contact-work-section figure.w-\[46rem\] {
+    width: 190px !important;
+  }
+  .inner-page .w-\[164rem\],
+  .inner-page .w-\[120rem\] {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 100px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .inner-page section {
+    padding-top: 44px !important;
+    padding-bottom: 44px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 32px !important;
+    line-height: 1 !important;
+  }
+
+  .inner-page section:first-of-type p[data-hero-lede] {
+    font-size: 14px !important;
+  }
+
+  .inner-page h2 {
+    font-size: 26px !important;
+  }
+
+  .inner-page h3 {
+    font-size: 18px !important;
+  }
+
+  .inner-page p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* About */
+  .about-hero-photo-wrap {
+    margin-top: -24px !important;
+  }
+
+  .about-hero-photo {
+    height: 190px !important;
+  }
+
+  /* Contact */
+  .contact-quick-list li a {
+    padding: 14px !important;
+  }
+
+  .contact-quick-list li span.size-\[7\.2rem\] {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .contact-quick-list li span.text-\[2\.4rem\] {
+    font-size: 17px !important;
+  }
+
+  .contact-form-card {
+    padding: 16px !important;
+  }
+
+  .contact-form-card h2 {
+    font-size: 24px !important;
+  }
+
+  .installation-modal-card {
+    padding: 16px !important;
+  }
+
+  /* Pricing */
+  .pricing-plan-card [class*="font-display"][class*="text-[10rem]"] {
+    font-size: 42px !important;
+  }
+
+  .pricing-faq-list details summary {
+    font-size: 16px !important;
+    padding: 18px 14px !important;
+  }
+
+  /* Process */
+  .process-step-number {
+    font-size: 44px !important;
+  }
+
+  .process-step-content h2 {
+    font-size: 22px !important;
+  }
+
+  /* Service Areas */
+  .service-areas-stats {
+    gap: 6px !important;
+  }
+
+  .service-areas-stats div[data-hero-stat] {
+    padding: 8px 4px !important;
+  }
+
+  .service-areas-stats dd.text-\[6rem\] {
+    font-size: 26px !important;
+  }
+
+  .service-areas-stats dd.text-\[1\.7rem\] {
+    font-size: 10px !important;
+  }
+
+  .service-areas-counties-grid li {
+    padding: 18px !important;
+  }
+
+  .service-areas-counties-grid h2 {
+    font-size: 22px !important;
+  }
+
+  /* Services */
+  .service-article-image {
+    height: 190px !important;
+  }
+
+  .service-article-detail-grid h2 {
+    font-size: 24px !important;
+  }
+
+  /* Service Detail */
+  .service-detail-hero h1 {
+    font-size: 30px !important;
+  }
+
+  /* CtaBand */
+  .cta-band-title {
+    font-size: 30px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: 320px — SMALL MOBILE
+   Compact spacing and scaled typography to prevent overflow on 320px screens
+   -------------------------------------------------------------------------- */
+@media (max-width: 320px) {
+  body:has(.inner-page) header.fixed {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  body:has(.inner-page) header.fixed a img {
+    width: auto !important;
+    height: 32px !important;
+    max-width: 28px !important;
+  }
+
+  body:has(.inner-page) header.fixed button.humburger {
+    height: 34px !important;
+    padding: 0 8px !important;
+  }
+
+  .contact-work-section figure {
+    height: 130px !important;
+  }
+
+  .contact-work-section figure.w-\[26rem\] {
+    width: 105px !important;
+  }
+
+  .contact-work-section figure.w-\[46rem\] {
+    width: 165px !important;
+  }
+
+  .cta-band-actions {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .cta-band-btn {
+    width: 100% !important;
+  }
+  .inner-page .w-\[164rem\],
+  .inner-page .w-\[120rem\] {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .inner-page section:first-of-type {
+    padding-top: 95px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .inner-page section {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .inner-page h1 {
+    font-size: 26px !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .inner-page section:first-of-type p[data-hero-lede] {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .inner-page h2 {
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+  }
+
+  .inner-page h3 {
+    font-size: 16px !important;
+  }
+
+  .inner-page p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .inner-page a,
+  .inner-page button {
+    font-size: 14px !important;
+  }
+
+  /* About */
+  .about-hero-photo-wrap {
+    margin-top: -20px !important;
+  }
+
+  .about-hero-photo {
+    height: 160px !important;
+    border-width: 2px !important;
+  }
+
+  .about-cols li {
+    padding: 14px !important;
+  }
+
+  .about-what div.p-\[4rem\] {
+    padding: 16px !important;
+  }
+
+  /* Contact */
+  .contact-quick-list li a {
+    padding: 12px !important;
+  }
+
+  .contact-quick-list li span.size-\[7\.2rem\] {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .contact-quick-list li span.text-\[2\.4rem\] {
+    font-size: 15px !important;
+  }
+
+  .contact-form-card {
+    padding: 12px !important;
+  }
+
+  .contact-form-card h2 {
+    font-size: 22px !important;
+  }
+
+  .installation-modal-card {
+    padding: 12px !important;
+  }
+
+  /* Pricing */
+  .pricing-plan-details {
+    padding: 16px !important;
+  }
+
+  .pricing-plan-card .relative.isolate {
+    padding: 16px !important;
+  }
+
+  .pricing-plan-card [class*="font-display"][class*="text-[10rem]"] {
+    font-size: 36px !important;
+  }
+
+  .pricing-faq-list details summary {
+    font-size: 15px !important;
+    padding: 14px 10px !important;
+  }
+
+  /* Process */
+  .process-step-number {
+    font-size: 38px !important;
+  }
+
+  .process-step-content h2 {
+    font-size: 20px !important;
+  }
+
+  .process-step-photo {
+    height: 180px !important;
+  }
+
+  /* Service Areas */
+  .service-areas-stats {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+
+  .service-areas-stats div[data-hero-stat] {
+    width: 100% !important;
+    padding: 10px !important;
+  }
+
+  .service-areas-stats dd.text-\[6rem\] {
+    font-size: 24px !important;
+  }
+
+  .service-areas-stats dd.text-\[1\.7rem\] {
+    font-size: 11px !important;
+  }
+
+  .area-two-content {
+    padding: 14px !important;
+  }
+
+  .service-areas-counties-grid li {
+    padding: 14px !important;
+  }
+
+  /* Services */
+  .service-article-image {
+    height: 170px !important;
+  }
+
+  .service-article-detail-grid h2 {
+    font-size: 22px !important;
+  }
+
+  /* Service Detail */
+  .service-detail-hero h1 {
+    font-size: 26px !important;
+  }
+
+  /* CtaBand */
+  .cta-band-title {
+    font-size: 26px !important;
+  }
+
+  .cta-band-desc {
+    font-size: 13px !important;
+  }
+}

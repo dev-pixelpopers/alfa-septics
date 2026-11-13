@@ -52,9 +52,9 @@ export function ServiceAreasView() {
   );
 
   return (
-    <div ref={root} className="service-inner">
+    <div ref={root} className="service-areas-view service-inner">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white service-areas-hero">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
@@ -78,7 +78,7 @@ export function ServiceAreasView() {
             Our crews and equipment cover homes, businesses, and new construction across the region. Find your county
             below, or call and we&apos;ll confirm we can reach your site.
           </p>
-          <dl className="mt-[6.4rem] flex gap-[2.4rem]">
+          <dl className="mt-[6.4rem] flex gap-[2.4rem] service-areas-stats">
             {[
               { value: SERVICE_AREAS.length, label: "Counties" },
               { value: `${TOWN_COUNT}+`, label: "Communities" },
@@ -129,7 +129,7 @@ export function ServiceAreasView() {
             </p>
           </div>
 
-          <ul data-reveal-group className="mt-[6.4rem] grid grid-cols-3 gap-[2.8rem]">
+          <ul data-reveal-group className="mt-[6.4rem] grid grid-cols-3 gap-[2.8rem] service-areas-counties-grid">
             {SERVICE_AREAS.map((area) => {
               const shown = visible.includes(area);
               return (
@@ -187,7 +187,7 @@ export function ServiceAreasView() {
       </section>
 
       {/* Services available everywhere */}
-      <section data-reveal-group className="bg-white py-[14rem] area-three">
+      <section data-reveal-group className="bg-white py-[14rem] area-three service-areas-everywhere">
         <div className="mx-auto flex w-[164rem] items-center justify-between gap-[8rem] area-three-inner">
           <h2
             data-reveal

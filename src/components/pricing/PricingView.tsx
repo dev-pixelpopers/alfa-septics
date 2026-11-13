@@ -76,9 +76,9 @@ export function PricingView() {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="pricing-view">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[16rem] pt-[24rem] text-white pricing-hero">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
@@ -106,13 +106,13 @@ export function PricingView() {
       </section>
 
       {/* Plan card */}
-      <section className="relative z-10 bg-snow py-[14rem]">
-        <div className="mx-auto w-[120rem]">
+      <section className="relative z-10 bg-snow py-[14rem] pricing-plan-section">
+        <div className="mx-auto w-[120rem] pricing-plan-container">
           <div
             data-plan
-            className="invisible grid grid-cols-[1fr_48rem] overflow-hidden rounded-[4rem] bg-white shadow-[0_4rem_12rem_rgba(44,60,146,0.18)]"
+            className="invisible grid grid-cols-[1fr_48rem] overflow-hidden rounded-[4rem] bg-white shadow-[0_4rem_12rem_rgba(44,60,146,0.18)] pricing-plan-card"
           >
-            <div className="p-[6.4rem]">
+            <div className="p-[6.4rem] pricing-plan-details">
               <span className="inline-block rounded-full bg-mist px-[2rem] py-[0.8rem] text-[1.6rem] uppercase tracking-[0.3rem] text-brand-navy">
                 Most popular
               </span>
@@ -126,7 +126,7 @@ export function PricingView() {
                 </span>
                 <span className="pb-[0.6rem] text-[2.6rem] text-ink-muted">Per&nbsp;{PLAN.period}</span>
               </p>
-              <div className="mt-[5.6rem] flex items-center gap-[3.2rem]">
+              <div className="mt-[5.6rem] flex items-center gap-[3.2rem] pricing-plan-actions">
                 <Link
                   href="/contact?service=maintenance"
                   className="group inline-flex h-[7.2rem] items-center gap-[2rem] rounded-full bg-gradient-to-r from-brand-cyan to-brand-navy px-[4.4rem] text-[2.4rem] text-white shadow-[0_1.6rem_3.2rem_rgba(44,60,146,0.35)] transition-all duration-300 hover:-translate-y-[0.3rem]"
@@ -174,15 +174,15 @@ export function PricingView() {
       </section>
 
       {/* Included */}
-      <section data-reveal-group className="bg-white py-[14rem]">
-        <div className="mx-auto w-[164rem]">
+      <section data-reveal-group className="bg-white py-[14rem] pricing-includes-section">
+        <div className="mx-auto w-[164rem] pricing-includes-container">
           <h2
             data-reveal
             className="invisible text-center font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy"
           >
             Every contract <span className="text-brand-cyan">includes</span>
           </h2>
-          <ul className="mt-[7.2rem] grid grid-cols-4 gap-[2.8rem]">
+          <ul className="mt-[7.2rem] grid grid-cols-4 gap-[2.8rem] pricing-includes-grid">
             {INCLUDED.map((item) => (
               <li
                 key={item.title}
@@ -203,9 +203,9 @@ export function PricingView() {
       </section>
 
       {/* FAQs */}
-      <section data-reveal-group className="bg-snow py-[14rem]">
-        <div className="mx-auto grid w-[164rem] grid-cols-[56rem_1fr] items-start gap-[10rem]">
-          <div data-reveal className="invisible sticky top-[22rem]">
+      <section data-reveal-group className="bg-snow py-[14rem] pricing-faq-section">
+        <div className="mx-auto grid w-[164rem] grid-cols-[56rem_1fr] items-start gap-[10rem] pricing-faq-grid">
+          <div data-reveal className="invisible sticky top-[22rem] pricing-faq-header">
             <h2 className="font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy">
               Contract
               <br />
@@ -223,7 +223,7 @@ export function PricingView() {
               .
             </p>
           </div>
-          <div className="flex flex-col gap-[1.6rem]">
+          <div className="flex flex-col gap-[1.6rem] pricing-faq-list">
             {FAQS.map((faq, i) => (
               <details
                 key={faq.q}

@@ -16,7 +16,7 @@ export default async function ContactPage({
   const { service } = await searchParams;
 
   return (
-    <main className="relative">
+    <main className="relative inner-page">
       <ContactView initialService={typeof service === "string" ? service : undefined} />
     </main>
   );

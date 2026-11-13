@@ -76,10 +76,10 @@ export function AboutView() {
       </section>
 
       {/* Framed job-site photo overlapping the hero */}
-      <div className="relative z-10 -mt-[24rem] flex justify-center">
+      <div className="relative z-10 -mt-[24rem] flex justify-center about-hero-photo-wrap">
         <div
           data-hero-photo
-          className="invisible relative h-[65.5rem] w-[142.5rem] border-[1rem] border-white shadow-[0_4rem_12rem_rgba(44,60,146,0.25)]"
+          className="invisible relative h-[65.5rem] w-[142.5rem] border-[1rem] border-white shadow-[0_4rem_12rem_rgba(44,60,146,0.25)] about-hero-photo"
         >
           <Image
             src={projectPhoto("crane-truck-site")}
@@ -94,7 +94,7 @@ export function AboutView() {
 
       {/* Who we are */}
       <section data-reveal-group className="bg-white py-[16rem] about-second">
-        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_62rem] items-center gap-[12rem]">
+        <div className="mx-auto grid w-[164rem] grid-cols-[1fr_62rem] items-center gap-[12rem] about-second-grid">
           <div>
             <p data-reveal className="invisible text-[1.8rem] uppercase tracking-[0.4rem] text-brand-cyan">
               Who we are
@@ -114,7 +114,7 @@ export function AboutView() {
               Because the same crew evaluates, plans, permits, and builds your system, you get one point of contact,
               straight answers, and a site that&apos;s ready for county inspection when we&apos;re done.
             </p>
-            <ul data-reveal className="invisible mt-[4.8rem] grid grid-cols-2 gap-[2rem]">
+            <ul data-reveal className="invisible mt-[4.8rem] grid grid-cols-2 gap-[2rem] about-creds-list">
               {CREDENTIALS.map((credential) => (
                 <li key={credential} className="flex items-center gap-[1.6rem] text-[2rem] text-brand-navy">
                   <span className="grid size-[3.2rem] shrink-0 place-items-center rounded-full bg-gradient-to-br from-brand-cyan to-brand-navy text-white">
@@ -127,7 +127,7 @@ export function AboutView() {
           </div>
 
           {/* Photo card: navy square tilted behind a slightly tilted photo mask, as on the homepage */}
-          <div data-reveal className="invisible relative p-[3rem]">
+          <div data-reveal className="invisible relative p-[3rem] about-photo-card">
             <div aria-hidden className="absolute inset-[3rem] rotate-[4deg] bg-brand-navy" />
             <div className="relative aspect-[4/5] rotate-[2deg] overflow-hidden">
               <Image

@@ -81,9 +81,9 @@ export function ServicesView() {
   );
 
   return (
-    <div ref={root} className="service-inner">
+    <div ref={root} className="services-view service-inner">
       {/* Hero — same cyan wash as the homepage services scene */}
-      <section className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#3fcdf1_0%,#2b9fdc_55%,#2c3c92_100%)] pb-[18rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#3fcdf1_0%,#2b9fdc_55%,#2c3c92_100%)] pb-[18rem] pt-[24rem] text-white services-hero">
         <div className="mx-auto flex w-[164rem] flex-col items-center text-center">
           <p data-hero-lede className="invisible text-[2rem] uppercase tracking-[0.6rem] text-white/80">
             Our Services
@@ -108,8 +108,8 @@ export function ServicesView() {
 
       {/* Sticky index + service panels */}
       <section className="bg-snow py-[14rem]">
-        <div className="mx-auto grid w-[164rem] grid-cols-[38rem_1fr] items-start gap-[10rem] service-second">
-          <nav data-index aria-label="Services" className="invisible sticky top-[22rem]">
+        <div className="mx-auto grid w-[164rem] grid-cols-[38rem_1fr] items-start gap-[10rem] service-second services-main-grid">
+          <nav data-index aria-label="Services" className="invisible sticky top-[22rem] services-sticky-nav">
             <p className="text-[1.6rem] uppercase tracking-[0.4rem] text-ink-soft">{SERVICES.length} services</p>
             <ol className="mt-[2.4rem] flex flex-col gap-[0.8rem]">
               {SERVICES.map((service, i) => (
@@ -142,14 +142,14 @@ export function ServicesView() {
             </Link>
           </nav>
 
-          <div className="flex flex-col gap-[10rem]">
+          <div className="flex flex-col gap-[10rem] services-articles-list">
             {SERVICES.map((service, i) => (
-              <article key={service.slug} id={service.slug} data-panel className="scroll-mt-[20rem]">
+              <article key={service.slug} id={service.slug} data-panel className="scroll-mt-[20rem] service-article-card">
                 <Link
                   data-panel-image
                   href={servicePath(service.slug)}
                   tabIndex={-1}
-                  className="group invisible relative block h-[56rem] overflow-hidden rounded-[4rem] shadow-[0_3rem_8rem_rgba(44,60,146,0.18)]"
+                  className="group invisible relative block h-[56rem] overflow-hidden rounded-[4rem] shadow-[0_3rem_8rem_rgba(44,60,146,0.18)] service-article-image"
                 >
                   <Image
                     src={service.image}
@@ -162,7 +162,7 @@ export function ServicesView() {
                     {number(i)}
                   </span>
                 </Link>
-                <div className="mt-[5.6rem] grid grid-cols-[1fr_46rem] gap-[6rem]">
+                <div className="mt-[5.6rem] grid grid-cols-[1fr_46rem] gap-[6rem] service-article-detail-grid">
                   <div>
                     <h2
                       data-panel-copy
@@ -189,7 +189,7 @@ export function ServicesView() {
                         </p>
                       </div>
                     )}
-                    <div data-panel-copy className="invisible mt-[4rem] flex items-center gap-[1.6rem]">
+                    <div data-panel-copy className="invisible mt-[4rem] flex items-center gap-[1.6rem] service-article-actions">
                       <Link
                         href={servicePath(service.slug)}
                         className="group inline-flex h-[6.4rem] items-center gap-[1.6rem] rounded-full bg-gradient-to-r from-brand-cyan to-brand-navy px-[3.6rem] text-[2.2rem] text-white shadow-[0_1.6rem_3.2rem_rgba(44,60,146,0.3)] transition-all duration-300 hover:-translate-y-[0.3rem]"
@@ -226,7 +226,7 @@ export function ServicesView() {
       </section>
 
       {/* Site work */}
-      <section data-site-work-section className="bg-white py-[14rem]">
+      <section data-site-work-section className="bg-white py-[14rem] services-sitework-section">
         <div className="mx-auto w-[164rem]">
           <div className="flex items-end justify-between tank-col">
             <h2 className="font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy">

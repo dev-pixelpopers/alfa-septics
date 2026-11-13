@@ -73,9 +73,9 @@ export function ProcessView() {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="process-view">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pb-[20rem] pt-[24rem] text-white">
+      <section className="relative isolate overflow-hidden pb-[20rem] pt-[24rem] text-white process-hero">
         <div className="absolute inset-0 -z-10">
           <BrandBackground />
         </div>
@@ -103,8 +103,8 @@ export function ProcessView() {
       </section>
 
       {/* Steps */}
-      <section className="bg-snow py-[16rem]">
-        <ol className="mx-auto flex w-[164rem] flex-col gap-[16rem]">
+      <section className="bg-snow py-[16rem] process-steps-section">
+        <ol className="mx-auto flex w-[164rem] flex-col gap-[16rem] process-steps-list">
           {PROCESS_STEPS.map((step, i) => {
             const photoLeft = i % 2 === 0;
             return (
@@ -113,10 +113,10 @@ export function ProcessView() {
                 id={step.slug}
                 data-step
                 data-side={photoLeft ? "left" : "right"}
-                className="grid scroll-mt-[20rem] grid-cols-2 items-center gap-[12rem]"
+                className="grid scroll-mt-[20rem] grid-cols-2 items-center gap-[12rem] process-step-item"
               >
                 {/* Photo card: navy square tilted behind a slightly tilted photo mask, as on the homepage */}
-                <div data-step-photo className={`invisible relative px-[3rem] py-[3rem] ${photoLeft ? "" : "order-2"}`}>
+                <div data-step-photo className={`invisible relative px-[3rem] py-[3rem] process-step-photo ${photoLeft ? "" : "order-2"}`}>
                   <div
                     aria-hidden
                     className={`absolute inset-[3rem] bg-brand-navy ${photoLeft ? "rotate-[4deg]" : "-rotate-[4deg]"}`}
@@ -130,10 +130,10 @@ export function ProcessView() {
                   </div>
                 </div>
 
-                <div>
+                <div className="process-step-content">
                   <p
                     data-step-copy
-                    className="invisible font-display text-[16rem] font-black leading-[0.8] text-transparent [-webkit-text-stroke:0.2rem_var(--color-brand-cyan)]"
+                    className="invisible font-display text-[16rem] font-black leading-[0.8] text-transparent [-webkit-text-stroke:0.2rem_var(--color-brand-cyan)] process-step-number"
                   >
                     {number(i)}
                   </p>
@@ -164,12 +164,12 @@ export function ProcessView() {
       </section>
 
       {/* Promises */}
-      <section data-promises className="bg-white py-[14rem]">
-        <div className="mx-auto w-[164rem]">
+      <section data-promises className="bg-white py-[14rem] process-promises-section">
+        <div className="mx-auto w-[164rem] process-promises-container">
           <h2 className="text-center font-display text-[9rem] uppercase leading-[0.9] tracking-[-0.4rem] text-brand-navy">
             Why it <span className="text-brand-cyan">works</span>
           </h2>
-          <ul className="mt-[7.2rem] grid grid-cols-3 gap-[3.2rem]">
+          <ul className="mt-[7.2rem] grid grid-cols-3 gap-[3.2rem] process-promises-grid">
             {PROMISES.map((promise) => (
               <li
                 key={promise.title}

@@ -119,7 +119,7 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
           event.currentTarget.querySelector<HTMLElement>(`[name="${firstKey}"]`)?.focus();
         }
       }}
-      className="flex flex-col gap-[5.6rem]"
+      className="flex flex-col gap-[5.6rem] contact-form"
     >
       <header>
         <p className="text-[1.8rem] uppercase tracking-[0.4rem] text-brand-cyan">Free estimate</p>
@@ -218,7 +218,7 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
 
         {/* Septic Installation Sizing Details Preview Banner */}
         {values.services.includes("installation") && (
-          <div className="mt-[2.4rem] flex flex-wrap items-center justify-between gap-[2rem] rounded-[2.4rem] border-[0.2rem] border-brand-cyan/40 bg-gradient-to-r from-brand-cyan/10 via-mist/60 to-brand-navy/5 p-[2.4rem_3.2rem]">
+          <div className="mt-[2.4rem] flex flex-wrap items-center justify-between gap-[2rem] rounded-[2.4rem] border-[0.2rem] border-brand-cyan/40 bg-gradient-to-r from-brand-cyan/10 via-mist/60 to-brand-navy/5 p-[2.4rem_3.2rem] installation-sizing-banner">
             <div className="flex items-center gap-[1.8rem]">
               <span className="grid size-[4.8rem] shrink-0 place-items-center rounded-[1.6rem] bg-brand-navy text-white shadow-[0_0.8rem_2rem_rgba(44,60,146,0.25)]">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="size-[2.6rem]">
@@ -303,7 +303,7 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
       </Step>
 
       <Step number={3} title="How can we reach you?">
-        <div className="grid grid-cols-2 gap-x-[2.4rem] gap-y-[2.8rem]">
+        <div className="grid grid-cols-2 gap-x-[2.4rem] gap-y-[2.8rem] contact-fields-grid">
           <FloatingInput
             name="firstName"
             label="First name"
@@ -365,7 +365,7 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
         </div>
       </Step>
 
-      <div className="flex items-center justify-between gap-[3rem] border-t border-brand-navy/10 pt-[4rem]">
+      <div className="flex items-center justify-between gap-[3rem] border-t border-brand-navy/10 pt-[4rem] contact-form-footer">
         <p className="text-[1.8rem] leading-[1.5] text-ink-muted">
           Prefer to talk?{" "}
           <a href={CONTACT.phoneHref} className="text-brand-navy underline decoration-brand-cyan underline-offset-[0.4rem]">

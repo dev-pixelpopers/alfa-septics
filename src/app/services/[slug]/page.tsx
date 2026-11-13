@@ -26,7 +26,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
   if (!findService(slug)) notFound();
 
   return (
-    <main className="relative">
+    <main className="relative inner-page">
       {/* Keyed so moving between services remounts and replays the entrance. */}
       <ServiceDetailView key={slug} slug={slug} />
     </main>

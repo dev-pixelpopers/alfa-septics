@@ -600,4 +600,35 @@ li#site-evaluation {
 section#gallery .absolute.left-\[calc\(50\%-42\.3rem\)\].top-\[8rem\].h-\[85\.3rem\].w-\[86rem\].bg-cloud.max-sm\:left-0\!.max-sm\:top-\[calc\(50\%-\(var\(--gallery-hero\)\+248px\)\/2\+36px\)\]\!.max-sm\:h-\[calc\(var\(--gallery-hero\)\+176px\)\].max-sm\:w-full {
     display: none;
 }
+.service-areas-counties-grid h2 {
+    font-size: 24px !important;
+}
+.service-article-detail-grid li span {
+    width: 20px;
+    height: 20px;
+}
+
+.service-article-detail-grid li span svg {
+    width: 15px;
+    height: 15px;
+}
+.service-article-detail-grid p {
+    width: 100% !important;
+}
+.service-article-actions a svg {
+    width: 10px;
+    height: 10px;
+}
+.services-sticky-nav p {
+    width: 100% !important;
+}
+.about-creds-list li span {
+    width: 20px;
+    height: 20px;
+}
+
+.about-creds-list li span svg {
+    width: 15px;
+    height: 15px;
+}
 }

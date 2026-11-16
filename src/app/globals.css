@@ -348,6 +348,44 @@ section#reviews ul blockquote {
 .txt-header p {
     font-size: 12px;
 }
+.about-creds-list li {
+    font-size: 14px;
+}
+    .about-what a span.mt-auto {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+    }
+        .contact-form-grid aside.invisible {
+        gap: 40px;
+    }
+    .contact-work-section .contact-work-header {
+        text-align: center;
+    }
+    .contact-work-section .contact-work-header h2 {
+    width: 100% !important;
+}
+.service-detail-hero-grid .service-detail-hero-photo {
+    order: 1;
+    max-width: 100% !important;
+}
+.service-detail-hero-grid div:first-child {
+    order: 2;
+}
+.service-detail-overview-grid ul li {
+    font-size: 14px;
+}
+.service-detail-process-steps li {
+    flex-direction: column;
+    text-align: center;
+    align-items: center !important;
+}
+.service-detail-hero-grid, .service-detail-signs-grid li {
+    text-align: center;
+}
+.service-detail-hero-grid nav ol {
+    justify-content: center;
+    font-size: 12px;
+}
 }
 
 @media (max-width: 981px) {
@@ -418,28 +456,7 @@ section#reviews ul blockquote {
 .service-detail-others-container {
     text-align: center;
 }
-.service-detail-hero-grid nav ol {
-    justify-content: center;
-    font-size: 12px;
-}
-.service-detail-hero-grid, .service-detail-signs-grid li {
-    text-align: center;
-}
-.service-detail-hero-grid .service-detail-hero-photo {
-    order: 1;
-    max-width: 100% !important;
-}
-.service-detail-hero-grid div:first-child {
-    order: 2;
-}
-.service-detail-overview-grid ul li {
-    font-size: 14px;
-}
-.service-detail-process-steps li {
-    flex-direction: column;
-    text-align: center;
-    align-items: center !important;
-}
+
 .service-detail-process-header {
     align-items: center !important;
     text-align: center;
@@ -462,10 +479,10 @@ section#reviews ul blockquote {
     text-align: center;
 }
 
-.service-article-detail-grid .invisible ul {
-    justify-content: center;
-    align-items: center;
-}
+    .service-article-detail-grid .invisible ul {
+        justify-content: center;
+        text-align: left;
+    }
 
 .service-article-detail-grid .invisible p {
     justify-content: center;
@@ -770,5 +787,50 @@ section#gallery .absolute.left-\[calc\(50\%-42\.3rem\)\].top-\[8rem\].h-\[85\.3r
     }
 .service-detail-hero-grid p {
     width: 100% !important;
+}
+.service-article-detail-grid p.mt-\[1\.2rem\].flex.items-end.gap-\[1rem\].text-brand-navy span.font-display, .service-detail-hero-grid p.mt-\[1\.4rem\].flex.items-end.gap-\[1rem\] span.font-display {
+    font-size: 20px !important;
+}
+.service-detail-others-grid li svg, .installation-modal-card button svg {
+    width: 15px;
+    height: 15px;
+}
+.installation-modal-card button.absolute.right-\[2\.8rem\] {
+    right: 5%;
+    top: 3%;
+    padding: 8px;
+}
+.installation-modal-card span.relative.block.size-\[1\.6rem\] {
+    width: 10px;
+    height: 10px;
+    font-size: 17px !important;
+    margin-left: -4px;
+    margin-top: -5px;
+}
+.service-article-detail-grid p.mt-\[1\.2rem\].flex.items-end.gap-\[1rem\].text-brand-navy span.font-display {
+    font-size: 20px !important;
+}
+.installation-modal-card input#county-input {
+    height: 50px;
+}
+.installation-modal-card button.rounded-full.border-\[0\.2rem\].border-brand-navy\/20.px-\[2\.8rem\].py-\[1\.4rem\].text-\[1\.8rem\].text-brand-navy.transition-colors.hover\:border-brand-cyan {
+    padding: 11px 20px;
+}
+
+form#main-form span.grid {display: none;}
+
+form#main-form span.grid svg {
+    width: 15px;
+    height: 15px;
+}
+form#main-form .flex.items-center.gap-\[1rem\] {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.installation-modal-card button.rounded-full.border-\[0\.2rem\].border-brand-navy\/20.px-\[2\.8rem\].py-\[1\.4rem\].text-\[1\.8rem\].text-brand-navy.transition-colors.hover\:border-brand-cyan {
+    padding: 11px 20px;
 }
 }

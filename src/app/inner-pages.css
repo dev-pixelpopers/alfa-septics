@@ -1335,6 +1335,17 @@ button.hide-mob svg {
   .cta-band-phone {
     font-size: 18px !important;
   }
+   .service-detail-hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+   .service-detail-hero-actions a {
+    width: 100% !important;
+    height: 50px !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1695,20 +1706,6 @@ button.hide-mob svg {
   .service-detail-hero h1 {
     font-size: 44px !important;
   }
-
-  .service-detail-hero-actions {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 12px !important;
-  }
-
-  .service-detail-hero-actions a {
-    width: 100% !important;
-    height: 50px !important;
-    justify-content: center !important;
-    font-size: 16px !important;
-  }
-
   .service-detail-signs-grid {
     grid-template-columns: 1fr !important;
     gap: 14px !important;

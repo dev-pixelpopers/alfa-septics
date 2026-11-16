@@ -726,4 +726,16 @@ section#gallery .absolute.left-\[calc\(50\%-42\.3rem\)\].top-\[8rem\].h-\[85\.3r
     width: 15px;
     height: 15px;
 }
+    .area-two .service-areas-counties-grid h2 {
+        font-size: 22px !important;
+    }
+    .service-areas-counties-grid li svg {
+    width: 10px;
+    height: 10px;
+}
+
+.service-areas-counties-grid li span {
+    width: 20px;
+    height: 20px;
+}
 }

@@ -874,7 +874,7 @@ body:has(.inner-page) footer {
   }
 
   /* Header Menu overlay on tablet */
-  body:has(.inner-page) #site-menu > div {
+  #site-menu > div {
     width: 100% !important;
     max-width: 100% !important;
     padding: 90px 30px 40px !important;
@@ -883,11 +883,11 @@ body:has(.inner-page) footer {
     overflow-y: auto !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-item] {
+  #site-menu [data-menu-item] {
     font-size: 38px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] {
+  #site-menu [data-menu-aside] {
     border-left: none !important;
     border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
     padding-left: 0 !important;
@@ -1410,12 +1410,12 @@ body:has(.inner-page) footer {
   }
 
   /* Header menu on tablet portrait */
-  body:has(.inner-page) #site-menu > div {
+  #site-menu > div {
     padding: 80px 20px 30px !important;
     gap: 24px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-item] {
+  #site-menu [data-menu-item] {
     font-size: 30px !important;
   }
 
@@ -1794,40 +1794,40 @@ body:has(.inner-page) footer {
   }
 
   /* Fullscreen Menu Overlay */
-  body:has(.inner-page) #site-menu > div {
+  #site-menu > div {
     padding: 70px 16px 24px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-item] {
+  #site-menu [data-menu-item] {
     font-size: 30px !important;
     line-height: 1.15 !important;
     gap: 14px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-item] span:first-child {
+  #site-menu [data-menu-item] span:first-child {
     font-size: 15px !important;
     width: auto !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] p {
+  #site-menu [data-menu-aside] p {
     font-size: 13.5px !important;
     letter-spacing: 0.18rem !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] a[href^="tel:"] {
+  #site-menu [data-menu-aside] a[href^="tel:"] {
     font-size: 22px !important;
     font-weight: 600 !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] p:not(.uppercase) {
+  #site-menu [data-menu-aside] p:not(.uppercase) {
     font-size: 16.5px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] ul a {
+  #site-menu [data-menu-aside] ul a {
     font-size: 16px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] .pill-link {
+  #site-menu [data-menu-aside] .pill-link {
     font-size: 16px !important;
     font-weight: 600 !important;
     height: 50px !important;
@@ -2639,36 +2639,36 @@ body:has(.inner-page) footer {
   }
 
   /* Fullscreen Menu Overlay */
-  body:has(.inner-page) #site-menu > div {
+  #site-menu > div {
     padding: 65px 14px 20px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-item] {
+  #site-menu [data-menu-item] {
     font-size: 28px !important;
     line-height: 1.15 !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-item] span:first-child {
+  #site-menu [data-menu-item] span:first-child {
     font-size: 14px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] p {
+  #site-menu [data-menu-aside] p {
     font-size: 13px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] a[href^="tel:"] {
+  #site-menu [data-menu-aside] a[href^="tel:"] {
     font-size: 20px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] p:not(.uppercase) {
+  #site-menu [data-menu-aside] p:not(.uppercase) {
     font-size: 16px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] ul a {
+  #site-menu [data-menu-aside] ul a {
     font-size: 15.5px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] .pill-link {
+  #site-menu [data-menu-aside] .pill-link {
     font-size: 15.5px !important;
     height: 48px !important;
   }
@@ -3143,32 +3143,32 @@ body:has(.inner-page) footer {
     font-weight: 600 !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-item] {
+  #site-menu [data-menu-item] {
     font-size: 24px !important;
     line-height: 1.15 !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-item] span:first-child {
+  #site-menu [data-menu-item] span:first-child {
     font-size: 13px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] p {
+  #site-menu [data-menu-aside] p {
     font-size: 12.5px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] a[href^="tel:"] {
+  #site-menu [data-menu-aside] a[href^="tel:"] {
     font-size: 18px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] p:not(.uppercase) {
+  #site-menu [data-menu-aside] p:not(.uppercase) {
     font-size: 15px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] ul a {
+  #site-menu [data-menu-aside] ul a {
     font-size: 15px !important;
   }
 
-  body:has(.inner-page) #site-menu [data-menu-aside] .pill-link {
+  #site-menu [data-menu-aside] .pill-link {
     font-size: 15px !important;
     height: 46px !important;
   }

@@ -85,7 +85,7 @@ export function SiteHeader() {
   return (
     <header
       ref={root}
-      className="fixed inset-x-0 top-0 z-20 flex items-center justify-between px-[7.2rem] py-[2rem] text-white bg-[#00000059] md:bg-none"
+      className="fixed inset-x-0 top-0 z-20 flex items-center justify-between px-[7.2rem] py-[2rem] text-white  md:bg-none"
     >
       {/* Subtle black wash so the white logo and button read over any section, fading out below the bar. */}
       <div

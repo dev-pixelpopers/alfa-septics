@@ -104,7 +104,31 @@ section#reviews button {
   .hero-sec h1 {
     margin-top: -130px;
   }
+
 }
+
+
+@media (max-width: 1680px) and (min-width: 1390px) {
+  .pricing-faq-section .invisible.sticky p {
+    max-width: 420px;
+}
+.service-areas-counties-grid h2 {
+    font-size: 24px !important;
+}
+form#main-form section {
+    padding: 0px !important;
+}
+.contact-next-card h2 {
+    font-size: 32px !important;
+}
+.about-cols li img {
+    width: 60px;
+}
+p.footer-logotxt {
+    margin-top: 19rem;
+}
+}
+
 
 @media (max-width: 1450px) and (min-width: 1400px) {
   .hero-sec-inner {
@@ -120,6 +144,15 @@ section#reviews button {
   .solution-sec {
     top: 80px;
   }
+}
+
+@media (max-width: 1450px) and (min-width: 1000px) {
+  .process-step-content .process-step-number {
+    font-size: 60px !important;
+}
+.about-hero-photo-wrap.about-img {
+    margin-top: -60px !important;
+}
 }
 
 @media (max-width: 1370px) and (min-width: 1300px) {
@@ -151,6 +184,16 @@ section#reviews button {
   .box-system {
     padding-top: 10px;
   }
+  .service-areas-counties-grid h2 {
+    font-size: 24px !important;
+}
+form#main-form section {
+    padding: 0px !important;
+}
+.contact-next-card h2 {
+    font-size: 32px !important;
+}
+
 }
 
 @media (max-width: 1290px) and (min-width: 1152px) {
@@ -182,19 +225,43 @@ section#reviews button {
   .box-system {
     padding-top: 10px;
   }
+  form#main-form section {
+    padding: 0px !important;
+}
+.contact-next-card h2 {
+    font-size: 32px !important;
+}
+.service-areas-counties-grid ul li {
+    font-size: 13px;
+    padding: 10px 20px !important;
+}
 }
 
 @media (max-width: 1026px) {
+  .process-step-content ul li {
+    font-size: 16px;
+}
+  form#main-form section {
+    padding: 0px !important;
+}
   .hero-sec-inner {
     height: 100rem;
   }
-  .hero-sec h1 {
-    margin-top: -77px;
-  }
+      .hero-sec h1 {
+        margin-top: -77px;
+        letter-spacing: -5px;
+    }
   .hero-sec h1 span {
     font-size: 100px;
   }
-  
+  .second-home {
+    width: 70%;
+}
+
+.second-home p {
+    font-size: 15px;
+    line-height: 22px;
+}
   .solution-sec {
     top: 40px;
   }
@@ -244,6 +311,34 @@ section#reviews .sticky {
         font-size: 15px !important;
         line-height: 1.4 !important;
     }
+        .area-two .service-areas-counties-grid h2 {
+        font-size: 26px !important;
+    }
+    .service-areas-counties-grid ul li {
+    font-size: 16px;
+}
+    header.fixed a img {
+        width: auto !important;
+        max-width: 70px !important;
+        height: 70px !important;
+    }
+      header.fixed button.hide-mob {
+        width: 46px !important;
+        height: 46px !important;
+    }
+     header.fixed button.humburger {
+        height: 46px !important;
+        padding: 0 18px !important;
+        font-size: 13px !important;
+    }
+    .land-home p {
+    font-size: 14px;
+    width: 100rem !important;
+    line-height: 1.5;
+}
+section#gallery .sticky {
+    background-color: #f4f4f4;
+}
 }
 
 @media (max-width: 981px) {

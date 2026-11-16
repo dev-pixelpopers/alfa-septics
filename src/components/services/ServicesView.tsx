@@ -45,7 +45,7 @@ export function ServicesView() {
         .timeline({ defaults: { ease: EASE_REVEAL, duration: reduce ? 0.01 : 1 } })
         .fromTo("[data-hero-line]", { yPercent: 110 }, { yPercent: 0, autoAlpha: 1, stagger: 0.1, duration: 1.1 }, 0.1)
         .fromTo("[data-hero-lede]", { y: "3rem" }, { y: 0, autoAlpha: 1 }, 0.45)
-        .fromTo("[data-index]", { x: "-6rem" }, { x: 0, autoAlpha: 1 }, 0.7);
+        .fromTo("[data-index]", { x: "-6rem" }, { x: 0, autoAlpha: 1, clearProps: "transform" }, 0.7);
 
       gsap.utils.toArray<HTMLElement>("[data-panel]").forEach((panel, i) => {
         // Index highlight follows whichever panel crosses the middle of the screen.

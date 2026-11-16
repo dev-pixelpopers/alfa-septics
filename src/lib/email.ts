@@ -1,4 +1,4 @@
-import { Resend } from "resend";
+import nodemailer, { type Transporter } from "nodemailer";
 import { type ContactRequest } from "@/lib/contact";
 import { buildContactEmail } from "@/lib/contact-email";
 import { CONTACT } from "@/lib/site";
@@ -18,11 +18,58 @@ export type SendEmailResult = {
   error?: string;
 };
 
-/** Get the configured sender email from environment or default */
+const FRIENDLY_ERROR = `We couldn't send your email right now. Please call us at ${CONTACT.phoneDisplay}.`;
+
+type SmtpConfig = {
+  host: string;
+  port: number;
+  secure: boolean;
+  user: string;
+  pass: string;
+};
+
+/** Read SMTP settings from env. Returns null when credentials are missing. */
+function getSmtpConfig(): SmtpConfig | null {
+  const user = process.env.SMTP_USER?.trim();
+  // Gmail shows app passwords with spaces ("abcd efgh ijkl mnop"); strip them.
+  const pass = process.env.SMTP_PASS?.replace(/\s+/g, "");
+  if (!user || !pass) return null;
+
+  const port = Number(process.env.SMTP_PORT) || 465;
+  const secureEnv = process.env.SMTP_SECURE?.trim().toLowerCase();
+  const secure = secureEnv ? secureEnv === "true" : port === 465;
+
+  return {
+    host: process.env.SMTP_HOST?.trim() || "smtp.gmail.com",
+    port,
+    secure,
+    user,
+    pass,
+  };
+}
+
+let cachedTransporter: Transporter | null = null;
+
+function getTransporter(config: SmtpConfig): Transporter {
+  if (!cachedTransporter) {
+    cachedTransporter = nodemailer.createTransport({
+      host: config.host,
+      port: config.port,
+      secure: config.secure,
+      auth: { user: config.user, pass: config.pass },
+    });
+  }
+  return cachedTransporter;
+}
+
+/**
+ * Get the configured sender. Gmail rewrites the From address to the
+ * authenticated account, so default to SMTP_USER.
+ */
 export function getFromEmail(): string {
-  const fromEnv = process.env.CONTACT_FROM_EMAIL?.trim();
+  const fromEnv = process.env.CONTACT_FROM_EMAIL?.trim() || process.env.SMTP_USER?.trim();
   if (!fromEnv) {
-    return "Alfa Septics Website <onboarding@resend.dev>";
+    return "Alfa Septics Website";
   }
   if (fromEnv.includes("<") && fromEnv.includes(">")) {
     return fromEnv;
@@ -36,8 +83,8 @@ export function getToEmail(): string {
 }
 
 /**
- * Reusable utility to send an email using Resend.
- * Retrieves API key and default addresses from environment variables (.env.local).
+ * Reusable utility to send an email over SMTP (Gmail by default) with Nodemailer.
+ * Reads credentials and default addresses from environment variables.
  */
 export async function sendEmail({
   to,
@@ -47,58 +94,32 @@ export async function sendEmail({
   text,
   html,
 }: SendEmailOptions): Promise<SendEmailResult> {
-  const apiKey = process.env.RESEND_API_KEY;
-  const toAddress = to || getToEmail();
-  const fromAddress = from || getFromEmail();
+  const config = getSmtpConfig();
 
-  if (!apiKey) {
+  if (!config) {
     if (process.env.NODE_ENV === "production") {
-      console.error("Resend API key is not configured (RESEND_API_KEY missing).");
-      return {
-        success: false,
-        error: `We couldn't send your email right now. Please call us at ${CONTACT.phoneDisplay}.`,
-      };
+      console.error("SMTP is not configured (SMTP_USER / SMTP_PASS missing).");
+      return { success: false, error: FRIENDLY_ERROR };
     }
-    console.warn("Resend API key is not set. Email delivery was simulated.");
-    return { success: true, data: { id: "simulated-delivery" } };
+    console.warn("SMTP credentials are not set. Email delivery was simulated.");
+    return { success: true, data: { messageId: "simulated-delivery" } };
   }
 
   try {
-    const resend = new Resend(apiKey);
-    const { data, error } = await resend.emails.send({
-      from: fromAddress,
-      to: toAddress,
+    const info = await getTransporter(config).sendMail({
+      from: from || getFromEmail(),
+      to: to || getToEmail(),
       replyTo,
       subject,
       text: text || "",
       html: html || undefined,
     });
 
-    if (error) {
-      console.error("Resend API error:", error);
-      const message =
-        typeof error === "object" && error !== null && "message" in error
-          ? String((error as { message: unknown }).message)
-          : "Failed to send email via Resend.";
-      return {
-        success: false,
-        error: message,
-      };
-    }
-
-    return {
-      success: true,
-      data,
-    };
+    return { success: true, data: { messageId: info.messageId } };
   } catch (thrown: unknown) {
-    console.error("Unexpected error in sendEmail:", thrown);
-    return {
-      success: false,
-      error:
-        thrown instanceof Error
-          ? thrown.message
-          : `Something went wrong sending your request. Please call us at ${CONTACT.phoneDisplay}.`,
-    };
+    // Don't leak SMTP/server details to the visitor; log them instead.
+    console.error("SMTP error in sendEmail:", thrown);
+    return { success: false, error: FRIENDLY_ERROR };
   }
 }
 

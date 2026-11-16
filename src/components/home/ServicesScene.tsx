@@ -63,7 +63,7 @@ export function ServicesScene() {
       {/* Intro (Variant28 layout) */}
       <div
         data-intro
-        className="relative flex h-[58.1rem] flex-col items-center pt-[12.5rem] max-sm:h-auto max-sm:px-[16px] max-sm:pb-[48px] max-sm:pt-[96px] overflow-x-hidde"
+        className="relative flex h-[58.1rem] flex-col items-center pt-[12.5rem] max-sm:h-auto max-sm:px-[16px] max-sm:pb-[48px] max-sm:pt-[96px] overflow-x-hidden"
       >
         <div className="h-[31.1rem] w-[160.4rem] max-sm:h-auto max-sm:w-full">
           <h2

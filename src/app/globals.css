@@ -640,10 +640,12 @@ li#site-evaluation {
 }
 
 .pricing-includes-grid span svg, .contact-quick-list svg {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
 }
-
+.contact-form-grid aside.invisible {
+    gap: 40px;
+}
 .pricing-includes-grid p, .pricing-faq-header p, .pricing-faq-list p, .contact-form-grid header p, .contact-form-footer p, .service-detail-overview-grid p {
     width: 100% !important;
 }
@@ -737,5 +739,27 @@ section#gallery .absolute.left-\[calc\(50\%-42\.3rem\)\].top-\[8rem\].h-\[85\.3r
 .service-areas-counties-grid li span {
     width: 20px;
     height: 20px;
+}
+.services-sticky-nav a svg, .area-two .flex-1 svg {
+    width: 15px;
+    height: 15px;
+}
+.process-step-content ul span, .service-detail-overview ul li span {
+    width: 20px;
+    height: 20px;
+}
+.process-step-content ul span svg, .pricing-plan-card .pricing-plan-details a svg, .service-detail-overview ul li span svg, .service-detail-process-header a svg {
+    width: 15px;
+    height: 15px;
+}
+.process-step-content .process-step-number {
+    font-size: 26px !important;
+}
+.service-article-detail-grid p.mt-\[1\.2rem\].flex.items-end.gap-\[1rem\].text-brand-navy, .service-detail-hero-grid p.mt-\[1\.4rem\].flex.items-end.gap-\[1rem\] {
+        align-items: center;
+        justify-content: center;
+    }
+.service-detail-hero-grid p {
+    width: 100% !important;
 }
 }

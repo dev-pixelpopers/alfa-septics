@@ -19,10 +19,10 @@ export function PillLink({ href, children, variant = "outline", className }: Pil
   return (
     <Link
       href={href}
-      className={`group inline-flex h-[6.9rem] items-center justify-center gap-[2.4rem] whitespace-nowrap rounded-full border border-white p-[1rem] font-body text-[2.6rem] leading-[2.8rem] text-white backdrop-blur-[0.65rem] transition-[background-color,filter] ${fill} ${className ?? ""}`}
+      className={`group inline-flex lg:h-[6.9rem] w-auto items-center justify-center gap-[2.4rem] whitespace-nowrap rounded-full border border-white p-[16px_16px_14px_16px] md:p-0 md:px-[4rem] text-[16px] md:text-[2.4rem] leading-[2.8rem] text-white backdrop-blur-[0.65rem] transition-[background-color,filter] ${fill} ${className ?? ""}`}
     >
       {children}
-      <ArrowIcon className="w-[2.6rem] transition-transform duration-300 group-hover:-translate-y-[0.3rem] group-hover:translate-x-[0.3rem]" />
+      <ArrowIcon className="w-[16px] md:w-[2.6rem] transition-transform duration-300 group-hover:-translate-y-[0.3rem] group-hover:translate-x-[0.3rem]" />
     </Link>
   );
 }

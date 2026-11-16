@@ -94,10 +94,10 @@ export function ServiceDetailView({ slug }: { slug: string }) {
             <div data-hero-copy className="invisible mt-[5.6rem] flex items-center gap-[3.2rem] service-detail-hero-actions">
               <Link
                 href={`/contact?service=${service.slug}`}
-                className="group inline-flex h-[6.9rem] items-center gap-[2rem] rounded-full border border-white bg-gradient-to-b from-[rgba(32,100,172,0.9)] to-[rgba(49,162,202,0.9)] px-[4rem] text-[2.4rem] transition-[filter] hover:brightness-110"
+                className="group inline-flex lg:h-[6.9rem] items-center gap-[2rem] rounded-full border border-white bg-gradient-to-b from-[rgba(32,100,172,0.9)] to-[rgba(49,162,202,0.9)] p-[16px_16px_14px_16px] md:p-0 md:px-[4rem] text-[16px] md:text-[2.4rem] transition-[filter] hover:brightness-110"
               >
                 Get a free estimate
-                <ArrowIcon className="w-[2.4rem] transition-transform duration-300 group-hover:-translate-y-[0.3rem] group-hover:translate-x-[0.3rem]" />
+                <ArrowIcon className="w-[16px] md:w-[2.4rem] transition-transform duration-300 group-hover:-translate-y-[0.3rem] group-hover:translate-x-[0.3rem]" />
               </Link>
               <a
                 href={CONTACT.phoneHref}

@@ -13,11 +13,12 @@ export default async function ContactPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   // `/contact?service=pumping` preselects a service chip.
-  const { service } = await searchParams;
+  const resolvedParams = await searchParams;
+  const service = typeof resolvedParams?.service === "string" ? resolvedParams.service : undefined;
 
   return (
     <main className="relative inner-page">
-      <ContactView initialService={typeof service === "string" ? service : undefined} />
+      <ContactView initialService={service} />
     </main>
   );
 }

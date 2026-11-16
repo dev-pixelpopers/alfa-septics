@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useEffect, useRef, useState, type ReactNode } from "react";
-import { type ContactState, submitContactRequest } from "@/app/contact/actions";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import {
   CONTACT_METHODS,
   type ContactErrors,
   type ContactField,
   type ContactRequest,
+  type ContactState,
   EMAIL_RE,
   MESSAGE_LIMIT,
   NOT_SURE,
@@ -49,7 +49,8 @@ export function ContactForm({ initialService }: { initialService?: string }) {
 }
 
 function ContactFormBody({ initialService, onReset }: { initialService?: string; onReset: () => void }) {
-  const [state, formAction, pending] = useActionState<ContactState, FormData>(submitContactRequest, { status: "idle" });
+  const [state, setState] = useState<ContactState>({ status: "idle" });
+  const [pending, setPending] = useState(false);
   const [isInstallationModalOpen, setIsInstallationModalOpen] = useState(false);
   const [values, setValues] = useState<ContactRequest>(() => ({
     ...EMPTY,
@@ -100,25 +101,60 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
   ];
   const progress = Math.round((checks.filter(Boolean).length / checks.length) * 100);
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const found = validateContact(values);
+    if (Object.keys(found).length > 0) {
+      setClientErrors(found);
+      setTouched(Object.fromEntries(Object.keys(found).map((k) => [k, true])));
+      // Errors render on the next paint, so find the first bad field by name, not aria-invalid.
+      const firstKey = Object.keys(found)[0];
+      event.currentTarget.querySelector<HTMLElement>(`[name="${firstKey}"]`)?.focus();
+      return;
+    }
+
+    setPending(true);
+    setState({ status: "idle" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setState({ status: "success" });
+      } else {
+        if (data.errors) {
+          setClientErrors(data.errors);
+        }
+        setState({
+          status: "error",
+          errors: data.errors,
+          message: data.message || "Failed to send request. Please try again.",
+        });
+      }
+    } catch (err) {
+      console.error("Error submitting contact request:", err);
+      setState({
+        status: "error",
+        message: `Something went wrong sending your request. Please try again or call ${CONTACT.phoneDisplay}.`,
+      });
+    } finally {
+      setPending(false);
+    }
+  };
+
   if (state.status === "success") {
     return <SuccessPanel values={values} onReset={onReset} />;
   }
 
   return (
     <form
-      action={formAction}
+      onSubmit={handleSubmit}
       noValidate
-      onSubmit={(event) => {
-        const found = validateContact(values);
-        if (Object.keys(found).length > 0) {
-          event.preventDefault();
-          setClientErrors(found);
-          setTouched(Object.fromEntries(Object.keys(found).map((k) => [k, true])));
-          // Errors render on the next paint, so find the first bad field by name, not aria-invalid.
-          const firstKey = Object.keys(found)[0];
-          event.currentTarget.querySelector<HTMLElement>(`[name="${firstKey}"]`)?.focus();
-        }
-      }}
       className="flex flex-col gap-[5.6rem] contact-form"
     >
       <header>

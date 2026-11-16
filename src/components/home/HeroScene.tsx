@@ -288,10 +288,10 @@ export function HeroScene() {
 
         {/* "From Bare Land" (Variant15 → Variant20 layout); reveals itself on entering view */}
         <div data-bare-block className="relative flex w-full flex-col items-center overflow-hidden pb-[12.6rem] pt-[15.1rem] land-home">
-          <div className="h-[34.8rem] w-[101.5rem]">
+          <div className="md:h-[34.8rem] md:w-[101.5rem]">
             <h2
               data-bare-heading
-              className="whitespace-nowrap text-center font-display text-[12rem] font-black uppercase leading-[0.9] tracking-[-0.84rem]"
+              className="whitespace-nowrap text-center font-display text-[30px] md:text-[12rem] font-black uppercase leading-[0.9] tracking-[-0.84rem]"
             >
               <span className="block">From Bare</span>
               <span className="block">Land to Fully</span>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useEffectEvent, useRef, useState } from "react";
 import { EASE_REVEAL, createSceneTimeline, gsap, useGSAP } from "@/lib/gsap";
 // Card stack from Figma "Features" C001–C004 (shown in that order).
 import { FEATURES } from "@/lib/site";
@@ -12,27 +12,95 @@ export function FeaturesScene() {
 
   useGSAP(
     () => {
-      const q = gsap.utils.selector(root);
-      const cards = q("[data-card]");
+      const mm = gsap.matchMedia();
 
-      gsap.set(q("[data-heading]"), { clipPath: "inset(0% 0% 100% 0%)", y: "5rem" });
-      gsap.set(q("[data-lede]"), { x: "-13rem", autoAlpha: 0 });
-      gsap.set(cards, { y: "100rem", rotation: 8, autoAlpha: 1 });
+      mm.add(
+        {
+          isMobile: "(max-width: 768px)",
+          isDesktop: "(min-width: 769px)",
+        },
+        (context) => {
+          const { isMobile } = context.conditions!;
 
-      const tl = createSceneTimeline(root.current!)
-        // V21 → V22: heading wipes in, lede slides in from the left.
-        .to(q("[data-heading]"), { clipPath: "inset(0% 0% 0% 0%)", y: 0, ease: EASE_REVEAL, duration: 1.2 }, 0)
-        .to(q("[data-lede]"), { x: 0, autoAlpha: 1, ease: EASE_REVEAL }, 0.3);
+          const q = gsap.utils.selector(root);
+          const cards = q("[data-card]");
 
-      // V22 → V26: each card swings up into place while the previous one recedes.
-      cards.forEach((card, i) => {
-        const at = i + 1;
-        tl.to(card, { y: 0, ease: EASE_REVEAL, duration: 1.1 }, at);
-        if (i > 0) {
-          tl.to(cards[i - 1], { autoAlpha: 0, scale: 0.92, y: "-4rem", ease: "power2.in", duration: 0.6 }, at + 0.15);
-        }
-      });
-      tl.to({}, { duration: 0.6 });
+          gsap.set(q("[data-heading]"), {
+            clipPath: "inset(0% 0% 100% 0%)",
+            y: "5rem",
+          });
+
+          gsap.set(q("[data-lede]"), {
+            x: "-13rem",
+            autoAlpha: 0,
+          });
+
+          gsap.set(cards, {
+            y: isMobile ? "50rem" : "100rem",
+            rotation: isMobile ? 4 : 8,
+            autoAlpha: 1,
+          });
+
+          const tl = gsap.timeline({
+            defaults: { duration: 1 },
+            scrollTrigger: {
+              trigger: root.current!,
+              start: isMobile ? "top 60%" : "top top",
+              end: "bottom bottom",
+              scrub: 0.8,
+            },
+          });
+
+          tl.to(
+            q("[data-heading]"),
+            {
+              clipPath: "inset(0% 0% 0% 0%)",
+              y: 0,
+              ease: EASE_REVEAL,
+              duration: 1.2,
+            },
+            0,
+          ).to(
+            q("[data-lede]"),
+            {
+              x: 0,
+              autoAlpha: 1,
+              ease: EASE_REVEAL,
+            },
+            0.3,
+          );
+
+          cards.forEach((card, i) => {
+            const at = i + 1;
+
+            tl.to(
+              card,
+              {
+                y: 0,
+                ease: EASE_REVEAL,
+                duration: 1.1,
+              },
+              at,
+            );
+
+            if (i > 0) {
+              tl.to(
+                cards[i - 1],
+                {
+                  autoAlpha: 0,
+                  scale: 0.92,
+                  y: "-4rem",
+                  ease: "power2.in",
+                  duration: 0.6,
+                },
+                at + 0.15,
+              );
+            }
+          });
+
+          tl.to({}, { duration: 0.6 });
+        },
+      );
     },
     { scope: root },
   );
@@ -63,20 +131,20 @@ export function FeaturesScene() {
             <li
               key={feature.title}
               data-card
-              className="invisible absolute left-0 top-0 flex h-[49.8rem] w-[55rem] rotate-[7.68deg] flex-col overflow-hidden rounded-[5rem] bg-[linear-gradient(to_bottom,#64c3b3cf_0%,#2f9fcf_40%)] pb-[4rem] pl-[4.5rem] pr-[4rem] pt-[5rem] text-white shadow-[0_4rem_8rem_rgba(0,0,0,0.18)]"
+              className="invisible absolute left-0 top-0 flex h-[49.8rem] w-[55rem] rotate-[7.68deg] flex-col overflow-hidden rounded-[5rem] bg-[linear-gradient(to_bottom,#64c3b3cf_0%,#2f9fcf_40%)] gap-[10px] md:gap-0 pb-[4rem] pl-[4.5rem] pr-[4rem] pt-[5rem] text-white shadow-[0_4rem_8rem_rgba(0,0,0,0.18)]"
             >
               {/* 5.5rem keeps the longest word ("Communication") inside the 46.5rem content box */}
-              <h3 className="w-full font-display text-[5.5rem] font-black capitalize leading-[0.96]">
+              <h3 className="w-full font-display text-[20px] md:text-[5.5rem] font-black capitalize leading-[0.96]">
                 {feature.title}
               </h3>
-              <p className="mt-[2.4rem] w-full text-[2.5rem] leading-[1.5]">{feature.body}</p>
+              <p className="mt-[2.4rem] w-full text-[14px] md:text-[2.5rem] leading-[1.5]">{feature.body}</p>
               <Image
                 src={feature.icon.src}
                 alt=""
                 width={feature.icon.width}
                 height={feature.icon.height}
                 sizes="12vw"
-                className="mt-auto h-[13rem] w-auto shrink-0 self-end"
+                className="mt-auto h-[40px] md:h-[13rem] w-auto shrink-0 self-end"
               />
             </li>
           ))}

@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useState } from "react";
-import { type ContactState, submitContactRequest } from "@/app/contact/actions";
-import { NOT_SURE, formatPhone } from "@/lib/contact";
+import { useState } from "react";
+import { NOT_SURE, formatPhone, validateContact, type ContactState } from "@/lib/contact";
 
 const FIELDS = [
   { name: "firstName", label: "First Name", type: "text", autoComplete: "given-name" },
@@ -15,9 +14,75 @@ const FIELDS = [
 
 /** Variant42 → Variant43 ("Contact us for") — a quick callback form; the full form lives on /contact. */
 export function ContactSection() {
-  const [state, formAction, pending] = useActionState<ContactState, FormData>(submitContactRequest, { status: "idle" });
+  const [state, setState] = useState<ContactState>({ status: "idle" });
+  const [pending, setPending] = useState(false);
   const [phone, setPhone] = useState("");
   const errors = state.status === "error" ? (state.errors ?? {}) : {};
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      firstName: String(formData.get("firstName") || ""),
+      lastName: String(formData.get("lastName") || ""),
+      phone: phone || String(formData.get("phone") || ""),
+      email: String(formData.get("email") || ""),
+      message: String(formData.get("message") || ""),
+      services: [NOT_SURE],
+      contactMethod: "Call",
+      propertyType: "Residential",
+      timeline: "",
+    };
+
+    // Client-side pre-validation
+    const clientValidation = validateContact(payload);
+    if (Object.keys(clientValidation).length > 0) {
+      setState({
+        status: "error",
+        errors: clientValidation,
+        message: "Please check the highlighted fields.",
+      });
+      const firstField = Object.keys(clientValidation)[0];
+      form.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus();
+      return;
+    }
+
+    setPending(true);
+    setState({ status: "idle" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setState({ status: "success" });
+      } else {
+        setState({
+          status: "error",
+          errors: data.errors,
+          message: data.message || "Failed to send request. Please try again.",
+        });
+      }
+    } catch (err) {
+      console.error("Error submitting contact callback request:", err);
+      setState({
+        status: "error",
+        message: "Network error. Please try again or call us.",
+      });
+    } finally {
+      setPending(false);
+    }
+  }
 
   return (
     <section id="contact" className="flex h-[98.3rem] justify-center bg-snow pt-[15.9rem] max-sm:h-auto max-sm:px-[16px] max-sm:py-[48px]">
@@ -40,7 +105,7 @@ export function ContactSection() {
           </div>
         ) : (
           <form
-            action={formAction}
+            onSubmit={handleSubmit}
             noValidate
             className="mt-[11rem] grid w-[140rem] grid-cols-2 gap-x-[10.8rem] gap-y-[8.4rem] max-sm:mt-[28px] max-sm:w-full max-sm:grid-cols-1 max-sm:gap-y-[30px]"
           >

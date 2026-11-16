@@ -23,6 +23,12 @@ export type ContactRequest = {
 export type ContactField = keyof ContactRequest;
 export type ContactErrors = Partial<Record<ContactField, string>>;
 
+export type ContactState = {
+  status: "idle" | "success" | "error";
+  errors?: ContactErrors;
+  message?: string;
+};
+
 export const MESSAGE_LIMIT = 1000;
 
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;

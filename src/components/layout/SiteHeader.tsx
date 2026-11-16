@@ -85,12 +85,12 @@ export function SiteHeader() {
   return (
     <header
       ref={root}
-      className="fixed inset-x-0 top-0 z-20 flex items-center justify-between px-[7.2rem] py-[2rem] text-white"
+      className="fixed inset-x-0 top-0 z-20 flex items-center justify-between px-[7.2rem] py-[2rem] text-white bg-[#00000059] md:bg-none"
     >
       {/* Subtle black wash so the white logo and button read over any section, fading out below the bar. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[16rem] bg-gradient-to-b from-black/45 via-black/15 to-transparent"
+        className="pointer-events-none absolute left-0 w-full h-full inset-x-0 top-0 -z-10 h-[16rem] bg-gradient-to-b from-black/45 via-black/15 to-transparent"
       />
 
       <Link href="/" aria-label="Alfa Septic home" onClick={() => setOpen(false)} className="relative z-10 shrink-0">
@@ -143,7 +143,7 @@ export function SiteHeader() {
           className="humburger group flex h-[5.4rem] cursor-pointer items-center gap-[1.6rem] rounded-full border border-white/30 bg-white/10 pl-[2.4rem] pr-[1.8rem] font-gotham text-[1.5rem] font-medium uppercase tracking-[0.15rem] backdrop-blur-[0.8rem] transition-colors hover:border-white/60 hover:bg-white/20"
         >
           <span className="w-[5.2rem] text-left">{open ? "Close" : "Menu"}</span>
-          <span aria-hidden className="relative block h-[1.4rem] w-[2.6rem]">
+          <span aria-hidden className="relative block h-[6px] md:h-[1.4rem] w-[16px] md:w-[2.6rem]">
             <span
               className={`absolute left-0 h-[0.2rem] w-full rounded-full bg-white transition-all duration-300 ${open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"
                 }`}

@@ -58,6 +58,7 @@ body:has(.inner-page) footer {
     height: 64px !important;
     max-width: 56px !important;
   }
+
   .inner-page .w-\[164rem\] {
     width: 100% !important;
     max-width: 1560px !important;
@@ -112,6 +113,7 @@ body:has(.inner-page) footer {
     height: 60px !important;
     max-width: 52px !important;
   }
+
   .inner-page .w-\[164rem\] {
     max-width: 1480px !important;
     padding-left: 36px !important;
@@ -154,7 +156,7 @@ body:has(.inner-page) footer {
     font-size: 130px !important;
   }
 
-  .pricing-plan-card > div {
+  .pricing-plan-card>div {
     padding: 50px !important;
   }
 }
@@ -173,6 +175,7 @@ body:has(.inner-page) footer {
     height: 56px !important;
     max-width: 48px !important;
   }
+
   .inner-page .w-\[164rem\] {
     max-width: 1320px !important;
     padding-left: 32px !important;
@@ -396,6 +399,7 @@ body:has(.inner-page) footer {
     height: 54px !important;
     max-width: 46px !important;
   }
+
   .inner-page .w-\[164rem\] {
     max-width: 1240px !important;
     padding-left: 28px !important;
@@ -545,6 +549,7 @@ body:has(.inner-page) footer {
     height: 52px !important;
     max-width: 44px !important;
   }
+
   .inner-page .w-\[164rem\] {
     max-width: 1160px !important;
     padding-left: 24px !important;
@@ -792,13 +797,16 @@ body:has(.inner-page) footer {
     padding-top: 16px !important;
     padding-bottom: 16px !important;
   }
-button.hide-mob svg {
+
+  button.hide-mob svg {
     width: 20px;
     height: 20px;
-}
-    button.humburger span.w-\[5\.2rem\].text-left {
-        display: none;
-    }
+  }
+
+  button.humburger span.w-\[5\.2rem\].text-left {
+    display: none;
+  }
+
   body:has(.inner-page) header.fixed a img {
     width: auto !important;
     height: 70px !important;
@@ -832,6 +840,7 @@ button.hide-mob svg {
     width: 100% !important;
     max-width: 680px !important;
   }
+
   .inner-page .w-\[164rem\],
   .inner-page .w-\[120rem\] {
     width: 100% !important;
@@ -880,7 +889,7 @@ button.hide-mob svg {
   }
 
   /* Header Menu overlay on tablet */
-  #site-menu > div {
+  #site-menu>div {
     width: 100% !important;
     max-width: 100% !important;
     padding: 90px 30px 40px !important;
@@ -1191,7 +1200,7 @@ button.hide-mob svg {
     display: none !important;
   }
 
-  .services-sticky-nav > a {
+  .services-sticky-nav>a {
     margin-top: 16px !important;
     padding: 12px 18px !important;
     font-size: 15px !important;
@@ -1335,12 +1344,14 @@ button.hide-mob svg {
   .cta-band-phone {
     font-size: 18px !important;
   }
-   .service-detail-hero-actions {
+
+  .service-detail-hero-actions {
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 12px !important;
   }
-   .service-detail-hero-actions a {
+
+  .service-detail-hero-actions a {
     width: 100% !important;
     height: 50px !important;
     justify-content: center !important;
@@ -1383,6 +1394,7 @@ button.hide-mob svg {
   .contact-work-section figure.w-\[46rem\] {
     width: 260px !important;
   }
+
   .inner-page .w-\[164rem\],
   .inner-page .w-\[120rem\] {
     padding-left: 20px !important;
@@ -1427,7 +1439,7 @@ button.hide-mob svg {
   }
 
   /* Header menu on tablet portrait */
-  #site-menu > div {
+  #site-menu>div {
     padding: 80px 20px 30px !important;
     gap: 24px !important;
   }
@@ -1442,7 +1454,7 @@ button.hide-mob svg {
     border-radius: 20px !important;
   }
 
-  div[data-search-card] > div:first-child {
+  div[data-search-card]>div:first-child {
     padding: 16px !important;
     gap: 12px !important;
   }
@@ -1524,7 +1536,11 @@ button.hide-mob svg {
     font-size: 12px !important;
   }
 
-  .contact-form input:placeholder-shown + label[for^="field-"] {
+  #field-message {
+    padding-top: 6.4rem !important;
+  }
+
+  .contact-form input:placeholder-shown+label[for^="field-"] {
     top: 17px !important;
     font-size: 16px !important;
   }
@@ -1706,6 +1722,7 @@ button.hide-mob svg {
   .service-detail-hero h1 {
     font-size: 44px !important;
   }
+
   .service-detail-signs-grid {
     grid-template-columns: 1fr !important;
     gap: 14px !important;
@@ -1729,7 +1746,7 @@ button.hide-mob svg {
     align-items: flex-start !important;
   }
 
-  .service-detail-step-card > span {
+  .service-detail-step-card>span {
     flex-shrink: 0 !important;
     margin-top: 4px !important;
   }
@@ -1775,6 +1792,7 @@ button.hide-mob svg {
    Comfortable typography and balanced mobile readability
    -------------------------------------------------------------------------- */
 @media (max-width: 425px) {
+
   /* Header on Inner Pages */
   body:has(.inner-page) header.fixed {
     padding-left: 16px !important;
@@ -1797,7 +1815,7 @@ button.hide-mob svg {
   }
 
   /* Fullscreen Menu Overlay */
-  #site-menu > div {
+  #site-menu>div {
     padding: 70px 16px 24px !important;
   }
 
@@ -1923,9 +1941,9 @@ button.hide-mob svg {
     font-size: inherit;
   }
 
-  .inner-page a > span,
-  .inner-page button > span,
-  .inner-page label > span {
+  .inner-page a>span,
+  .inner-page button>span,
+  .inner-page label>span {
     font-size: inherit;
   }
 
@@ -2100,13 +2118,13 @@ button.hide-mob svg {
     height: 50px !important;
   }
 
-  .contact-form input:placeholder-shown + label[for^="field-"],
-  .contact-form textarea:placeholder-shown + label[for^="field-"] {
+  .contact-form input:placeholder-shown+label[for^="field-"],
+  .contact-form textarea:placeholder-shown+label[for^="field-"] {
     top: 14px !important;
     font-size: 15.5px !important;
   }
 
-  .contact-form [role="group"] label > span {
+  .contact-form [role="group"] label>span {
     font-size: 15.5px !important;
     padding: 12px 18px !important;
   }
@@ -2195,7 +2213,7 @@ button.hide-mob svg {
     font-weight: 400 !important;
   }
 
-  .installation-modal-card div:has(> label) > span {
+  .installation-modal-card div:has(> label)>span {
     font-size: 14.5px !important;
     font-weight: 600 !important;
   }
@@ -2210,6 +2228,8 @@ button.hide-mob svg {
 
   .installation-modal-card input {
     font-size: 16px !important;
+    height: 100%;
+    width: 30rem;
   }
 
   .installation-modal-card div.gap-\[0\.8rem\] button {
@@ -2437,7 +2457,7 @@ button.hide-mob svg {
     font-weight: 500 !important;
   }
 
-  .services-sticky-nav > a {
+  .services-sticky-nav>a {
     font-size: 15px !important;
     font-weight: 500 !important;
   }
@@ -2578,7 +2598,7 @@ button.hide-mob svg {
     font-weight: 500 !important;
   }
 
-  
+
 
   .service-detail-step-card h3 {
     font-size: 18px !important;
@@ -2620,6 +2640,7 @@ button.hide-mob svg {
    Enhanced readability for compact smartphones
    -------------------------------------------------------------------------- */
 @media (max-width: 375px) {
+
   /* Header */
   body:has(.inner-page) header.fixed {
     padding-left: 14px !important;
@@ -2642,7 +2663,7 @@ button.hide-mob svg {
   }
 
   /* Fullscreen Menu Overlay */
-  #site-menu > div {
+  #site-menu>div {
     padding: 65px 14px 20px !important;
   }
 
@@ -2831,12 +2852,12 @@ button.hide-mob svg {
     font-size: 16px !important;
   }
 
-  .contact-form input:placeholder-shown + label[for^="field-"],
-  .contact-form textarea:placeholder-shown + label[for^="field-"] {
+  .contact-form input:placeholder-shown+label[for^="field-"],
+  .contact-form textarea:placeholder-shown+label[for^="field-"] {
     font-size: 15px !important;
   }
 
-  .contact-form [role="group"] label > span {
+  .contact-form [role="group"] label>span {
     font-size: 15px !important;
     padding: 10px 16px !important;
   }
@@ -3203,7 +3224,7 @@ button.hide-mob svg {
     padding-right: 10px !important;
   }
 
-  
+
 
   .inner-page section {
     padding-top: 36px !important;
@@ -3344,12 +3365,12 @@ button.hide-mob svg {
     font-size: 16px !important;
   }
 
-  .contact-form input:placeholder-shown + label[for^="field-"],
-  .contact-form textarea:placeholder-shown + label[for^="field-"] {
+  .contact-form input:placeholder-shown+label[for^="field-"],
+  .contact-form textarea:placeholder-shown+label[for^="field-"] {
     font-size: 14.5px !important;
   }
 
-  .contact-form [role="group"] label > span {
+  .contact-form [role="group"] label>span {
     font-size: 14px !important;
     padding: 8px 13px !important;
   }

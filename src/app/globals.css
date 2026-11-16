@@ -339,6 +339,15 @@ section#reviews .sticky {
 section#gallery .sticky {
     background-color: #f4f4f4;
 }
+section#reviews ul {
+    height: 35rem;
+}
+section#reviews ul blockquote {
+    font-size: 14px;
+}
+.txt-header p {
+    font-size: 12px;
+}
 }
 
 @media (max-width: 981px) {

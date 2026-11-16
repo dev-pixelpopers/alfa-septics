@@ -125,7 +125,7 @@ export function ReviewsScene() {
                 >
                   {review.initial}
                 </span>
-                <div>
+                <div className="txt-header">
                   <p className="text-[1.9rem] font-medium leading-[1.3] text-[#202124] max-sm:w-auto! max-sm:text-[15px]! max-sm:leading-[1.3]!">
                     {review.name}
                   </p>

@@ -155,7 +155,7 @@ function ContactFormBody({ initialService, onReset }: { initialService?: string;
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="flex flex-col gap-[5.6rem] contact-form"
+      className="flex flex-col gap-[5.6rem] contact-form" id="main-form"
     >
       <header>
         <p className="text-[1.8rem] uppercase tracking-[0.4rem] text-brand-cyan">Free estimate</p>

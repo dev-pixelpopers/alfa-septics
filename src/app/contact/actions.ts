@@ -7,7 +7,7 @@ import { CONTACT } from "@/lib/site";
 export type { ContactState };
 
 /**
- * Receives a contact request and emails it to the team through Resend using the reusable email lib.
+ * Receives a contact request and emails it to the team over SMTP (Nodemailer) using the reusable email lib.
  */
 export async function submitContactRequest(_prev: ContactState, formData: FormData): Promise<ContactState> {
   const data = readContactForm(formData);

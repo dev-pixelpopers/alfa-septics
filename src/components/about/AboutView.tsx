@@ -76,7 +76,7 @@ export function AboutView() {
       </section>
 
       {/* Framed job-site photo overlapping the hero */}
-      <div className="relative z-10 -mt-[24rem] flex justify-center about-hero-photo-wrap">
+      <div className="relative z-10 -mt-[24rem] flex justify-center about-hero-photo-wrap about-img">
         <div
           data-hero-photo
           className="invisible relative h-[65.5rem] w-[142.5rem] border-[1rem] border-white shadow-[0_4rem_12rem_rgba(44,60,146,0.25)] about-hero-photo"

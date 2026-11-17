@@ -107,7 +107,36 @@ section#reviews button {
   .hero-sec h1 {
     margin-top: -130px;
   }
+
 }
+
+
+@media (max-width: 1680px) and (min-width: 1390px) {
+  .pricing-faq-section .invisible.sticky p {
+    max-width: 420px;
+  }
+
+  .service-areas-counties-grid h2 {
+    font-size: 24px !important;
+  }
+
+  form#main-form section {
+    padding: 0px !important;
+  }
+
+  .contact-next-card h2 {
+    font-size: 32px !important;
+  }
+
+  .about-cols li img {
+    width: 60px;
+  }
+
+  p.footer-logotxt {
+    margin-top: 19rem;
+  }
+}
+
 
 @media (max-width: 1450px) and (min-width: 1400px) {
   .hero-sec-inner {
@@ -124,6 +153,16 @@ section#reviews button {
 
   .solution-sec {
     top: 80px;
+  }
+}
+
+@media (max-width: 1450px) and (min-width: 1000px) {
+  .process-step-content .process-step-number {
+    font-size: 60px !important;
+  }
+
+  .about-hero-photo-wrap.about-img {
+    margin-top: -60px !important;
   }
 }
 
@@ -163,6 +202,19 @@ section#reviews button {
   .box-system {
     padding-top: 10px;
   }
+
+  .service-areas-counties-grid h2 {
+    font-size: 24px !important;
+  }
+
+  form#main-form section {
+    padding: 0px !important;
+  }
+
+  .contact-next-card h2 {
+    font-size: 32px !important;
+  }
+
 }
 
 @media (max-width: 1290px) and (min-width: 1152px) {
@@ -201,19 +253,50 @@ section#reviews button {
   .box-system {
     padding-top: 10px;
   }
+
+  form#main-form section {
+    padding: 0px !important;
+  }
+
+  .contact-next-card h2 {
+    font-size: 32px !important;
+  }
+
+  .service-areas-counties-grid ul li {
+    font-size: 13px;
+    padding: 10px 20px !important;
+  }
 }
 
 @media (max-width: 1026px) {
+  .process-step-content ul li {
+    font-size: 16px;
+  }
+
+  form#main-form section {
+    padding: 0px !important;
+  }
+
   .hero-sec-inner {
     height: 100rem;
   }
 
   .hero-sec h1 {
     margin-top: -77px;
+    letter-spacing: -5px;
   }
 
   .hero-sec h1 span {
     font-size: 100px;
+  }
+
+  .second-home {
+    width: 70%;
+  }
+
+  .second-home p {
+    font-size: 15px;
+    line-height: 22px;
   }
 
   .solution-sec {
@@ -278,6 +361,104 @@ section#reviews button {
   .service-article-detail-grid li {
     font-size: 15px !important;
     line-height: 1.4 !important;
+  }
+
+  .area-two .service-areas-counties-grid h2 {
+    font-size: 26px !important;
+  }
+
+  .service-areas-counties-grid ul li {
+    font-size: 16px;
+  }
+
+  header.fixed a img {
+    width: auto !important;
+    max-width: 70px !important;
+    height: 70px !important;
+  }
+
+  header.fixed button.hide-mob {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  header.fixed button.humburger {
+    height: 46px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+  }
+
+  .land-home p {
+    font-size: 14px;
+    width: 100rem !important;
+    line-height: 1.5;
+  }
+
+  section#gallery .sticky {
+    background-color: #f4f4f4;
+  }
+
+  section#reviews ul {
+    /* 35rem collapses on phones (rem scales with viewport); keep room for the quote. */
+    height: max(35rem, 264px);
+  }
+
+  section#reviews ul blockquote {
+    font-size: 14px;
+  }
+
+  .txt-header p {
+    font-size: 12px;
+  }
+
+  .about-creds-list li {
+    font-size: 14px;
+  }
+
+  .about-what a span.mt-auto {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+
+  .contact-form-grid aside.invisible {
+    gap: 40px;
+  }
+
+  .contact-work-section .contact-work-header {
+    text-align: center;
+  }
+
+  .contact-work-section .contact-work-header h2 {
+    width: 100% !important;
+  }
+
+  .service-detail-hero-grid .service-detail-hero-photo {
+    order: 1;
+    max-width: 100% !important;
+  }
+
+  .service-detail-hero-grid div:first-child {
+    order: 2;
+  }
+
+  .service-detail-overview-grid ul li {
+    font-size: 14px;
+  }
+
+  .service-detail-process-steps li {
+    flex-direction: column;
+    text-align: center;
+    align-items: center !important;
+  }
+
+  .service-detail-hero-grid,
+  .service-detail-signs-grid li {
+    text-align: center;
+  }
+
+  .service-detail-hero-grid nav ol {
+    justify-content: center;
+    font-size: 12px;
   }
 }
 
@@ -369,35 +550,6 @@ section#reviews button {
     text-align: center;
   }
 
-  .service-detail-hero-grid nav ol {
-    justify-content: center;
-    font-size: 12px;
-  }
-
-  .service-detail-hero-grid,
-  .service-detail-signs-grid li {
-    text-align: center;
-  }
-
-  .service-detail-hero-grid .service-detail-hero-photo {
-    order: 1;
-    max-width: 100% !important;
-  }
-
-  .service-detail-hero-grid div:first-child {
-    order: 2;
-  }
-
-  .service-detail-overview-grid ul li {
-    font-size: 14px;
-  }
-
-  .service-detail-process-steps li {
-    flex-direction: column;
-    text-align: center;
-    align-items: center !important;
-  }
-
   .service-detail-process-header {
     align-items: center !important;
     text-align: center;
@@ -428,7 +580,7 @@ section#reviews button {
 
   .service-article-detail-grid .invisible ul {
     justify-content: center;
-    align-items: center;
+    text-align: left;
   }
 
   .service-article-detail-grid .invisible p {
@@ -663,8 +815,12 @@ section#reviews button {
 
   .pricing-includes-grid span svg,
   .contact-quick-list svg {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .contact-form-grid aside.invisible {
+    gap: 40px;
   }
 
   .pricing-includes-grid p,
@@ -772,5 +928,111 @@ section#reviews button {
   .about-creds-list li span svg {
     width: 15px;
     height: 15px;
+  }
+
+  .area-two .service-areas-counties-grid h2 {
+    font-size: 22px !important;
+  }
+
+  .service-areas-counties-grid li svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .service-areas-counties-grid li span {
+    width: 20px;
+    height: 20px;
+  }
+
+  .services-sticky-nav a svg,
+  .area-two .flex-1 svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .process-step-content ul span,
+  .service-detail-overview ul li span {
+    width: 20px;
+    height: 20px;
+  }
+
+  .process-step-content ul span svg,
+  .pricing-plan-card .pricing-plan-details a svg,
+  .service-detail-overview ul li span svg,
+  .service-detail-process-header a svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .process-step-content .process-step-number {
+    font-size: 26px !important;
+  }
+
+  .service-article-detail-grid p.mt-\[1\.2rem\].flex.items-end.gap-\[1rem\].text-brand-navy,
+  .service-detail-hero-grid p.mt-\[1\.4rem\].flex.items-end.gap-\[1rem\] {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-detail-hero-grid p {
+    width: 100% !important;
+  }
+
+  .service-article-detail-grid p.mt-\[1\.2rem\].flex.items-end.gap-\[1rem\].text-brand-navy span.font-display,
+  .service-detail-hero-grid p.mt-\[1\.4rem\].flex.items-end.gap-\[1rem\] span.font-display {
+    font-size: 20px !important;
+  }
+
+  .service-detail-others-grid li svg,
+  .installation-modal-card button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .installation-modal-card button.absolute.right-\[2\.8rem\] {
+    right: 5%;
+    top: 3%;
+    padding: 8px;
+  }
+
+  .installation-modal-card span.relative.block.size-\[1\.6rem\] {
+    width: 10px;
+    height: 10px;
+    font-size: 17px !important;
+    margin-left: -4px;
+    margin-top: -5px;
+  }
+
+  .service-article-detail-grid p.mt-\[1\.2rem\].flex.items-end.gap-\[1rem\].text-brand-navy span.font-display {
+    font-size: 20px !important;
+  }
+
+  .installation-modal-card input#county-input {
+    height: 50px;
+    width: 100% !important;
+  }
+
+  .installation-modal-card button.rounded-full.border-\[0\.2rem\].border-brand-navy\/20.px-\[2\.8rem\].py-\[1\.4rem\].text-\[1\.8rem\].text-brand-navy.transition-colors.hover\:border-brand-cyan {
+    padding: 11px 20px;
+  }
+
+  form#main-form span.grid {
+    display: none;
+  }
+
+  form#main-form span.grid svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  form#main-form .flex.items-center.gap-\[1rem\] {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .installation-modal-card button.rounded-full.border-\[0\.2rem\].border-brand-navy\/20.px-\[2\.8rem\].py-\[1\.4rem\].text-\[1\.8rem\].text-brand-navy.transition-colors.hover\:border-brand-cyan {
+    padding: 11px 20px;
   }
 }

@@ -77,7 +77,7 @@ export function SiteFooter() {
 
       <p
         aria-hidden
-        className="mt-[21.5rem] whitespace-nowrap font-display text-[22.6rem] font-black uppercase leading-[1.1] tracking-[-0.452rem] max-sm:mt-[16px] max-sm:w-auto! max-sm:text-[13.5vw]! max-sm:leading-[1.1]! max-sm:tracking-[-0.02em]"
+        className="footer-logotxt mt-[21.5rem] whitespace-nowrap font-display text-[22.6rem] font-black uppercase leading-[1.1] tracking-[-0.452rem] max-sm:mt-[16px] max-sm:w-auto! max-sm:text-[13.5vw]! max-sm:leading-[1.1]! max-sm:tracking-[-0.02em]"
       >
         Alfa Septic
       </p>

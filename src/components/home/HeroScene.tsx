@@ -291,7 +291,7 @@ export function HeroScene() {
           <div className="md:h-[34.8rem] md:w-[101.5rem]">
             <h2
               data-bare-heading
-              className="whitespace-nowrap text-center font-display text-[30px] md:text-[12rem] font-black uppercase leading-[0.9] tracking-[-0.84rem]"
+              className="whitespace-nowrap text-center font-display text-[30px] md:text-[12rem] font-black uppercase leading-[0.9] md:tracking-[-0.84rem]"
             >
               <span className="block">From Bare</span>
               <span className="block">Land to Fully</span>
@@ -315,7 +315,6 @@ export function HeroScene() {
                   alt=""
                   width={1690}
                   height={931}
-                  sizes="30vw"
                   className="absolute max-w-none"
                   style={{ top: "-20.29%", height: "144.08%", width: badge.imgWidth, left: badge.left }}
                 />

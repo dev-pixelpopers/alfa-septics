@@ -399,7 +399,8 @@ section#reviews button {
   }
 
   section#reviews ul {
-    height: 35rem;
+    /* 35rem collapses on phones (rem scales with viewport); keep room for the quote. */
+    height: max(35rem, 264px);
   }
 
   section#reviews ul blockquote {

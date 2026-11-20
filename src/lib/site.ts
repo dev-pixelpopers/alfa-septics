@@ -33,7 +33,7 @@ export const SERVICES = [
     slug: "installation",
     title: "Septic Installation",
     body: "Conventional and aerobic systems installed to TCEQ standards, from excavation to final hookup.",
-    image: photo("tank-in-excavation-crew"),
+    image: photo("septic-installation.jpeg"),
     alt: "Crew setting a concrete septic tank in a freshly dug excavation",
     points: [
       "Conventional and aerobic systems",

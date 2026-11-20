@@ -1302,7 +1302,7 @@ body:has(.inner-page) footer {
 
   .service-detail-process-header {
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     gap: 16px !important;
   }
 
@@ -3659,4 +3659,7 @@ body:has(.inner-page) footer {
   .cta-band-phone {
     font-size: 14.5px !important;
   }
+  .service-detail-hero-grid .service-detail-hero-photo {
+        max-width: 100% !important;
+    }
 }

@@ -592,7 +592,7 @@ function FloatingInput({ name, label, value, onChange, onBlur, error, hint, mult
           {label}
         </label>
       </div>
-      <div className="mt-[0.8rem] flex justify-between gap-[2rem] text-[1.5rem]">
+      <div className="mt-[0.8rem] flex justify-between gap-[2rem] text-[15px]">
         <span id={errorId} className="text-[#c0392b]">
           {error}
         </span>

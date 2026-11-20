@@ -434,7 +434,7 @@ section#reviews button {
 
   .service-detail-hero-grid .service-detail-hero-photo {
     order: 1;
-    max-width: 100% !important;
+    max-width: 60% !important;
   }
 
   .service-detail-hero-grid div:first-child {
@@ -460,6 +460,33 @@ section#reviews button {
     justify-content: center;
     font-size: 12px;
   }
+  .service-detail-hero-actions {
+    max-width: 300px;
+    margin: 30px auto auto auto;
+}
+.service-detail-hero-actions svg {
+    width: 15px;
+    height: 15px;
+}
+.service-detail-process-steps .service-detail-step-card span {
+    margin: auto;
+}
+  .service-detail-hero-grid p.mt-\[1\.4rem\].flex.items-end.gap-\[1rem\] {
+    justify-content: center;
+}  
+.installation-modal-card span {
+    font-size: 12px;
+}
+.installation-modal-card p {
+    font-size: 13px;
+}
+.installation-modal-card button, .installation-modal-card label {
+    font-size: 13px;
+}
+.contact-form-footer button svg {
+    width: 15px;
+    height: 15px;
+}
 }
 
 @media (max-width: 981px) {
@@ -1035,4 +1062,8 @@ section#reviews button {
   .installation-modal-card button.rounded-full.border-\[0\.2rem\].border-brand-navy\/20.px-\[2\.8rem\].py-\[1\.4rem\].text-\[1\.8rem\].text-brand-navy.transition-colors.hover\:border-brand-cyan {
     padding: 11px 20px;
   }
+  .service-detail-hero-actions {
+    max-width: 100%;
+    margin: 20px auto auto auto;
+}
 }
